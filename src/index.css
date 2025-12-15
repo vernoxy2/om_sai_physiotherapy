@@ -7,12 +7,14 @@
     @apply font-marcellus;
   }
 
+
+
   section {
     @apply py-10 md:py-20 space-y-5 md:space-y-10;
   }
 
   h1 {
-    @apply text-primary text-3xl md:text-4xl lg:text-5xl font-bold text-center;
+    @apply text-primary text-3xl md:text-4xl lg:text-5xl text-center font-marcellus;
   }
 
   h2 {
@@ -24,7 +26,7 @@
   }
 
   p {
-    @apply text-base text-textcolor;
+    @apply text-base text-textcolor font-Lato;
   }
 
   input {
@@ -43,5 +45,8 @@
 @layer utilities {
   .font-marcellus {
     font-family: Marcellus, sans-serif;
+  }
+   .font-Lato {
+    font-family: 'Lato', sans-serif;
   }
 }

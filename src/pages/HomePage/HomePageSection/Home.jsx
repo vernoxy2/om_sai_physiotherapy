@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
-// import Vector5 from "../../../assets/ProjectPageImgs/Vector5.svg"
+import PrimaryBtn from "../../../component/PrimaryBtn";
+
 const Header = ({
   slides,
   duration = 4500,
@@ -33,13 +34,16 @@ const Header = ({
     >
         <div className="container grid grid-cols-1 md:grid-cols-2 h-full">
         <div className="space-y-5 xl:w-[80%] py-16 lg:py-0 md:py-24 h-full flex flex-col items-start justify-center">
-          <h1 className="text-4xl md:text-5xl lg:text-6xl text-start font-bold ">
+          <h1 className=" text-start border space-x-4 leading-tight">
             {current.MainText}
           </h1>
           <div className="flex gap-6">
             {/* <img src={Vector5} alt="" className=" h-auto" /> */}
           <p className="text-white lg:w-4/5">{current.SubText}</p>
+         
           </div>
+         <PrimaryBtn className="w-[80%] text-base ">Physiotherapy in North York</PrimaryBtn>
+
         </div>
       </div>
       <h1></h1>

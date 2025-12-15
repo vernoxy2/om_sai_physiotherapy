@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, Link } from "react-router-dom";
 import GetTouch from "./GetTouch";
 import { HiMenu, HiX } from "react-icons/hi";
 import navLogo from "../assets/HomePageImgs/NavLogo.svg";
@@ -18,20 +18,34 @@ const NavBar = () => {
   ];
 
   return (
-    <nav className="shadow-md w-full py-4 flex items-center fixed top-0 left-0 z-50 ">
-      <div className=" container mx-auto flex items-center justify-between">
-        {/* Logo */}
-        <NavLink to="/">
-          <img src={navLogo} alt="navLogo" className="h-10 md:h-18" />
-        </NavLink>
+    <nav className="absolute left-1/2 -translate-x-1/2 w-full flex container top-3 md:top-5 z-50">
+      <div className="flex justify-between items-center bg-white rounded-full h-full w-full py-1 md:p-1">
+        {/* <div className="flex items-center justify-between w-full px-4 md:px-6 lg:px-0"> */}
+        <div className="flex items-center justify-between ">
+          {/* Logo */}
+          <Link to="/" className="flex items-center">
+            <img src={navLogo} alt="logo" className="ml-1 h-5 md:h-10" />
+          </Link>
 
-        {/* <img src={navLogo} alt="navLogo" className="h-12 md:h-20" /> */}
+          {/* Mobile Hamburger */}
+          <button
+            className="lg:hidden text-3xl text-primary"
+            onClick={() => setIsOpen(!isOpen)}
+          >
+            {isOpen ? (
+              <HiX className="text-black" />
+            ) : (
+              <HiMenu className="text-black" />
+            )}
+          </button>
+        </div>
+
         {/* Desktop Menu */}
-        <ul className="hidden lg:flex gap-4 xl:gap-2">
+        <ul className="hidden md:flex gap-4 xl:gap-2 relative h-full">
           {menuItems.map((item) => (
             <li
               key={item.name}
-              className="rounded-full cursor-pointer duration-300 transition-transform"
+              className="rounded-full cursor-pointer duration-300 transition-transform "
             >
               <NavLink
                 to={item.path}
@@ -39,8 +53,7 @@ const NavBar = () => {
                   `text-sm hover:text-primary duration-300 transition-colors
            py-2 px-5 xl:px-7 rounded-full ${
              isActive ? "text-primary  font-bold" : ""
-           }`
-                }
+           }` }
               >
                 {item.name}
               </NavLink>
@@ -48,27 +61,21 @@ const NavBar = () => {
           ))}
         </ul>
 
-        <GetTouch className="hidden lg:flex border-4 border-primary" />
-        {/* Mobile Hamburger */}
-        <button
-          className="lg:hidden text-4xl py-5 text-red-500 px-5 rounded-md"
-          onClick={() => setIsOpen(!isOpen)}
-        >
-          {isOpen ? (
-            <HiX className="text-black" />
-          ) : (
-            <HiMenu className="text-black" />
-          )}
-        </button>
+        {/* Desktop CTA */}
+        <Link to="/contact" className="hidden md:block">
+          <button className="bg-primary text-white px-5 text-base py-2 rounded-full hover:bg-primary transition-colors ">
+            Get In Touch
+          </button>
+        </Link>
       </div>
 
       {/* Mobile Menu */}
       <div
-        className={`lg:hidden bg-white shadow-lg w-full absolute top-16 left-0 transition-all duration-300 overflow-hidden ${
+        className={`lg:hidden bg-white shadow-lg w-full absolute top-16 left-0 transition-all duration-300 overflow-hidden border ${
           isOpen ? "h-fit" : "max-h-0"
         }`}
       >
-        <ul className="flex flex-col items-center gap-6 py-4 text-lg font-bold">
+        <ul className="flex flex-col items-center gap-2 py-2 text-base border border-red-600 bg-white rounded-3xl  ">
           {menuItems.map((item) => (
             <li
               key={item.name}

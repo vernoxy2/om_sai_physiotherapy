@@ -8,6 +8,7 @@ import Products from "./pages/ProductPage/Product";
 import FAQ from "./pages/FAQPage/FAQ";
 import ContactUs from "./pages/ContactUsPage/ContactUs";
 import GetTouch from "./component/GetTouch";
+import Footer from "./component/Footer";
 
 const App = () => {
   return (
@@ -24,7 +25,7 @@ const App = () => {
           <Route path="/contact" element={<ContactUs />} />
           <Route path="/gettouch" element={<GetTouch />} />
         </Routes>
-        {/* <Footer />    */}
+        <Footer />   
       </BrowserRouter>
     </div>
   )

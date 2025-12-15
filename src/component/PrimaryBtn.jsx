@@ -1,17 +1,17 @@
 import React from "react";
-import { GoArrowUpRight } from "react-icons/go";
+import { BsArrowRightShort } from "react-icons/bs";
 
-const PrimaryBtn = ({ children, className = "", onClick, type = "button", ...rest }) => {
+const PrimaryBtn = ({ children, className = "", ...props }) => {
   return (
     <button
-      onClick={onClick}                
-      type={type}                   
-      className={`bg-[#269BA3] text-white flex items-center font-bold gap-2 px-8 py-6 hover:scale-90 duration-300 text-base md:text-lg ${className}`}
-      {...rest}
+      {...props}
+      className={`bg-primary text-white text-lg md:text-xl flex md:gap-2 items-center justify-center rounded-full p-1 w-fit hover:bg-stride group duration-300 transition-colors ${className}`}
     >
-      {children} <GoArrowUpRight className="text-white text-2xl" />
+      <span className="text-white px-4">{children}</span>
+      <BsArrowRightShort className="text-white bg-[#696969] text-4xl md:text-5xl rounded-full p-1 group-hover:-rotate-45 duration-300 font-Marcellus" />
     </button>
   );
 };
 
 export default PrimaryBtn;
+

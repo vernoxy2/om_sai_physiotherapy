@@ -1,5 +1,5 @@
-
 /** @type {import('tailwindcss').Config} */
+
 export default {
   content: [
     "./index.html",
@@ -7,12 +7,10 @@ export default {
   ],
   theme: {
     extend: {
-      extend: {
-        fontFamily: {
-          marcellus: ["Marcellus", "sans-serif"],
-        },
+      fontFamily: {
+        marcellus: ["Marcellus", "sans-serif"],
+        lato: ["Lato", "sans-serif"],
       },
-
       colors: {
         primary: "#269BA3", // example (change if needed)
         textcolor: "#696969",
@@ -30,4 +28,4 @@ export default {
     },
   },
   plugins: [],
-}
+};
