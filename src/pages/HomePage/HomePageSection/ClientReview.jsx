@@ -1,6 +1,7 @@
 import React from "react";
 import { FaStar } from "react-icons/fa";
-import round from "../../../assets/ClientReviewPageImgs/round.png"
+// import round from "../../../assets/ClientReviewPageImgs/round.png"
+import BgImg from "../../../assets/ClientReviewPageImgs/BgImg.png"
 
 const ClientReview = () => {
   const Data = [
@@ -40,7 +41,9 @@ const ClientReview = () => {
   ];
 
   return (
-    <section>
+    <section 
+    style = {{backgroundImage: `url(${BgImg})`}}
+    >
       <div className="container grid grid-cols-1 md:grid-cols-2 gap-8">
         {Data.map((item) => (
           <div key={item.id} className="space-y-5">
