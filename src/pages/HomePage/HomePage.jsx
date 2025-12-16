@@ -4,6 +4,7 @@ import headImg from "../../assets/HomePageImgs/headImg.webp";
 import headImg2 from "../../assets/HomePageImgs/headImg2.webp";
 import AboutUs from "../HomePage/HomePageSection/AboutUs"
 import PatientsTrust from "../HomePage/HomePageSection/PatientsTrust";
+import ClientReview from "../HomePage/HomePageSection/ClientReview";
 
 const HomePage = () => {
   const slides = [
@@ -56,6 +57,7 @@ const HomePage = () => {
       <Home slides={slides} />
       <AboutUs />
       <PatientsTrust />
+      <ClientReview/>
     </div>
   );
 };

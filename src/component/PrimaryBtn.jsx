@@ -1,17 +1,44 @@
 import React from "react";
 import { BsArrowRightShort } from "react-icons/bs";
+import { Link } from "react-router-dom";
 
-const PrimaryBtn = ({ children, className = "", ...props }) => {
+const PrimaryBtn = ({
+  children,
+  className = "",
+  type = "button",
+  onClick,
+  to, // <— new prop for route navigation
+  iconclass = "",
+}) => {
+  const commonClasses =
+    "ps-4 p-1 bg-primary rounded-full flex items-center justify-center gap-3 transition-all duration-300 active:scale-95 group " +
+    className;
+
+  const iconClasses = `bg-textdark p-1 rounded-full text-3xl text-white transform transition-transform duration-500 ease-in-out group-hover:rotate-[-45deg] ${iconclass}`;
+  
+  // if 'to' is provided → use <Link>
+  if (to) {
+    return (
+      <Link data-aos="fade-up" to={to} className={commonClasses}>
+        <span className="font-Marcellus lg:text-xl">{children}</span>
+        <div className={iconClasses}>
+          <BsArrowRightShort className="text-xl lg:text-4xl" />
+        </div>
+      </Link>
+    );
+  }
+
+  // else → use <button>
   return (
-    <button
-      {...props}
-      className={`bg-primary text-white text-lg md:text-xl flex md:gap-2 items-center justify-center rounded-full p-1 w-fit hover:bg-stride group duration-300 transition-colors ${className}`}
-    >
-      <span className="text-white px-4">{children}</span>
-      <BsArrowRightShort className="text-white bg-[#696969] text-4xl md:text-5xl rounded-full p-1 group-hover:-rotate-45 duration-300 font-Marcellus" />
-    </button>
+    <div className={commonClasses}>
+      <button type={type} onClick={onClick} className="font-Marcellus text-xl">
+        {children}
+      </button>
+      <div className={iconClasses}>
+        <BsArrowRightShort />
+      </div>
+    </div>
   );
 };
 
 export default PrimaryBtn;
-

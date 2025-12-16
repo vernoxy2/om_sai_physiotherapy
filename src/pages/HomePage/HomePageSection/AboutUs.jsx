@@ -1,78 +1,89 @@
 import React from "react";
 import CountUp from "react-countup";
-import img1 from "../../../assets/AboutUsPageImgs/img1.png";
-import img2 from "../../../assets/AboutUsPageImgs/img2.png";
-import img3 from "../../../assets/AboutUsPageImgs/img3.png";
+import img1 from "../../../assets/HomePageImgs/AboutUs/img1.png";
+import img2 from "../../../assets/HomePageImgs/AboutUs/img2.png";
+import img3 from "../../../assets/HomePageImgs/AboutUs/img3.png";
+import CounterBg from "../../../assets/HomePageImgs/AboutUs/counterBg.png";
+import PrimaryBtn from "../../../component/PrimaryBtn";
 
 const AboutUs = () => {
   return (
     <section className="py-16">
-      <div className="max-w-7xl mx-auto px-4">
-        <div className="grid grid-cols-12 gap-6 items-center">
-
+      <div className="container mx-auto px-4">
+        {/* MAIN GRID */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center container">
           {/* LEFT SECTION */}
-          <div className="col-span-12 xl:col-span-6 relative">
-            <div className="grid grid-cols-2 gap-4">
-
-              {/* Image 1 */}
-              <div className="rounded-2xl overflow-hidden">
-                <img src={img1} alt="physio" className="w-full h-full object-cover" />
-              </div>
-
-              {/* Image 2 */}
-              <div className="rounded-2xl overflow-hidden">
-                <img src={img2} alt="treatment" className="w-full h-full object-cover" />
-              </div>
-
-              {/* Image 3 */}
-              <div className="col-span-2 rounded-2xl overflow-hidden">
-                <img src={img3} alt="exercise" className="w-full h-full object-cover" />
-              </div>
+          <div className="relative grid grid-cols-2 gap-7">
+            {/* Image 1 */}
+            <div className=" rounded-2xl overflow-hidden  ">
+              <img
+                src={img2}
+                alt="treatment"
+                className="w-full h-full object-contain"
+              />
             </div>
 
-            {/* CIRCLE COUNTER */}
+            {/* Image 2 & 3 */}
+            <div className="flex flex-col justify-between rounded-3xl overflow-hidden ">
+              <div>
+                <img src={img1} alt="physio" className="w-full rounded-3xl" />
+              </div>
+              <img src={img3} alt="physio" className="w-full object-cover  " />
+            </div>
+
+            {/* COUNTER */}
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
-              <div className="w-36 h-36 rounded-full bg-white shadow-xl flex flex-col items-center justify-center border">
-                <h3 className="text-3xl font-bold text-teal-600">
-                  <CountUp start={0} end={15} duration={2.5} />+
-                </h3>
-                <p className="text-xs text-gray-500 text-center mt-1">
-                  YEARS OF <br /> EXPERIENCE
-                </p>
+              {/* WHITE OUTLINE */}
+              <div className="w-48 h-48 rounded-full bg-white flex items-center justify-center shadow-xl">
+                {/* BACKGROUND IMAGE CIRCLE */}
+                <div
+                  className="w-40 h-40 rounded-full flex items-center justify-center bg-center bg-cover "
+                  style={{ backgroundImage: `url(${CounterBg})` }}
+                >
+                  <div className="text-center">
+                    <h3 className="text-3xl font-bold text-white">
+                      <CountUp start={0} end={15} duration={2.5} />+
+                    </h3>
+                    <p className="text-xs text-white mt-1 leading-tight">
+                      YEARS OF <br /> EXPERIENCE
+                    </p>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
 
           {/* RIGHT SECTION */}
-          <div className="col-span-12 xl:col-span-6 space-y-5">
-            <span className="text-teal-600 font-medium">About Us</span>
+          <div className=" space-y-11">
+            <span className="text-[#696969] font-medium">About Us</span>
+            <h1 className="text-4xl font-semibold leading-tight">
+              Om Sai Physiotherapy <span className="text-[#696969]">Clinic  <br/></span>
+              <span className="text-[#696969]">North York</span>
+            </h1>
 
-            <h2 className="text-4xl font-semibold leading-tight">
-              Om Sai Physiotherapy Clinic <br />
-              <span className="text-gray-500">North York</span>
-            </h2>
-
-            <p className="text-gray-600">
+            <p className="font-lato">
               Welcome to Om Sai Physiotherapy Clinic in North York, your trusted
-              destination for expert physiotherapy and rehabilitation.
-              Our experienced physiotherapists provide personalized,
-              evidence-based care for acute injuries, chronic pain,
-              and mobility issues.
+              destination for expert physiotherapy and rehabilitation. Our
+              experienced physiotherapists provide personalized, evidence-based
+              care for acute injuries, chronic pain, and mobility issues.
             </p>
 
-            <p className="text-gray-600">
-              Our modern clinic ensures effective treatment plans tailored for
-              every patient — from athletes to seniors.
+            <p className="font-lato">
+              We offer comprehensive physiotherapy services in North York,
+              helping patients move better, recover faster, and live pain-free.
+              Our modern, welcoming clinic ensures effective treatment plans
+              tailored for every patient, from athletes to seniors.
+            </p>
+            <p className="font-lato">
+              Start your recovery today at Om Sai Physiotherapy Clinic – North
+              York’s trusted physiotherapy center.
             </p>
 
-            <button className="inline-flex items-center gap-2 bg-teal-600 text-white px-6 py-3 rounded-full hover:bg-teal-700 transition">
-              Learn More
-              <span className="w-8 h-8 rounded-full bg-white text-teal-600 flex items-center justify-center">
-                →
-              </span>
-            </button>
+
+           <PrimaryBtn className="w-1/4" >
+            Learn More
+           </PrimaryBtn>
           </div>
-
         </div>
       </div>
     </section>

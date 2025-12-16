@@ -1,6 +1,8 @@
 import React from "react";
 import PrimaryBtn from "../../../component/PrimaryBtn";
-import cvrImg from "../../../assets/TrustusPageImgs/coverImg.png"
+import cvrImg from "../../../assets/TrustusPageImgs/coverImg.png";
+import SliderImg from "../../../assets/TrustusPageImgs/SliderImg.png";
+import { TiStarburst } from "react-icons/ti";
 
 const PatientsTrust = () => {
   const trustCards = [
@@ -27,8 +29,31 @@ const PatientsTrust = () => {
     },
   ];
 
+  const TherapyData = [
+    {
+      id: 1,
+      value: "Neurological Rehabilitation",
+    },
+    {
+      id: 2,
+      value: "Brain And Nerve Therapy",
+    },
+    {
+      id: 3,
+      value: "Joint Care Therapy",
+    },
+    {
+      id: 4,
+      value: "Bone And Muscle Therapy",
+    },
+    {
+      id: 5,
+      value: "Cardiovascular Rehabilitation",
+    },
+  ];
+
   return (
-    <section className="w-full bg-white py-20 px-4">
+    <section className="w-full bg-white py-20 container">
       <div className="max-w-7xl mx-auto">
         {/* Heading */}
         <div className="text-center max-w-3xl mx-auto mb-16">
@@ -77,11 +102,15 @@ const PatientsTrust = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
           {/* Left Content */}
           <div>
-            <p className="text-primary text-sm mb-2">Plan Your Visit</p>
+            <h4 className="text-[#696969] font-marcellus mb-2">
+              Plan Your Visit
+            </h4>
 
             <h3 className="text-3xl md:text-4xl font-light text-primary mb-4">
               Take The First Step <br />
-              <span className="font-medium text-[#696969]">To A Pain-Free Life</span>
+              <span className="font-medium text-[#696969]">
+                To A Pain-Free Life
+              </span>
             </h3>
             <p className="text-[#696969] text-sm mb-4">
               Read what our patients have to say about their experiences at Om
@@ -129,7 +158,23 @@ const PatientsTrust = () => {
           </form>
         </div>
       </div>
-      <img src={cvrImg} alt="curve" className="w-full" />
+      <img src={cvrImg} alt="curve" className="w-full " />
+
+      {/* slider  */}
+
+      <div
+        style={{ backgroundImage: `url(${SliderImg})` }}
+        className="relative overflow-hidden  py-5"
+      >
+        <div className="flex gap-10 animate-marquee-left whitespace-nowrap">
+          {[...TherapyData, ...TherapyData].map((item, i) => (
+            <div key={i} className="flex items-center gap-3 text-white">
+              <TiStarburst className="text-white" />
+              <h4>{item.value}</h4>
+            </div>
+          ))}
+        </div>
+      </div>
     </section>
   );
 };
