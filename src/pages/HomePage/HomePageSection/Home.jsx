@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import PrimaryBtn from "../../../component/PrimaryBtn";
+import PatientsTrust from "./PatientsTrust";
 
 const Header = ({
   slides,
