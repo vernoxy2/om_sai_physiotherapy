@@ -3,6 +3,7 @@ import PrimaryBtn from "../../../component/PrimaryBtn";
 import cvrImg from "../../../assets/TrustusPageImgs/coverImg.png";
 import SliderImg from "../../../assets/TrustusPageImgs/SliderImg.png";
 import { TiStarburst } from "react-icons/ti";
+import Title from "../../../component/Title";
 
 const PatientsTrust = () => {
   const trustCards = [
@@ -57,11 +58,9 @@ const PatientsTrust = () => {
       <div className="max-w-7xl mx-auto">
         {/* Heading */}
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <p className="text-primary text-sm tracking-wide mb-2">
-            Why Patients Trust Us
-          </p>
+          <Title className="text-center text-xl text-[#696969] items-center w-fit mx-auto" title="Why Patients Trust Us" />
           <h2 className="text-3xl md:text-4xl font-light text-[#696969]">
-            <span className="text-teal-500">Excellence In Physiotherapy</span>
+            <span className="text-primary ">Excellence In Physiotherapy</span>
             <br />
             You Can Feel
           </h2>
@@ -102,10 +101,7 @@ const PatientsTrust = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
           {/* Left Content */}
           <div>
-            <h4 className="text-[#696969] font-marcellus mb-2">
-              Plan Your Visit
-            </h4>
-
+            <Title className="text-xl text-[#696969] " title='Plan Your Visit '/>
             <h3 className="text-3xl md:text-4xl font-light text-primary mb-4">
               Take The First Step <br />
               <span className="font-medium text-[#696969]">

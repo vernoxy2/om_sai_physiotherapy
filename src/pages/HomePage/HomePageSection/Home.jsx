@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import PrimaryBtn from "../../../component/PrimaryBtn";
 import PatientsTrust from "./PatientsTrust";
+import Title from "../../../component/Title";
 
 const Header = ({
   slides,
@@ -35,16 +36,14 @@ const Header = ({
     >
         <div className="container grid grid-cols-1 md:grid-cols-2 h-full">
         <div className="space-y-5 xl:w-[80%] py-16 lg:py-0 md:py-24 h-full flex flex-col items-start justify-center">
-          <h1 className=" text-start border space-x-4 leading-tight">
+          <Title className="text-white text-xl md:text-3xl" title="Helping Hands"/>
+          <h1 className=" text-start space-x-4 leading-tight">
             {current.MainText}
           </h1>
           <div className="flex gap-6">
-            {/* <img src={Vector5} alt="" className=" h-auto" /> */}
-          <p className="text-white lg:w-4/5">{current.SubText}</p>
-         
+          <p className="text-white font-lato lg:w-4/5 ">{current.SubText}</p>
           </div>
-         <PrimaryBtn className="w-[80%] text-base ">Physiotherapy in North York</PrimaryBtn>
-
+         <PrimaryBtn className="w-[60%] text-base ">Physiotherapy in North York</PrimaryBtn>
         </div>
       </div>
       <h1></h1>

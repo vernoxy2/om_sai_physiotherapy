@@ -139,7 +139,7 @@ const FooterData = () => {
   ];
   return (
     <section className="container">
-      <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-y-6 gap-2 border ">
+      <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-y-6 gap-2  ">
         {/* col1 */}
         <div className="text-white flex flex-col gap-5 ">
           <img src={NavLogo} alt="Logo" className="w-[80%]" />
@@ -155,7 +155,7 @@ const FooterData = () => {
             onChange={handleChange}
             onBlur={handleBlur}
             placeholder="Email ID*"
-            className={` required px-4 py-3 text-base rounded-full w-[80%] outline-none border
+            className={` required px-4 py-3 text-base rounded-full w-[80%] outline-none 
         //   ${error ? "border-primary" : "border-gray-300 "}
         //   focus:ring-2 focus:ring-white`}
           />
@@ -223,7 +223,7 @@ const FooterData = () => {
                   ) : (
                     <a
                       href={item.link}
-                      className="text-white text-base font-Lato border"
+                      className="text-white text-base font-Lato "
                       target="_blank"
                       rel="noopener noreferrer"
                     >

@@ -2,42 +2,12 @@ import React from "react";
 import { BsArrowRightShort } from "react-icons/bs";
 import { Link } from "react-router-dom";
 
-const PrimaryBtn = ({
-  children,
-  className = "",
-  type = "button",
-  onClick,
-  to, // <— new prop for route navigation
-  iconclass = "",
-}) => {
-  const commonClasses =
-    "ps-4 p-1 bg-primary rounded-full flex items-center justify-center gap-3 transition-all duration-300 active:scale-95 group " +
-    className;
-
-  const iconClasses = `bg-textdark p-1 rounded-full text-3xl text-white transform transition-transform duration-500 ease-in-out group-hover:rotate-[-45deg] ${iconclass}`;
-  
-  // if 'to' is provided → use <Link>
-  if (to) {
-    return (
-      <Link data-aos="fade-up" to={to} className={commonClasses}>
-        <span className="font-Marcellus lg:text-xl">{children}</span>
-        <div className={iconClasses}>
-          <BsArrowRightShort className="text-xl lg:text-4xl" />
-        </div>
-      </Link>
-    );
-  }
-
-  // else → use <button>
+const PrimaryBtn = ({ children }) => {
   return (
-    <div className={commonClasses}>
-      <button type={type} onClick={onClick} className="font-Marcellus text-xl">
-        {children}
-      </button>
-      <div className={iconClasses}>
-        <BsArrowRightShort />
-      </div>
-    </div>
+    <button className="text-xl text-center bg-primary text-white py-5 rounded-full w-full relative group active:scale-95 duration-200">
+      {children}
+      <BsArrowRightShort className="absolute right-4 top-1/2 transform -translate-y-1/2 text-5xl bg-black rounded-full group-hover:rotate-[-45deg] duration-500 transition-transform" />
+    </button>
   );
 };
 

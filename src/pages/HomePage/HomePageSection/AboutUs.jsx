@@ -5,6 +5,7 @@ import img2 from "../../../assets/HomePageImgs/AboutUs/img2.png";
 import img3 from "../../../assets/HomePageImgs/AboutUs/img3.png";
 import CounterBg from "../../../assets/HomePageImgs/AboutUs/counterBg.png";
 import PrimaryBtn from "../../../component/PrimaryBtn";
+import Title from "../../../component/Title";
 
 const AboutUs = () => {
   return (
@@ -15,7 +16,7 @@ const AboutUs = () => {
           {/* LEFT SECTION */}
           <div className="relative grid grid-cols-2 gap-7">
             {/* Image 1 */}
-            <div className=" rounded-2xl overflow-hidden  ">
+            <div className="rounded-2xl overflow-hidden">
               <img
                 src={img2}
                 alt="treatment"
@@ -54,33 +55,32 @@ const AboutUs = () => {
           </div>
 
           {/* RIGHT SECTION */}
-          <div className=" space-y-11">
-            <span className="text-[#696969] font-medium">About Us</span>
+          <div className=" space-y-4">
+            <Title className="text-[#696969] text-xl md:text-3xl" title="About Us"/>
             <h1 className="text-4xl font-semibold leading-tight">
-              Om Sai Physiotherapy <span className="text-[#696969]">Clinic  <br/></span>
+              Om Sai Physiotherapy <span className="text-[#696969]">Clinic<br/></span>
               <span className="text-[#696969]">North York</span>
             </h1>
 
-            <p className="font-lato">
+            <p className="font-lato text-[#696969]">
               Welcome to Om Sai Physiotherapy Clinic in North York, your trusted
               destination for expert physiotherapy and rehabilitation. Our
               experienced physiotherapists provide personalized, evidence-based
               care for acute injuries, chronic pain, and mobility issues.
             </p>
 
-            <p className="font-lato">
+            <p className="font-lato text-[#696969]">
               We offer comprehensive physiotherapy services in North York,
               helping patients move better, recover faster, and live pain-free.
               Our modern, welcoming clinic ensures effective treatment plans
               tailored for every patient, from athletes to seniors.
             </p>
-            <p className="font-lato">
+            <p className="font-lato text-[#696969]">
               Start your recovery today at Om Sai Physiotherapy Clinic – North
               York’s trusted physiotherapy center.
             </p>
 
-
-           <PrimaryBtn className="w-1/4" >
+           <PrimaryBtn className="w-[28%]" >
             Learn More
            </PrimaryBtn>
           </div>
