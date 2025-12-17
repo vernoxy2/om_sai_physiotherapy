@@ -3,7 +3,7 @@ import CountUp from "react-countup";
 import img1 from "../../../assets/HomePageImgs/AboutUs/img1.png";
 import img2 from "../../../assets/HomePageImgs/AboutUs/img2.png";
 import img3 from "../../../assets/HomePageImgs/AboutUs/img3.png";
-import CounterBg from "../../../assets/HomePageImgs/AboutUs/counterBg.png";
+import CounterBg from "../../../assets/HomePageImgs/AboutUs/CounterBg.png";
 import PrimaryBtn from "../../../component/PrimaryBtn";
 import Title from "../../../component/Title";
 
