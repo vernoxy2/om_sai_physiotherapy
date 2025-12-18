@@ -1,42 +1,79 @@
-import React from "react";
+import React, { useState } from "react";
 import PrimaryBtn from "../../../component/PrimaryBtn";
-import cvrImg from "../../../assets/TrustusPageImgs/coverImg.png"
+import cvrImg from "../../../assets/HomePageImgs/Trustus/coverImg.png";
+import SliderImg from "../../../assets/HomePageImgs/Trustus/SliderImg.png";
+import { TiStarburst } from "react-icons/ti";
+import Title from "../../../component/Title";
+import img1 from "../../../assets/HomePageImgs/Trustus/img1.svg";
+import img2 from "../../../assets/HomePageImgs/Trustus/img2.svg";
+import img3 from "../../../assets/HomePageImgs/Trustus/img3.svg";
+import img4 from "../../../assets/HomePageImgs/Trustus/img4.svg";
+import DatePicker from "react-datepicker";
 
 const PatientsTrust = () => {
+    const [dateTime, setDateTime] = useState(null);
   const trustCards = [
     {
+      img: img1,
       MainText: "Tailored Treatment Plans",
       SubText:
         "Every program is customized to your specific needs, ensuring the most effective results.",
     },
     {
+      img: img2,
       MainText: "Expertise & Experience",
       SubText:
         "Our skilled physiotherapists provide professional, evidence-based care to help you recover with confidence.",
     },
     {
+      img: img3,
       MainText: "Modern Facilities",
       SubText:
         "Our state-of-the-art clinic is equipped with the latest physiotherapy tools and techniques.",
       active: true,
     },
     {
+      img: img4,
       MainText: "Compassionate Care",
       SubText:
         "We combine professional expertise with empathy to make your recovery comfortable and supportive.",
     },
   ];
 
+  const TherapyData = [
+    {
+      id: 1,
+      value: "Neurological Rehabilitation",
+    },
+    {
+      id: 2,
+      value: "Brain And Nerve Therapy",
+    },
+    {
+      id: 3,
+      value: "Joint Care Therapy",
+    },
+    {
+      id: 4,
+      value: "Bone And Muscle Therapy",
+    },
+    {
+      id: 5,
+      value: "Cardiovascular Rehabilitation",
+    },
+  ];
+
   return (
-    <section className="w-full bg-white py-20 px-4">
+    <section className="w-full bg-white py-20 container">
       <div className="max-w-7xl mx-auto">
         {/* Heading */}
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <p className="text-primary text-sm tracking-wide mb-2">
-            Why Patients Trust Us
-          </p>
+          <Title
+            className="text-center text-xl text-[#696969] items-center w-fit mx-auto"
+            title="Why Patients Trust Us"
+          />
           <h2 className="text-3xl md:text-4xl font-light text-[#696969]">
-            <span className="text-teal-500">Excellence In Physiotherapy</span>
+            <span className="text-primary ">Excellence In Physiotherapy</span>
             <br />
             You Can Feel
           </h2>
@@ -49,13 +86,19 @@ const PatientsTrust = () => {
         </div>
 
         {/* Cards */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-20">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-20  ">
           {trustCards.map((item, index) => (
             <div
               key={index}
               className="group rounded-2xl border border-primary p-6 transition duration-300
-                 bg-white hover:bg-primary"
+                 bg-white hover:bg-primary space-y-5"
             >
+              <img
+                src={item.img}
+                alt="img"
+                className="w-auto h-auto object-cover rounded-lg"
+              />
+
               <h4
                 className="text-lg font-medium mb-3 transition
                    text-[#696969] group-hover:text-white"
@@ -77,11 +120,15 @@ const PatientsTrust = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
           {/* Left Content */}
           <div>
-            <p className="text-primary text-sm mb-2">Plan Your Visit</p>
-
+            <Title
+              className="text-xl text-[#696969] "
+              title="Plan Your Visit "
+            />
             <h3 className="text-3xl md:text-4xl font-light text-primary mb-4">
               Take The First Step <br />
-              <span className="font-medium text-[#696969]">To A Pain-Free Life</span>
+              <span className="font-medium text-[#696969]">
+                To A Pain-Free Life
+              </span>
             </h3>
             <p className="text-[#696969] text-sm mb-4">
               Read what our patients have to say about their experiences at Om
@@ -114,11 +161,14 @@ const PatientsTrust = () => {
                 placeholder="Type Of Service Enquiry*"
                 className="w-full rounded-full bg-[#EEEEEE] px-5 py-3 text-sm focus:outline-none"
               />
-              <input
-                type="text"
-                placeholder="Select Date & Time*"
-                className="w-full rounded-full bg-[#EEEEEE] px-5 py-3 text-sm focus:outline-none"
-              />
+             <DatePicker
+                           selected={dateTime}
+                           onChange={(date) => setDateTime(date)}
+                           showTimeSelect
+                           dateFormat="MMMM d, yyyy h:mm aa"
+                           placeholderText="Select Date & Time*"
+                           className="w-full rounded-full bg-[#EEEEEE] px-5 py-3 text-sm focus:outline-none"
+                         />
             </div>
             <textarea
               placeholder="Enter Your Message Here*"
@@ -129,7 +179,22 @@ const PatientsTrust = () => {
           </form>
         </div>
       </div>
-      <img src={cvrImg} alt="curve" className="w-full" />
+      <img src={cvrImg} alt="curve" className="w-full " />
+      {/* slider  */}
+
+      <div
+        style={{ backgroundImage: `url(${SliderImg})` }}
+        className="relative overflow-hidden  py-5"
+      >
+        <div className="flex gap-10 animate-marquee-left whitespace-nowrap">
+          {[...TherapyData, ...TherapyData].map((item, i) => (
+            <div key={i} className="flex items-center gap-3 text-white">
+              <TiStarburst className="text-white" />
+              <h4>{item.value}</h4>
+            </div>
+          ))}
+        </div>
+      </div>
     </section>
   );
 };

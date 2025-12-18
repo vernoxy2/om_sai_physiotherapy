@@ -1,3 +1,5 @@
+
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -14,7 +16,7 @@
   }
 
   h1 {
-    @apply text-primary text-3xl md:text-4xl lg:text-5xl text-center font-marcellus;
+    @apply text-primary text-3xl md:text-4xl lg:text-5xl font-marcellus;
   }
 
   h2 {
@@ -24,9 +26,13 @@
   h3 {
     @apply text-4xl md:text-5xl lg:text-6xl font-black;
   }
+  
+  h4 {
+    @apply text-lg md:text-lg lg:text-xl font-marcellus;
+  }
 
   p {
-    @apply text-base text-textcolor font-Lato;
+    @apply text-base  font-Lato;
   }
 
   input {
@@ -49,4 +55,44 @@
    .font-Lato {
     font-family: 'Lato', sans-serif;
   }
+}
+
+@keyframes marquee-left {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee-left {
+  animation: marquee-left 20s linear infinite;
+}
+
+/* Force RTL slide direction */
+.swiper {
+  direction: ltr;
+}
+
+/* Fix text direction inside cards */
+.swiper-slide {
+  direction: rtl;
+}
+
+/* Pagination position */
+.swiper-pagination {
+  bottom: 0 !important;
+}
+
+.swiper-pagination-bullet {
+  background-color: white !important;
+  opacity: 0.4;
+  width: 10px;
+  height: 10px;
+  margin: 0 6px !important;
+}
+
+.swiper-pagination-bullet-active {
+  opacity: 1;
 }

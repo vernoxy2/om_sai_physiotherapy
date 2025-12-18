@@ -1,17 +1,14 @@
 import React from "react";
 import { BsArrowRightShort } from "react-icons/bs";
+import { Link } from "react-router-dom";
 
-const PrimaryBtn = ({ children, className = "", ...props }) => {
+const PrimaryBtn = ({ children }) => {
   return (
-    <button
-      {...props}
-      className={`bg-primary text-white text-lg md:text-xl flex md:gap-2 items-center justify-center rounded-full p-1 w-fit hover:bg-stride group duration-300 transition-colors ${className}`}
-    >
-      <span className="text-white px-4">{children}</span>
-      <BsArrowRightShort className="text-white bg-[#696969] text-4xl md:text-5xl rounded-full p-1 group-hover:-rotate-45 duration-300 font-Marcellus" />
+    <button className="text-xl text-center bg-primary text-white py-5 rounded-full w-full relative group active:scale-95 duration-200">
+      {children}
+      <BsArrowRightShort className="absolute right-4 top-1/2 transform -translate-y-1/2 text-5xl bg-black rounded-full group-hover:rotate-[-45deg] duration-500 transition-transform" />
     </button>
   );
 };
 
 export default PrimaryBtn;
-

@@ -2,8 +2,10 @@ import React from "react";
 import Home from "./HomePageSection/Home";
 import headImg from "../../assets/HomePageImgs/headImg.webp";
 import headImg2 from "../../assets/HomePageImgs/headImg2.webp";
-import AboutUs from "../HomePage/HomePageSection/AboutUs"
+import AboutUs from "../HomePage/HomePageSection/AboutUs";
 import PatientsTrust from "../HomePage/HomePageSection/PatientsTrust";
+import ClientReview from "../HomePage/HomePageSection/ClientReview";
+import Services from "./HomePageSection/Services";
 
 const HomePage = () => {
   const slides = [
@@ -23,8 +25,9 @@ const HomePage = () => {
       ),
       SubText: (
         <>
-          Welcome to Omsai Physiotherapy Centre Inc. We provide personalized,
-          expert physiotherapy in North York.
+         Welcome to Omsai Physiotherapy Centre Inc. We provide personalized,
+          expert physiotherapy in North York for a wide range of conditions.
+          Click below to learn more
         </>
       ),
     },
@@ -45,7 +48,8 @@ const HomePage = () => {
       SubText: (
         <>
           Welcome to Omsai Physiotherapy Centre Inc. We provide personalized,
-          expert physiotherapy in North York.
+          expert physiotherapy in North York for a wide range of conditions.
+          Click below to learn more
         </>
       ),
     },
@@ -55,7 +59,9 @@ const HomePage = () => {
     <div>
       <Home slides={slides} />
       <AboutUs />
+      <Services />
       <PatientsTrust />
+      <ClientReview />
     </div>
   );
 };

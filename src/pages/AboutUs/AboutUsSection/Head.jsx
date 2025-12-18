@@ -1,0 +1,16 @@
+import React from "react";
+import Title from "../../../component/Title";
+import BgImg from "../../../assets/AboutUsPageImgs/KnowUs/BgImg.png";
+
+const Head = () => {
+  return (
+    <section
+      className="container bg-no-repeat bg-cover bg-center items-center justify-start flex lg:h-screen max-h-auto"
+      style={{ backgroundImage: `url(${BgImg})` }}
+    >
+        <h1 className="text-priamry">About &nbsp;<span className="text-white">Us</span></h1>
+    </section>
+  );
+};
+
+export default Head;
