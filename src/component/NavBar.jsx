@@ -14,13 +14,11 @@ const NavBar = () => {
     { name: "Products", path: "/products" },
     { name: "FAQ", path: "/faq" },
     { name: "Contact Us", path: "/contactus" },
-    // {name: "Get Touch", path: "/gettouch"},
   ];
 
   return (
     <nav className="absolute left-1/2 -translate-x-1/2 w-full flex container top-3 md:top-5 z-50">
       <div className="flex justify-between items-center bg-white rounded-full h-full w-full py-1 md:p-1">
-        {/* <div className="flex items-center justify-between w-full px-4 md:px-6 lg:px-0"> */}
         <div className="flex items-center justify-between ">
           {/* Logo */}
           <Link to="/" className="flex items-center">
@@ -53,7 +51,8 @@ const NavBar = () => {
                   `text-sm hover:text-primary duration-300 transition-colors
            py-2 px-5 xl:px-7 rounded-full ${
              isActive ? "text-primary  font-bold" : ""
-           }` }
+           }`
+                }
               >
                 {item.name}
               </NavLink>
@@ -61,12 +60,11 @@ const NavBar = () => {
           ))}
         </ul>
 
-        {/* Desktop CTA */}
-        <Link to="/contact" className="hidden md:block">
-          <button className="bg-primary text-white px-5 text-base py-2 rounded-full hover:bg-primary transition-colors ">
-            Get In Touch
-          </button>
-        </Link>
+        <GetTouch
+          onClick={() => {
+            setIsOpen(false);
+          }}
+        />
       </div>
 
       {/* Mobile Menu */}
@@ -85,7 +83,6 @@ const NavBar = () => {
               <NavLink to={item.path}>{item.name}</NavLink>
             </li>
           ))}
-          <GetTouch onClick={() => setIsOpen(false)} />
         </ul>
       </div>
     </nav>
