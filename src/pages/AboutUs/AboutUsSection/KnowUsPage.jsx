@@ -1,8 +1,44 @@
-import React from "react";
+import React, { useEffect, useRef, useState } from "react";
 import KnowUs from "../../../assets/AboutUsPageImgs/KnowUs/KnowUs.png";
 import Title from "../../../component/Title";
 
 const KnowUsPage = () => {
+  const [count, setCount] = useState(0);
+  const hasAnimated = useRef(false);
+  const counterRef = useRef(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting && !hasAnimated.current) {
+          hasAnimated.current = true;
+
+          let start = 0;
+          const end = 15;
+          const duration = 2000;
+          const interval = 30;
+          const step = Math.ceil(end / (duration / interval));
+
+          const timer = setInterval(() => {
+            start += step;
+            if (start >= end) {
+              start = end;
+              clearInterval(timer);
+            }
+            setCount(start);
+          }, interval);
+        }
+      },
+      { threshold: 0.5 }
+    );
+
+    if (counterRef.current) {
+      observer.observe(counterRef.current);
+    }
+
+    return () => observer.disconnect();
+  }, []);
+
   const DataList1 = [
     {
       SubText: (
@@ -123,26 +159,43 @@ const KnowUsPage = () => {
 
             <div
               className="
-      absolute
-      bottom-2 left-2
-      sm:bottom-3 sm:left-3
-      md:bottom-4 md:left-4
-      lg:bottom-6 lg:left-6
-      text-xs sm:text-sm md:text-base lg:text-lg
-      text-white
-      bg-black/50
-      px-2 py-1
-      rounded
-    "
+                    absolute
+                    bottom-2 left-2
+                    sm:bottom-3 sm:left-3
+                    md:bottom-4 md:left-4
+                    lg:bottom-3 lg:left-3
+                    text-xs sm:text-sm md:text-base lg:text-lg
+                    text-white
+                    bg-white
+                    px-1 py-1
+                    rounded-2xl
+                  "
             >
-              123
+              <span
+                className="relative inline-flex rounded-2xl p-[3px] 
+                 bg-gradient-to-tr 
+                bg-primary "
+              >
+                <span
+                  className="flex flex-col items-center justify-center 
+                   rounded-2xl bg-black/0 
+                   px-7 py-4 text-center"
+                >
+                  <h1
+                    className="text-white text-3xl font-bold"
+                    ref={counterRef}
+                  >
+                    {count}+
+                  </h1>
+                  <h4 className="text-white">Years Expert Care</h4>
+                </span>
+              </span>
             </div>
           </div>
 
           {/* Right Section */}
-          <div className="text-[#696969] ">
-            <Title title="know us" />
-
+          <div className="text-[#696969] space-y-7 ">
+            <Title title="Get to Know Us" />
             <h1 className="text-[#696969] text-2xl font-semibold mb-4">
               Om Sai Physiotherapy{" "}
               <span className="font-bold">Clinic (Mississauga) Inc.</span>
@@ -169,6 +222,7 @@ const KnowUsPage = () => {
             </div>
           ))}
         </div>
+        <div className="bg-primary w-full h-0.5"></div>
       </div>
     </section>
   );

@@ -46,7 +46,6 @@ const Header = ({
          <PrimaryBtn className="w-[60%] text-base ">Physiotherapy in North York</PrimaryBtn>
         </div>
       </div>
-      <h1></h1>
     </section>
   );
 };

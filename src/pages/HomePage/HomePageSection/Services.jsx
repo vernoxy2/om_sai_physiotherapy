@@ -1,12 +1,12 @@
 import React from "react";
-import BgImg from "../../../assets/ServicesPageImgs/BgImg.png";
+import BgImg from "../../../assets/HomePageImgs/Service/BgImg.png"
 import Title from "../../../component/Title";
-import cover1 from "../../../assets/ServicesPageImgs/cover1.png";
-import cover2 from "../../../assets/ServicesPageImgs/cover2.png";
-import cover3 from "../../../assets/ServicesPageImgs/cover3.png";
-import cover4 from "../../../assets/ServicesPageImgs/cover4.png";
-import cover5 from "../../../assets/ServicesPageImgs/cover5.png";
-import cover6 from "../../../assets/ServicesPageImgs/cover6.png";
+import cover1 from "../../../assets/HomePageImgs/Service/cover1.png"
+import cover2 from "../../../assets/HomePageImgs/Service/cover2.png"
+import cover3 from "../../../assets/HomePageImgs/Service/cover3.png"
+import cover4 from "../../../assets/HomePageImgs/Service/cover4.png"
+import cover5 from "../../../assets/HomePageImgs/Service/cover5.png"
+import cover6 from "../../../assets/HomePageImgs/Service/cover6.png"
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination, Autoplay } from "swiper/modules";
 
