@@ -1,6 +1,5 @@
 import React from "react";
 import BgImg from "../../../assets/ServicesPageImgs/PhysioTherapy/BgImg.png";
-import PhysioTherapy from "./PhysioTherapy";
 
 const PhysioHead = () => {
   const slides = [
@@ -37,8 +36,6 @@ const PhysioHead = () => {
           </div>
         </div>
       </div>
-
-      
     </section>
   );
 };
