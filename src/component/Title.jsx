@@ -10,9 +10,8 @@ const Title = ({ title, className = "" }) => {
       </div>
 
       {/* title */}
-      <div className="text-xl text-[#696969]">
+      <div className="text-xl text-[#696969] font-Marcellus">
         {title}
-        
       </div>
     </div>
   );
