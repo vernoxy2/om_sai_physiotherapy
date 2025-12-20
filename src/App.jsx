@@ -13,6 +13,7 @@ import ChiropracticCare from "./pages/ServicePage/ChiropracticCare/Chiropractice
 import MassageTherapy from "./pages/ServicePage/MassageTherapy/MassageTherapy.jsx";
 import Acupuncture from "./pages/ServicePage/Acupuncture/Acupuncture.jsx";
 import ShockwaveTherapy from "./pages/ServicePage/ShockwaveTherapy/ShockwaveTherapy.jsx";
+import Spinal from "./pages/ServicePage/Spinal/Spinal.jsx";
 
 const App = () => {
   return (
@@ -32,7 +33,7 @@ const App = () => {
             <Route path="massage-therapy" element={<MassageTherapy />} />
             <Route path="acupuncture-treatment" element={<Acupuncture />} />
             <Route path="shockwave-therapy" element={<ShockwaveTherapy />} />
-            <Route path="spinal-traction" element={<ShockwaveTherapy />} />
+            <Route path="spinal-traction" element={<Spinal />} />
           </Route>
           <Route path="/products" element={<Products />} />
           <Route path="/faq" element={<FAQ />} />

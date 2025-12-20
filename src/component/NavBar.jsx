@@ -230,7 +230,6 @@
 
 // export default Navbar;
 
-
 import React, { useState, useRef, useEffect } from "react";
 import { Link } from "react-router-dom";
 import navLogo from "../assets/HomePageImgs/NavLogo.svg";
@@ -244,12 +243,20 @@ const menuItems = [
     id: 4,
     name: "Services",
     submenu: [
-      { id: 41, name: "Physiotherapy in North York", url: "/services/physiotherapy-north-york" },
+      {
+        id: 41,
+        name: "Physiotherapy in North York",
+        url: "/services/physiotherapy-north-york",
+      },
       { id: 42, name: "Chiropractic Care", url: "/services/chiropractic-care" },
       { id: 43, name: "Massage Therapy", url: "/services/massage-therapy" },
-      {id: 44, name: "Acupuncture Treatment", url: "/services/acupuncture-treatment" },
+      {
+        id: 44,
+        name: "Acupuncture Treatment",
+        url: "/services/acupuncture-treatment",
+      },
       { id: 45, name: "Shockwave Therapy", url: "/services/shockwave-therapy" },
-      {id: 46, name: "Spinal Traction", url: "/services/spinal-traction" },
+      { id: 46, name: "Spinal Traction", url: "/services/spinal-traction" },
     ],
   },
   { id: 5, name: "Products", url: "/products" },
@@ -300,7 +307,6 @@ const Navbar = () => {
   return (
     <nav className="absolute left-1/2 -translate-x-1/2 top-3 md:top-5 w-full z-50 container">
       <div className="flex justify-between items-center bg-white rounded-full py-2 md:p-1">
-        
         {/* LEFT SIDE */}
         <div className="flex items-center gap-8 lg:gap-16">
           <Link to="/" className="flex items-center">
@@ -325,8 +331,7 @@ const Navbar = () => {
                       setDesktopDropdown(link.id);
                   }}
                   onMouseLeave={() => {
-                    if (!desktopSticky && hasSubmenu)
-                      setDesktopDropdown(null);
+                    if (!desktopSticky && hasSubmenu) setDesktopDropdown(null);
                   }}
                 >
                   {/* MAIN ITEM */}
@@ -395,8 +400,8 @@ const Navbar = () => {
         </div>
 
         {/* DESKTOP CTA */}
-        <Link to="/contactus" className="hidden md:block mr-4">
-          <button className="bg-primary text-white px-5 py-2 rounded-full hover:bg-primary transition-colors">
+        <Link to="/contactus" className="hidden md:block mr-1">
+          <button className="bg-primary text-white px-4 py-1 rounded-full hover:bg-primary transition-colors">
             Get In Touch
           </button>
         </Link>
