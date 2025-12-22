@@ -9,14 +9,16 @@ import img5 from "../../../assets/ProductPageImgs/AllProducts/img5.png";
 import img6 from "../../../assets/ProductPageImgs/AllProducts/img6.png";
 import img7 from "../../../assets/ProductPageImgs/AllProducts/img7.png";
 import img8 from "../../../assets/ProductPageImgs/AllProducts/img8.png";
-import CustomOrthotics from "./CustomOrthotics"
+import CustomOrthotics from "./CustomOrthotics";
 import ProductModal from "./ProductModal";
 import ProductSection from "./ProductSection";
 
 const ProductPages = () => {
   const [open, setOpen] = useState(false);
   return (
-    <section>
+    <>
+    
+    <section className="rounded-full">
       <PhysioHead
         Heading={
           <>
@@ -31,16 +33,13 @@ const ProductPages = () => {
         solutions that truly fit your body."
       />
 
-      <div className="container grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-5 capitalize">
+      <div className="container grid grid-cols-1 xl:grid-cols-2 gap-5 capitalize">
         {/* Text */}
         <ProductSection
           ProductImg={img1}
           ColorText="Orthotics"
           Headtext="Custom"
-          SubText1="Custom orthotics are specially molded devices designed to correct
-              abnormal foot mechanics and provide optimal support."
-          SubText2="Unlike store-bought insoles, these prescription-grade inserts
-              address the root cause of pain."
+          SubText1="Custom orthotics are specially molded devices designed to correct abnormal foot mechanics and provide optimal support, alignment, and balance."
           onOpen={() => setOpen(true)}
         />
         <ProductSection
@@ -90,11 +89,12 @@ const ProductPages = () => {
         {/* Image */}
       </div>
 
+    </section>
       {/* ✅ MODAL */}
       <ProductModal isOpen={open} onClose={() => setOpen(false)}>
         <CustomOrthotics />
       </ProductModal>
-    </section>
+    </>
   );
 };
 

@@ -18,7 +18,7 @@ const Section1 = () => {
         <span className="text-[#696969]">Helps</span>
       </h1>
 
-      <ul className="space-y-5">
+      <ul className="space-y-5 ">
         <li className="flex items-start gap-3">
           <img src={icon} alt="icon" className="w-3 h-3 my-auto" />
           <p>Reduces Pain From Acute And Chronic Injuries</p>
@@ -171,7 +171,11 @@ const Section3 = () => {
         </ul>
       </div>
       <p className="bg-[#D9D9D9] h-0.5 w-full" />
-      <h5>"Direct Billing Available For Extended Health Benefit Plans."</h5>
+      <h5 className="capitalize">
+        "Direct Billing Available For Extended Health
+        <br />
+        Benefit Plans.”
+      </h5>
     </div>
   );
 };
