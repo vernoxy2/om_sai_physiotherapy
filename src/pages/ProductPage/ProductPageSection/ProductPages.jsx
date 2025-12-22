@@ -13,7 +13,7 @@ import CustomOrthotics from "./CustomOrthotics";
 import ProductModal from "./ProductModal";
 import ProductSection from "./ProductSection";
 import Compression from "./Compression";
-import KneeBraces from "./kneebraces";
+import KneeBraces from "./KneeBraces";
 import BackBraces from "./BackBraces";
 import ElbowBraces from "./ElbowBraces";
 import AnkleBraces from "./AnkleBraces";
