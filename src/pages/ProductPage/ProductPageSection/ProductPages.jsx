@@ -9,14 +9,12 @@ import img5 from "../../../assets/ProductPageImgs/AllProducts/img5.png";
 import img6 from "../../../assets/ProductPageImgs/AllProducts/img6.png";
 import img7 from "../../../assets/ProductPageImgs/AllProducts/img7.png";
 import img8 from "../../../assets/ProductPageImgs/AllProducts/img8.png";
-import CustomOrthotics from "../ProductPageSection/CustomOrthotics"
-import ProductModal from "../../ProductPage/ProductPageSection/ProductModal";
-import PrimaryBtn from "../../../component/PrimaryBtn";
+import CustomOrthotics from "./CustomOrthotics"
+import ProductModal from "./ProductModal";
 import ProductSection from "./ProductSection";
 
-const ProductPage = () => {
+const ProductPages = () => {
   const [open, setOpen] = useState(false);
-
   return (
     <section>
       <PhysioHead
@@ -100,4 +98,4 @@ const ProductPage = () => {
   );
 };
 
-export default ProductPage;
+export default ProductPages;
