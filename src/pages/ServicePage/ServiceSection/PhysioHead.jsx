@@ -1,39 +1,24 @@
 import React from "react";
-import BgImg from "../../../assets/ServicesPageImgs/PhysioTherapy/BgImg.png";
 
-const PhysioHead = () => {
-  const slides = [
-    {
-      MainText: (
-        <h1>
-          Physiotherapy in<br /> <span className="text-white">North York </span>
-        </h1>
-      ),
-      SubText: (
-        <>
-          Our physiotherapy team uses hands-on techniques and clinical expertise
-          to assess, diagnose, and treat the root cause of your pain. We focus
-          on restoring mobility, improving strength, and enhancing overall
-          physical function.
-        </>
-      ),
-    },
-  ];
+const PhysioHead = ({ Heading, subtext, subtext1, WhiteText, BgImg }) => {
   return (
     <section
       style={{ backgroundImage: `url(${BgImg})` }}
-      className="bg-no-repeat bg-cover bg-center items-center justify-start flex lg:h-screen max-h-auto"
+      className="bg-no-repeat bg-cover bg-center flex items-center justify-start h-[480px] lg:h-[600px]"
     >
       <div className="container grid grid-cols-1 md:grid-cols-2 h-full">
         <div className="h-full flex flex-col items-start justify-center space-y-5">
-          <h1 className=" text-start  leading-tight text-primary">
-            {slides[0].MainText}
+          <h1 className="text-start w-[80%] leading-tight text-primary">
+            {Heading}{" "}
+            <span className="text-white">{WhiteText}</span>
           </h1>
-          <div className="space-y-5">
-            <p className="text-white font-lato lg:w-3/4 ">
-              {slides[0].SubText}
-            </p>
-          </div>
+
+          <p className="text-white font-lato lg:w-3/4 capitalize">
+            {subtext}
+          </p>
+          <p className="text-white font-lato lg:w-3/4 capitalize">
+            {subtext1}
+          </p>
         </div>
       </div>
     </section>

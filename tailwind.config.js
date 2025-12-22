@@ -8,7 +8,7 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        marcellus: ["Marcellus", "sans-serif"],
+        Marcellus: ["Marcellus", "sans-serif"],
         lato: ["Lato", "sans-serif"],
       },
       colors: {

@@ -11,10 +11,9 @@ import BgImg from "../../../assets/ServicesPageImgs/MassageTherapy/BgImg.png";
 const Section1 = () => {
   return (
     <div className="space-y-5">
-      <Title title="Shockwave" />
+      <Title title="Shockwave Therapy" />
       <h1>
-        Shockwave <br />
-        <span className="text-[#696969]">Therapy</span>
+        Spinal<span className="text-[#696969]">Traction</span>
       </h1>
 
       <div className="grid grid-cols-1 lg:grid-cols-2">
@@ -119,21 +118,19 @@ const Section2 = () => {
 };
 
 // Main Component
-const ShockwaveTherapy = () => {
+const Spinal = () => {
   return (
-    <div className="bg-white rounded-3xl">
+    <div className="">
       <PhysioHead
-      BgImg = {BgImg}
-        Heading="Shockwave"
-        WhiteText="Therapy"
+      BgImg={BgImg}
+        Heading="Spinal"
+        WhiteText="Traction"
         subtext={
           <>
             <p className="w-[85%]">
-              Advanced Non-Surgical Pain Treatment
-              <br />
-              Shockwave Therapy promotes healing by increasing blood flow,
-              reducing inflammation, and stimulating tissue repair. Ideal for
-              chronic pain, tendinopathies, and stubborn injuries.
+              Gentle Spinal Decompression for Back & Neck Pain Spinal traction
+              relieves pressure on spinal discs, reduces nerve compression, and
+              supports recovery from:
             </p>
           </>
         }
@@ -155,4 +152,4 @@ const ShockwaveTherapy = () => {
   );
 };
 
-export default ShockwaveTherapy;
+export default Spinal;
