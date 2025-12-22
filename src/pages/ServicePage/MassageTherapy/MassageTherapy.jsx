@@ -119,10 +119,6 @@ const Section2 = () => {
           <p>Boosts healing of injured tissues</p>
         </li>
         <p className="bg-[#D9D9D9] h-0.5 w-full" />
-        <h5 className="capitalize">
-          “Sessions available in 30 and 60 minutes.
-          <br /> Direct billing available for most insurance plans.”
-        </h5>
       </ul>
     </div>
   );

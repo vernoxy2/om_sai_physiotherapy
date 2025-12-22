@@ -145,7 +145,10 @@ const Section3 = () => {
         </li>
       </ul>
       <p className="bg-[#D9D9D9] h-0.5 w-full" />
-      <h5>"Direct Billing Available For Extended Health Benefit Plans."</h5>
+      <h5 className="capitalize py-7">
+        “Direct billing available for extended health <br />
+        insurances”
+      </h5>
     </div>
   );
 };
