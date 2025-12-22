@@ -1,12 +1,10 @@
 import React from "react";
-import ProductPage from "./ProductPageSection/Productpage";
-import CustomOrthotics from "./ProductPageSection/CustomOrthotics";
+import ProductPages from "./ProductPageSection/ProductPages"
 
 const Product = () => {
   return (
     <div>
-      <ProductPage />
-      {/* <CustomOrthotics /> */}
+      <ProductPages />
     </div>
   );
 };
