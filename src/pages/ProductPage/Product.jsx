@@ -3,7 +3,7 @@ import ProductPages from "./ProductPageSection/ProductPages"
 
 const Product = () => {
   return (
-    <div>
+    <div className="overflow-x-hidden">
       <ProductPages />
     </div>
   );
