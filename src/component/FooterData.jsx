@@ -72,7 +72,7 @@ const FooterData = () => {
   const ServiceLinks = [
     {
       id: 1,
-      title: "Physiotherapy in North York",
+      title: "Physiotherapy in Mississauga",
       // link: "/projects/aura-redefine_living",
     },
     {

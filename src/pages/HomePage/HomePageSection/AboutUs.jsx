@@ -9,8 +9,8 @@ import Title from "../../../component/Title";
 
 const AboutUs = () => {
   return (
-    <section className="py-16">
-      <div className="container mx-auto px-4">
+    <section className="">
+      <div className=" mx-auto ">
         {/* MAIN GRID */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center container">
           {/* LEFT SECTION */}
@@ -55,22 +55,21 @@ const AboutUs = () => {
           </div>
 
           {/* RIGHT SECTION */}
-          <div className=" space-y-4">
-            <Title className="text-[#696969] text-xl md:text-3xl" title="About Us"/>
-            <h1 className="text-4xl font-semibold leading-tight">
-              Om Sai Physiotherapy <span className="text-[#696969]">Clinic<br/></span>
-              <span className="text-[#696969]">North York</span>
+          <div className=" space-y-4 w-full lg:w-[90%]">
+            <Title className="text-[#696969] text-xl md:text-3xl " title="About Us"/>
+            <h1 className="leading-tight">
+              Om Sai Physiotherapy<span className="text-[#696969]"><br/>Mississauga</span>
             </h1>
 
             <p className="font-lato text-[#696969]">
-              Welcome to Om Sai Physiotherapy Clinic in North York, your trusted
+              Welcome to Om Sai Physiotherapy Clinic in Mississauga, your trusted
               destination for expert physiotherapy and rehabilitation. Our
               experienced physiotherapists provide personalized, evidence-based
               care for acute injuries, chronic pain, and mobility issues.
             </p>
 
             <p className="font-lato text-[#696969]">
-              We offer comprehensive physiotherapy services in North York,
+              We offer comprehensive physiotherapy services in Mississauga,
               helping patients move better, recover faster, and live pain-free.
               Our modern, welcoming clinic ensures effective treatment plans
               tailored for every patient, from athletes to seniors.
@@ -80,7 +79,7 @@ const AboutUs = () => {
               York’s trusted physiotherapy center.
             </p>
 
-           <PrimaryBtn className="w-[28%]" >
+           <PrimaryBtn className="xl:w-[28%] w-full" >
             Learn More
            </PrimaryBtn>
           </div>

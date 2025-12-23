@@ -26,7 +26,7 @@ const App = () => {
           <Route path="/conditions" element={<Conditions />} />
           <Route path="/services">
             <Route
-              path="physiotherapy-north-york"
+              path="physiotherapy-mississauga"
               element={<Physiotherapy />}
             />
             <Route path="chiropractic-care" element={<ChiropracticCare />} />
