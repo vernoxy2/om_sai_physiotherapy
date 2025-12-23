@@ -192,7 +192,7 @@ const PhysioTherapy = () => {
             <br />
           </>
         }
-        WhiteText="North York "
+        WhiteText="Mississauga"
         subtext="Professional Physiotherapy Services By Experienced Physiotherapists
                 Our Physiotherapy Team Uses Hands-On Techniques And Clinical Expertise To Assess, Diagnose, And Treat The Root Cause Of Your Pain. 
                   We Focus On Restoring Mobility, Improving Strength, And Enhancing Overall Physical Function."
