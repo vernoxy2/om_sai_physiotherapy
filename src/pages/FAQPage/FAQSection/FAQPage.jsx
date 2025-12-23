@@ -4,6 +4,11 @@ import PrimaryBtn from "../../../component/PrimaryBtn";
 import AOS from "aos";
 import "aos/dist/aos.css";
 
+const FAQpage = () => {
+  useEffect(() => {
+    AOS.init({ duration: 2000, once: true });
+  });
+  const [openIndex, setOpenIndex] = useState(null);
 const faqs = [
   {
     question: "Do your physiotherapists treat my condition?",
@@ -95,13 +100,6 @@ const faqs = [
     ),
   },
 ];
-
-const FAQpage = () => {
-  useEffect(() => {
-    AOS.init({ duration: 2000, once: true });
-  });
-  const [openIndex, setOpenIndex] = useState(null);
-
   const handleToggle = (idx) => {
     setOpenIndex(openIndex === idx ? null : idx);
   };
