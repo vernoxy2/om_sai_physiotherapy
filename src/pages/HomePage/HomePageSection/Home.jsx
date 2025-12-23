@@ -32,10 +32,9 @@ const Header = ({
         transition: `opacity ${fadeDuration}ms ease-in-out`,
       }}
       className="bg-cover bg-center bg-no-repeat lg:h-screen max-h-auto"
-
     >
-        <div className="container grid grid-cols-1 md:grid-cols-2 h-full">
-        <div className="space-y-5 xl:w-[80%] py-16 lg:py-0 md:py-24 h-full flex flex-col items-start justify-center">
+        <div className="container grid grid-cols-1 md:grid-cols-2 h-full capitalize">
+        <div className="space-y-5 xl:w-[95%] py-16 lg:py-0 md:py-24 h-full flex flex-col items-start justify-center">
           <Title className="text-white text-xl md:text-3xl" title="Helping Hands"/>
           <h1 className=" text-start space-x-4 leading-tight">
             {current.MainText}
@@ -43,7 +42,7 @@ const Header = ({
           <div className="flex gap-6">
           <p className="text-white font-lato lg:w-4/5 ">{current.SubText}</p>
           </div>
-         <PrimaryBtn className="w-[60%] text-base ">Physiotherapy in North York</PrimaryBtn>
+         <PrimaryBtn className="w-full xl:w-[58%] text-base lg:text-start ">Physiotherapy in Mississauga</PrimaryBtn>
         </div>
       </div>
     </section>

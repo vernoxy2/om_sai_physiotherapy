@@ -32,7 +32,7 @@ const Head = () => {
       style={{ backgroundImage: `url(${BgImg})` }}
       className="bg-no-repeat bg-cover bg-center items-center justify-start flex lg:h-screen max-h-auto"
     >
-      <div className="container grid grid-cols-1 md:grid-cols-2 h-full">
+      <div className="container grid grid-cols-1 md:grid-cols-2 h-full capitalize">
         <div className="h-full flex flex-col items-start justify-center space-y-3">
           <h1 className=" text-start space-x-4 leading-tight text-primary">
             {slides[0].MainText}

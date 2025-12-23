@@ -1,12 +1,12 @@
 import React from "react";
-import BgImg from "../../../assets/HomePageImgs/Service/BgImg.png"
+import BgImg from "../../../assets/HomePageImgs/Service/BgImg.png";
 import Title from "../../../component/Title";
-import cover1 from "../../../assets/HomePageImgs/Service/cover1.png"
-import cover2 from "../../../assets/HomePageImgs/Service/cover2.png"
-import cover3 from "../../../assets/HomePageImgs/Service/cover3.png"
-import cover4 from "../../../assets/HomePageImgs/Service/cover4.png"
-import cover5 from "../../../assets/HomePageImgs/Service/cover5.png"
-import cover6 from "../../../assets/HomePageImgs/Service/cover6.png"
+import cover1 from "../../../assets/HomePageImgs/Service/cover1.png";
+import cover2 from "../../../assets/HomePageImgs/Service/cover2.png";
+import cover3 from "../../../assets/HomePageImgs/Service/cover3.png";
+import cover4 from "../../../assets/HomePageImgs/Service/cover4.png";
+import cover5 from "../../../assets/HomePageImgs/Service/cover5.png";
+import cover6 from "../../../assets/HomePageImgs/Service/cover6.png";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination, Autoplay } from "swiper/modules";
 
@@ -118,11 +118,8 @@ const Services = () => {
                     className="w-full h-auto object-cover rounded-lg "
                   />
 
-                  <h3 className="text-xl font-semibold text-primary">
-                    {item.Maintext}
-                  </h3>
-
-                  <p className="text-sm text-gray-200">{item.Subtext}</p>
+                  <h3 className="text-xl font-Marcellus text-white">{item.Maintext}</h3>
+                  <p className="text-sm text-white">{item.Subtext}</p>
                 </div>
               </SwiperSlide>
             ))}

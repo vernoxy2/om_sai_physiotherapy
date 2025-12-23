@@ -3,9 +3,13 @@ import Home from "./HomePageSection/Home";
 import headImg from "../../assets/HomePageImgs/headImg.webp";
 import headImg2 from "../../assets/HomePageImgs/headImg2.webp";
 import AboutUs from "../HomePage/HomePageSection/AboutUs";
+import Services from "./HomePageSection/Services";
+import AdvancedTreat from "../HomePage/HomePageSection/AdvancedTreat";
+import InsuranceCard from "../HomePage/HomePageSection/InsuranceCard";
+import Logo from "../HomePage/HomePageSection/Logo";
+import Visit from "./HomePageSection/Visit";
 import PatientsTrust from "../HomePage/HomePageSection/PatientsTrust";
 import ClientReview from "../HomePage/HomePageSection/ClientReview";
-import Services from "./HomePageSection/Services";
 
 const HomePage = () => {
   const slides = [
@@ -13,42 +17,28 @@ const HomePage = () => {
       BgImg: headImg,
       MainText: (
         <>
-          <span className="text-white">Physiotherapy </span>
-          <span className="text-primary">in North York </span>
-          <span className="text-white">
-            | Expert Low
-            <br />
-            Back Pain{" "}
-          </span>
-          <span className="text-primary">Treatment</span>
+          <h1 className="text-white">Physiotherapy <span className="text-primary">in Mississauga <br/>|</span>  Expert Low Back Pain </h1>Treatment
         </>
       ),
       SubText: (
         <>
-         Welcome to Omsai Physiotherapy Centre Inc. We provide personalized,
-          expert physiotherapy in North York for a wide range of conditions.
+          Welcome to Omsai Physiotherapy Centre Inc. We provide personalized,
+          expert physiotherapy in Mississauga for a wide range of conditions.
           Click below to learn more
         </>
       ),
     },
     {
       BgImg: headImg2,
-      MainText: (
+     MainText: (
         <>
-          <span className="text-white">Physiotherapy </span>
-          <span className="text-primary">in North York </span>
-          <span className="text-white">
-            | Expert Low
-            <br />
-            Back Pain{" "}
-          </span>
-          <span className="text-primary">Treatment</span>
+          <h1 className="text-white">Physiotherapy <span className="text-primary">in Mississauga <br/>|</span>  Expert Low Back Pain </h1>Treatment
         </>
       ),
       SubText: (
         <>
           Welcome to Omsai Physiotherapy Centre Inc. We provide personalized,
-          expert physiotherapy in North York for a wide range of conditions.
+          expert physiotherapy in Mississauga for a wide range of conditions.
           Click below to learn more
         </>
       ),
@@ -60,7 +50,11 @@ const HomePage = () => {
       <Home slides={slides} />
       <AboutUs />
       <Services />
+      <AdvancedTreat />
       <PatientsTrust />
+      <InsuranceCard />
+      <Logo />
+      <Visit />
       <ClientReview />
     </div>
   );
