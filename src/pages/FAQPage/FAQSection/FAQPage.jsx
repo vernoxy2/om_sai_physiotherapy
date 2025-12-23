@@ -85,7 +85,7 @@ const faqs = [
         primary health care providers and an appointment can be booked without a
         doctor’s prescription. However,
         <br />
-         if you are utilizing your extended health care to pay for your sessions
+        if you are utilizing your extended health care to pay for your sessions
         certain providers request a doctor’s referral in order to reimburse you
         for treatment provided. Therefore, it is important to first check with
         your extended health care provider for the specific requirements of your
