@@ -1,13 +1,13 @@
 import React from 'react';
 import Head from './FAQSection/Head';
-import FAQpage from './FAQSection/FAQpage';
+import FAQPages from './FAQSection/FAQPages';
 import Visit from '../HomePage/HomePageSection/Visit';
 
 const FAQ = () => {
   return (
     <div>
       <Head />
-      <FAQpage />
+      <FAQPages />
       <Visit />
     </div>
   )
