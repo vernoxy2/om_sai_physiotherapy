@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
+import { useSearchParams } from "react-router-dom";
 import PhysioHead from "../../ServicePage/ServiceSection/PhysioHead";
 import BgImg from "../../../assets/ServicesPageImgs/PhysioTherapy/BgImg.png";
 import img1 from "../../../assets/ProductPageImgs/AllProducts/img1.png";
@@ -22,6 +23,40 @@ import CervicalPillow from "./CervicalPillow";
 
 const ProductPages = () => {
   const [selectedProduct, setSelectedProduct] = useState(null);
+  const [searchParams] = useSearchParams();
+  const isSelected = (key) => searchParams.get("product") === key;
+  // 🔹 refs for scrolling
+  const orthoticsRef = useRef(null);
+  const compressionRef = useRef(null);
+  const kneeBracesRef = useRef(null);
+  const backBracesRef = useRef(null);
+  const elbowBracesRef = useRef(null);
+  const ankleBracesRef = useRef(null);
+  const wristBracesRef = useRef(null);
+  const cervicalRef = useRef(null);
+
+  // 🔹 scroll to section from footer link
+  useEffect(() => {
+    const product = searchParams.get("product");
+
+    const refMap = {
+      orthotics: orthoticsRef,
+      compression: compressionRef,
+      kneeBraces: kneeBracesRef,
+      backBraces: backBracesRef,
+      elbowbraces: elbowBracesRef,
+      anklebraces: ankleBracesRef,
+      wristbraces: wristBracesRef,
+      cervical: cervicalRef,
+    };
+
+    if (product && refMap[product]?.current) {
+      refMap[product].current.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
+    }
+  }, [searchParams]);
 
   const handleOpenModal = (product) => {
     setSelectedProduct(product);
@@ -43,11 +78,11 @@ const ProductPages = () => {
         return <BackBraces />;
       case "elbowbraces":
         return <ElbowBraces />;
-        case "anklebraces":
+      case "anklebraces":
         return <AnkleBraces />;
-        case "wristbraces":
+      case "wristbraces":
         return <WristBraces />;
-        case "cervical":
+      case "cervical":
         return <CervicalPillow />;
       default:
         return null;
@@ -72,68 +107,122 @@ const ProductPages = () => {
         />
 
         <div className="container grid grid-cols-1 xl:grid-cols-2 gap-5 capitalize">
-          {/* Text */}
-          <ProductSection
-            ProductImg={img1}
-            ColorText="Orthotics"
-            Headtext="Custom"
-            SubText1="Custom orthotics are specially molded devices designed to correct abnormal foot mechanics and provide optimal support, alignment, and balance."
-            onOpen={() => handleOpenModal("orthotics")}
-          />
-          <ProductSection
-            ProductImg={img2}
-            Headtext="Compression"
-            ColorText="Stockings"
-            SubText1="Compression therapy uses medical-grade stockings that apply graduated pressure—tightest at the ankle and lighter upward
-        to improve circulation, prevent pooling of blood, and reduce swelling."
-            onOpen={() => handleOpenModal("compression")}
-          />
-          <ProductSection
-            ProductImg={img3}
-            Headtext="Custom"
-            ColorText="Knee Braces"
-            SubText1="Custom knee braces provide targeted support for injury recovery, arthritis, ligament instability, and chronic knee pain."
-            onOpen={() => handleOpenModal("kneeBraces")}
-          />
-          <ProductSection
-            ProductImg={img4}
-            Headtext="Back"
-            ColorText="Braces"
-            SubText1="Back braces help support the spine, reduce pain, stabilize injuries, and improve posture. They are especially useful after surgery or trauma."
-            onOpen={() => handleOpenModal("backBraces")}
-          />
-          <ProductSection
-            ProductImg={img5}
-            Headtext="Elbow"
-            ColorText="Braces"
-            SubText1="Elbow braces provide targeted compression for tendon injuries and chronic conditions."
-            onOpen={() => handleOpenModal("elbowbraces")}
-          />
-          <ProductSection
-            ProductImg={img6}
-            Headtext="Ankle"
-            ColorText="Braces"
-            SubText1="Ankle braces stabilize the joint, reduce pain, and assist recovery from sprains or instability."
-            onOpen={() => handleOpenModal("anklebraces")}
-          />
-          <ProductSection
-            ProductImg={img7}
-            Headtext="Wrist"
-            ColorText="Braces"
-            SubText1="Wrist braces immobilize and support the wrist after injury or strain."
-            onOpen={() => handleOpenModal("wristbraces")}
-          />
-          <ProductSection
-            ProductImg={img8}
-            Headtext="Cervical"
-            ColorText="Pillows"
-            SubText1="Cervical pillows provide proper neck alignment during sleep, ensuring comfort and reducing strain."
-            onOpen={() => handleOpenModal("cervical")}
-          />
+          <div
+            ref={orthoticsRef}
+            className={`rounded-2xl transition-all duration-300 ${
+              isSelected("orthotics") ? "ring-4 ring-primary ring-offset-4" : ""
+            }`}
+          >
+            <ProductSection
+              ProductImg={img1}
+              ColorText="Orthotics"
+              Headtext="Custom"
+              SubText1="Custom orthotics are specially molded devices designed to correct abnormal foot mechanics and provide optimal support, alignment, and balance."
+              onOpen={() => handleOpenModal("orthotics")}
+            />
+          </div>
+
+          <div ref={compressionRef}
+          className={`rounded-2xl transition-all duration-300 ${
+              isSelected("compression") ? "ring-4 ring-primary ring-offset-4" : ""
+            }`}>
+            <ProductSection
+              ProductImg={img2}
+              Headtext="Compression"
+              ColorText="Stockings"
+              SubText1="Compression therapy uses medical-grade stockings that apply graduated pressure—tightest at the ankle and lighter upward
+              to improve circulation, prevent pooling of blood, and reduce swelling."
+              onOpen={() => handleOpenModal("compression")}
+            />
+          </div>
+
+          <div ref={kneeBracesRef}
+           className={`rounded-2xl transition-all duration-300 ${
+              isSelected("kneeBraces") ? "ring-4 ring-primary ring-offset-4" : ""
+            }`}
+          >
+            <ProductSection
+              ProductImg={img3}
+              Headtext="Custom"
+              ColorText="Knee Braces"
+              SubText1="Custom knee braces provide targeted support for injury recovery, arthritis, ligament instability, and chronic knee pain."
+              onOpen={() => handleOpenModal("kneeBraces")}
+            />
+          </div>
+
+          <div ref={backBracesRef}
+          className={`rounded-2xl transition-all duration-300 ${
+              isSelected("backBraces") ? "ring-4 ring-primary ring-offset-4" : ""
+            }`}
+          >
+            <ProductSection
+              ProductImg={img4}
+              Headtext="Back"
+              ColorText="Braces"
+              SubText1="Back braces help support the spine, reduce pain, stabilize injuries, and improve posture. They are especially useful after surgery or trauma."
+              onOpen={() => handleOpenModal("backBraces")}
+            />
+          </div>
+
+          <div ref={elbowBracesRef}
+          className={`rounded-2xl transition-all duration-300 ${
+              isSelected("elbowbraces") ? "ring-4 ring-primary ring-offset-4" : ""
+            }`}
+          >
+            <ProductSection
+              ProductImg={img5}
+              Headtext="Elbow"
+              ColorText="Braces"
+              SubText1="Elbow braces provide targeted compression for tendon injuries and chronic conditions."
+              onOpen={() => handleOpenModal("elbowbraces")}
+            />
+          </div>
+
+          <div ref={ankleBracesRef}
+           className={`rounded-2xl transition-all duration-300 ${
+              isSelected("anklebraces") ? "ring-4 ring-primary ring-offset-4" : ""
+            }`}
+          >
+            <ProductSection
+              ProductImg={img6}
+              Headtext="Ankle"
+              ColorText="Braces"
+              SubText1="Ankle braces stabilize the joint, reduce pain, and assist recovery from sprains or instability."
+              onOpen={() => handleOpenModal("anklebraces")}
+            />
+          </div>
+
+          <div ref={wristBracesRef}
+          className={`rounded-2xl transition-all duration-300 ${
+              isSelected("wristbraces") ? "ring-4 ring-primary ring-offset-4" : ""
+            }`}
+          >
+            <ProductSection
+              ProductImg={img7}
+              Headtext="Wrist"
+              ColorText="Braces"
+              SubText1="Wrist braces immobilize and support the wrist after injury or strain."
+              onOpen={() => handleOpenModal("wristbraces")}
+            />
+          </div>
+
+          <div ref={cervicalRef}
+          className={`rounded-2xl transition-all duration-300 ${
+              isSelected("cervical") ? "ring-4 ring-primary ring-offset-4" : ""
+            }`}
+          >
+            <ProductSection
+              ProductImg={img8}
+              Headtext="Cervical"
+              ColorText="Pillows"
+              SubText1="Cervical pillows provide proper neck alignment during sleep, ensuring comfort and reducing strain."
+              onOpen={() => handleOpenModal("cervical")}
+            />
+          </div>
         </div>
       </section>
 
-      {/* ✅ MODAL */}
+      {/* MODAL (opens ONLY on card click) */}
       <ProductModal
         isOpen={selectedProduct !== null}
         onClose={handleCloseModal}

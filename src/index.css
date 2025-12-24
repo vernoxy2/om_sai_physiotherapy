@@ -59,7 +59,8 @@ body {
   .font-marcellus {
     font-family: Marcellus, sans-serif;
   }
-   .font-Lato {
+
+  .font-Lato {
     font-family: 'Lato', sans-serif;
   }
 }
@@ -77,29 +78,69 @@ body {
   animation: marquee-left 20s linear infinite;
 }
 
-/* Force RTL slide direction */
+/* ------------------------------
+   SWIPER FIXES (LTR / RTL)
+--------------------------------*/
+
 .swiper {
   direction: ltr;
 }
 
-/* Fix text direction inside cards */
 .swiper-slide {
   direction: rtl;
 }
 
-/* Pagination position */
+/* ------------------------------
+   SWIPER PAGINATION
+--------------------------------*/
+
 .swiper-pagination {
-  bottom: 0 !important;
+ position: absolute;
+  bottom: 20px; /* distance from bottom of section */
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex !important;
+  justify-content: center;
+  z-index: 50;
 }
 
 .swiper-pagination-bullet {
-  background-color: white !important;
-  opacity: 0.4;
   width: 10px;
   height: 10px;
+  background-color: white !important;
+  opacity: 0.4;
   margin: 0 6px !important;
+  border-radius: 50%;
+  transition: all 0.3s ease;
 }
 
-.swiper-pagination-bullet-active {
-  opacity: 1;
+/* Show ONLY first 3 dots */
+.swiper-pagination-bullet:nth-child(1),
+.swiper-pagination-bullet:nth-child(2),
+.swiper-pagination-bullet:nth-child(3) {
+  display: inline-block !important;
 }
+
+/* Active dot */
+
+/* ------------------------------
+   SERVICE CARD ANIMATION
+--------------------------------*/
+
+.swiper-slide .group {
+  transition: transform 0.45s ease, box-shadow 0.45s ease;
+}
+
+/* Hover + click lift */
+.swiper-slide .group:hover,
+.swiper-slide .group:active {
+  transform: translateY(-18px);
+  box-shadow: 0 30px 45px rgba(0, 0, 0, 0.35);
+}
+
+/* Active slide highlight */
+.swiper-slide-active .group {
+  transform: translateY(-20px) scale(1.03);
+  box-shadow: 0 30px 50px rgba(0, 0, 0, 0.4);
+}
+

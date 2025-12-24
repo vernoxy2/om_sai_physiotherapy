@@ -33,7 +33,7 @@ const Logo = () => {
           </span>
         </h1>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 gap-y-9">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {img.map((image, index) => (
             <div key={index} className="flex justify-center items-center bg-[#EDEDED]">
               <img

@@ -72,50 +72,46 @@ const AdvancedTreat = () => {
   ];
 
   return (
-    <section >
-        <Title
-          className="text-center text-xl text-[#696969] items-center w-fit mx-auto"
-          title="Advanced Treatment"
-        />
-        <h2 className="text-3xl md:text-4xl font-light text-center text-[#696969] capitalize space-y-14">
-          <span className="text-primary ">
-            Advanced Physiotherapy Treatments
-          </span>
-          <br />
-          at Om sai physiotherapy Clinic
-        </h2>
-        {/* Cards */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-7 w-full container">
-          {trustCards.map((item, index) => (
-            <div
-              key={index}
-              className="group rounded-2xl transition duration-300
-                 bg-primary space-y-4"
-            >
-              <img
-                src={item.img}
-                alt="img"
-                className="w-full h-auto object-cover rounded-lg"
-              />
+    <section>
+      <Title
+        className="text-center text-xl text-[#696969] items-center w-fit mx-auto font-Marcellus"
+        title="Advanced Treatment"
+      />
+      <h1 className="text-center capitalize ">Advanced Physiotherapy Treatments
+        <span className="text-[#696969] "><br /> at Om sai physiotherapy Clinic</span>  
+      </h1>
+      {/* Cards */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-7 w-full container ">
+        {trustCards.map((item, index) => (
+          <div
+            key={index}
+            className="group rounded-2xl transition duration-300
+                 bg-primary space-y-4 "
+          >
+            <img
+              src={item.img}
+              alt="img"
+              className="w-full h-auto object-cover rounded-lg"
+            />
 
-              <h4 className="mb-3 transition text-white group-hover:text-white flex items-center justify-between px-3 relative">
-                {item.MainText}
-                <img
-                  src={item.svg}
-                  alt="icon"
-                  className="flex-shrink-0 absolute bottom-6 right-0"
-                />
-              </h4>
-              <p
-                className="text-base leading-relaxed transition
+            <h4 className="mb-3 transition text-white group-hover:text-white flex items-center justify-between px-3 relative">
+              {item.MainText}
+              <img
+                src={item.svg}
+                alt="icon"
+                className="flex-shrink-0 absolute bottom-6 right-0"
+              />
+            </h4>
+            <p
+              className="text-base leading-relaxed transition
                     text-white group-hover:text-white px-3 w-[92%]"
-              >
-                {item.SubText}
-              </p>
-            </div>
-          ))}
-        </div>
-        {/* Bottom Section */}
+            >
+              {item.SubText}
+            </p>
+          </div>
+        ))}
+      </div>
+      {/* Bottom Section */}
     </section>
   );
 };
