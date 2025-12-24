@@ -8,7 +8,7 @@ const PrimaryBtn = ({ children, className, onClick, type="button" }) => {
     type={type}
     onClick={onClick}>
       {children}
-      <BsArrowRightShort className="absolute right-1 top-1/2 transform -translate-y-1/2 text-5xl bg-[#696969] rounded-full group-hover:rotate-[-45deg] duration-500 transition-transform" />
+      <BsArrowRightShort className="absolute right-1 top-1/2 transform -translate-y-1/2 text-5xl  bg-[#696969] rounded-full group-hover:rotate-[-45deg] duration-500 transition-transform" />
     </button>
   );
 };

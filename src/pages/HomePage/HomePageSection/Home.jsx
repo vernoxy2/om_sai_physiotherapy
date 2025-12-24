@@ -39,10 +39,10 @@ const Header = ({
           <h1 className=" text-start space-x-4 leading-tight">
             {current.MainText}
           </h1>
-          <div className="flex gap-6">
-          <p className="text-white font-lato lg:w-4/5 ">{current.SubText}</p>
+          <div className="flex">
+          <p className="text-white lg:w-4/5 ">{current.SubText}</p>
           </div>
-         <PrimaryBtn className="w-full xl:w-[58%] text-base lg:text-start ">Physiotherapy in Mississauga</PrimaryBtn>
+         <PrimaryBtn className="w-full xl:w-[55%] lg:w-[80%] text-start text-base lg:text-xl">Physiotherapy in Mississauga</PrimaryBtn>
         </div>
       </div>
     </section>
