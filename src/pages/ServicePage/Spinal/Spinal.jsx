@@ -5,7 +5,7 @@ import img2 from "../../../assets/ServicesPageImgs/MassageTherapy/img2.png";
 import Title from "../../../component/Title";
 import icon from "../../../assets/ServicesPageImgs/PhysioTherapy/icon.svg";
 import PhysioHead from "../ServiceSection/PhysioHead";
-import BgImg from "../../../assets/ServicesPageImgs/MassageTherapy/BgImg.png";
+import BgImg from "../../../assets/ServicesPageImgs/Spinal/BgImg.png";
 
 // Section 1
 const Section1 = () => {

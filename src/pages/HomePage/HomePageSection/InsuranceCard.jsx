@@ -53,7 +53,7 @@ const InsuranceCard = () => {
             <h1 className="text-white capitalize ">
               we accept insurance coverage
             </h1>
-           <hr className="bg-white w-1/2 h-1 absolute md:bottom-20 md:left-9 space-y-5" />
+            {/* <hr className="bg-white w-1/2 h-1 absolute md:bottom-20 md:left-9 space-y-5" /> */}
           </div>
 
           {/* Insurance Cards */}
@@ -81,7 +81,9 @@ const InsuranceCard = () => {
                   pb-5 opacity-0 group-hover:opacity-100 
                    transition-all duration-300 space-y-2"
               >
-                <h4 className="text-white px-7 xl:w-[75%]  ">{card.MainText}</h4>
+                <h4 className="text-white px-7 xl:w-[75%]  ">
+                  {card.MainText}
+                </h4>
                 <p className="text-white px-7 xl:w-[95%]">{card.Subtext}</p>
               </div>
             </div>

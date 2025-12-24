@@ -42,7 +42,6 @@ const Navbar = () => {
 
   const desktopRef = useRef(null);
 
-  /* ✅ OUTSIDE CLICK (DESKTOP ONLY) */
   useEffect(() => {
     const handleOutsideClick = (e) => {
       if (desktopRef.current && !desktopRef.current.contains(e.target)) {
@@ -73,18 +72,18 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="absolute left-1/2 -translate-x-1/2 top-3 md:top-5 w-full z-50 container">
-      <div className="flex justify-between items-center bg-white rounded-full py-2 md:p-1">
+    <nav className="absolute left-1/2 -translate-x-1/2 top-3 lg:top-5 w-full z-50 container">
+      <div className="flex justify-between items-center bg-white rounded-full py-2 lg:p-1">
         {/* LEFT SIDE */}
         <div className="flex items-center gap-8 lg:gap-16">
           <Link to="/" className="flex items-center">
-            <img src={navLogo} alt="logo" className="ml-4 h-7 md:h-10" />
+            <img src={navLogo} alt="logo" className="ml-4 h-7 lg:h-10" />
           </Link>
 
-          {/* DESKTOP MENU */}
+          {/* DESKTOP MENU (only on lg and above) */}
           <ul
             ref={desktopRef}
-            className="hidden md:flex space-x-4 lg:space-x-8 relative gap-5"
+            className="hidden 2xl:flex 2xl:space-x-8 relative gap-5"
           >
             {menuItems.map((link) => {
               const hasSubmenu = !!link.submenu;
@@ -102,7 +101,6 @@ const Navbar = () => {
                     if (!desktopSticky && hasSubmenu) setDesktopDropdown(null);
                   }}
                 >
-                  {/* MAIN ITEM */}
                   {hasSubmenu ? (
                     <button
                       onClick={() => {
@@ -134,31 +132,27 @@ const Navbar = () => {
                     </Link>
                   )}
 
-                  {/* DESKTOP DROPDOWN */}
                   {hasSubmenu &&
                     (desktopDropdown === link.id ||
                       desktopSticky === link.id) && (
                       <ul className="absolute left-0 top-full mt-2 bg-white shadow-lg rounded-xl w-56 py-2">
-                        {link.submenu.map((sub) => {
-                          const isActiveSub = activeSubmenu === sub.id;
-                          return (
-                            <li key={sub.id}>
-                              <Link
-                                to={sub.url}
-                                onClick={() =>
-                                  handleSubmenuClick(sub.id, link.id)
-                                }
-                                className={`block py-2 px-4 text-sm transition-colors duration-200 ${
-                                  isActiveSub
-                                    ? "text-primary font-bold"
-                                    : "text-[#696969] hover:text-primary"
-                                }`}
-                              >
-                                {sub.name}
-                              </Link>
-                            </li>
-                          );
-                        })}
+                        {link.submenu.map((sub) => (
+                          <li key={sub.id}>
+                            <Link
+                              to={sub.url}
+                              onClick={() =>
+                                handleSubmenuClick(sub.id, link.id)
+                              }
+                              className={`block py-2 px-4 text-sm ${
+                                activeSubmenu === sub.id
+                                  ? "text-primary font-bold"
+                                  : "text-[#696969] hover:text-primary"
+                              }`}
+                            >
+                              {sub.name}
+                            </Link>
+                          </li>
+                        ))}
                       </ul>
                     )}
                 </li>
@@ -167,45 +161,41 @@ const Navbar = () => {
           </ul>
         </div>
 
-        {/* DESKTOP CTA */}
-        <Link to="/contactus" className="hidden md:block mr-1">
-          <button className="bg-primary text-white px-4 py-1 rounded-full hover:bg-primary transition-colors">
+        {/* DESKTOP CTA (only on lg and above) */}
+        <Link to="/contactus" className="hidden 2xl:block mr-1">
+          <button className="bg-primary text-white lg:px-6 lg:py-4 rounded-full text-base">
             Get In Touch
           </button>
         </Link>
 
-        {/* MOBILE TOGGLE */}
+        {/* HAMBURGER MENU (visible on all screens < lg, including iPads) */}
         <button
-          className="md:hidden p-2 bg-primary rounded-xl text-white mr-4"
+          className="2xl:hidden p-2 bg-primary rounded-xl text-white mr-4"
           onClick={() => setMenuOpen(!menuOpen)}
         >
           {menuOpen ? <X size={24} /> : <Menu size={24} />}
         </button>
       </div>
 
-      {/* MOBILE MENU */}
+      {/* MOBILE / IPAD MENU */}
+      {/* {menuOpen && (
+        <div className="lg:hidden bg-white w-full rounded-3xl border border-gray-300 shadow-xl mt-2"> */}
       {menuOpen && (
-        <div className="md:hidden bg-white w-full rounded-3xl border border-gray-300 shadow-xl mt-2">
+        <div className="2xl:hidden bg-white w-full rounded-3xl border border-gray-300 shadow-xl mt-2">
           <ul className="flex flex-col items-center py-4 space-y-4">
             {menuItems.map((link) => {
               const hasSubmenu = !!link.submenu;
-              const isMainActive = activeMenu === link.id;
 
               return (
                 <li key={link.id} className="w-full text-center">
                   {hasSubmenu ? (
                     <button
-                      onClick={() => {
-                        handleMainClick(link.id, true);
+                      onClick={() =>
                         setMobileDropdown(
                           mobileDropdown === link.id ? null : link.id
-                        );
-                      }}
-                      className={`w-full flex justify-center items-center gap-2 text-base ${
-                        isMainActive
-                          ? "text-primary font-bold"
-                          : "text-[#696969]"
-                      }`}
+                        )
+                      }
+                      className="w-full flex justify-center items-center gap-2 text-base text-[#696969]"
                     >
                       {link.name}
                       <ChevronDown size={18} />
@@ -213,15 +203,8 @@ const Navbar = () => {
                   ) : (
                     <Link
                       to={link.url}
-                      onClick={() => {
-                        handleMainClick(link.id, false);
-                        setMenuOpen(false);
-                      }}
-                      className={`block text-base ${
-                        isMainActive
-                          ? "text-primary font-bold"
-                          : "text-[#696969]"
-                      }`}
+                      onClick={() => setMenuOpen(false)}
+                      className="block text-base text-[#696969]"
                     >
                       {link.name}
                     </Link>
@@ -229,26 +212,17 @@ const Navbar = () => {
 
                   {hasSubmenu && mobileDropdown === link.id && (
                     <ul className="mt-2 space-y-2">
-                      {link.submenu.map((sub) => {
-                        const isActiveSub = activeSubmenu === sub.id;
-                        return (
-                          <li key={sub.id}>
-                            <Link
-                              to={sub.url}
-                              onClick={() =>
-                                handleSubmenuClick(sub.id, link.id)
-                              }
-                              className={`block text-sm ${
-                                isActiveSub
-                                  ? "text-primary font-bold"
-                                  : "text-[#696969]"
-                              }`}
-                            >
-                              {sub.name}
-                            </Link>
-                          </li>
-                        );
-                      })}
+                      {link.submenu.map((sub) => (
+                        <li key={sub.id}>
+                          <Link
+                            to={sub.url}
+                            onClick={() => handleSubmenuClick(sub.id, link.id)}
+                            className="block text-sm text-[#696969]"
+                          >
+                            {sub.name}
+                          </Link>
+                        </li>
+                      ))}
                     </ul>
                   )}
                 </li>
