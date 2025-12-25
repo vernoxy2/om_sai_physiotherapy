@@ -107,7 +107,7 @@ const FAQPages = () => {
 
   return (
     <section>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 container capitalize gap-9">
+      <div className="grid grid-cols-1 lg:grid-cols-2 container capitalize gap-8">
         {/* left sec */}
         <div className=" justify-start space-y-7 ">
           <Title title="FAQ" />
@@ -115,7 +115,7 @@ const FAQPages = () => {
             Most Frequently{" "}
             <span className="text-[#696969]">
               Asked
-              <br />
+              <br className="hidden md:block lg:hidden block" />
               Question And {""}
             </span>
             Answer
@@ -130,16 +130,18 @@ const FAQPages = () => {
             happy to help!
           </p>
           <div
-            className="bg-[#EEEEEE] rounded-xl lg:w-5/6 space-y-7 p-5"
+            className="bg-[#EEEEEE] rounded-xl space-y-7 py-5 px-6"
             data-aos="fade-down"
           >
-            <h1 className=" text-primary">Still have a Question?</h1>
+            <div className="space-y-3">
+              <h1 className=" text-primary">Still have a Question?</h1>
             <p className="text-[#696969]">
               Unsure about anything? Our experts are ready to assist you.
             </p>
+            </div>
             <PrimaryBtn
               href="mailto:"
-              className="bg-[#EEEEEE] text-white xl:w-[35%] w-full xl:text-start rounded-full hover:bg-primary transition "
+              className="bg-[#EEEEEE] text-white xl:w-[45%] w-full xl:text-start rounded-full hover:bg-primary transition "
             >
               Send Email
             </PrimaryBtn>
@@ -150,11 +152,11 @@ const FAQPages = () => {
           {faqs.map((faq, idx) => (
             <div
               key={idx}
-              className="bg-[#EEEEEE] rounded-xl border border-primary p-6"
+              className="bg-[#EEEEEE] rounded-3xl border border-primary p-3 md:p-5"
               data-aos="fade-down"
             >
               <button
-                className="flex justify-between items-center w-full text-left text-primary text-base md:text-lg focus:outline-none"
+                className="flex justify-between items-center w-full text-left text-primary text-base md:text-xl focus:outline-none"
                 onClick={() => handleToggle(idx)}
               >
                 <span>{faq.question}</span>
