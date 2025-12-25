@@ -117,7 +117,7 @@ const Navbar = () => {
                         setDesktopSticky(isOpen ? null : link.id);
                         setDesktopDropdown(isOpen ? null : link.id);
                       }}
-                      className={`flex items-center gap-1 text-base font-medium transition-colors duration-300 ${
+                      className={`flex items-center gap-1 text-base font-medium transition-colors duration-300  ${
                         isActiveMain
                           ? "text-primary font-bold"
                           : "text-[#696969] hover:text-primary"
@@ -130,7 +130,7 @@ const Navbar = () => {
                     <Link
                       to={link.url}
                       onClick={() => handleMainClick(link.id, false)}
-                      className={`flex items-center text-base font-medium transition-colors duration-300 ${
+                      className={`flex items-center text-base font-medium transition-colors duration-300  ${
                         isActiveMain
                           ? "text-primary font-bold"
                           : "text-[#696969] hover:text-primary"
@@ -143,7 +143,7 @@ const Navbar = () => {
                   {hasSubmenu &&
                     (desktopDropdown === link.id ||
                       desktopSticky === link.id) && (
-                      <ul className="absolute left-0 top-full mt-2 bg-white shadow-lg rounded-xl w-56 py-2">
+                      <ul className="absolute left-0 top-full mt-2 bg-white text-base rounded-xl w-56 py-2 border font-lato border-red-500 ">
                         {link.submenu.map((sub) => (
                           <li key={sub.id}>
                             <Link
@@ -193,7 +193,6 @@ const Navbar = () => {
           <ul className="flex flex-col items-center py-4 space-y-4">
             {menuItems.map((link) => {
               const hasSubmenu = !!link.submenu;
-
               return (
                 <li key={link.id} className="w-full text-center">
                   {hasSubmenu ? (
