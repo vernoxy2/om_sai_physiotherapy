@@ -91,7 +91,7 @@ const ProductPages = () => {
 
   return (
     <>
-      <section className="rounded-full">
+      <div className="">
         <PhysioHead
           Heading={
             <>
@@ -106,7 +106,7 @@ const ProductPages = () => {
         solutions that truly fit your body."
         />
 
-        <div className="container grid grid-cols-1 xl:grid-cols-2 gap-5 capitalize">
+        <div className="container grid grid-cols-1 xl:grid-cols-2 gap-8 capitalize py-20">
           <div
             ref={orthoticsRef}
             className={`rounded-2xl transition-all duration-300 ${
@@ -220,7 +220,7 @@ const ProductPages = () => {
             />
           </div>
         </div>
-      </section>
+      </div>
 
       {/* MODAL (opens ONLY on card click) */}
       <ProductModal

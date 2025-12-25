@@ -12,7 +12,7 @@ const wristConditions = [
 
 
   return (
-    <section className="py-4 pb-8 space-y-5 capitalize md:ps-9 ">
+    <section className="py-4 space-y-5 capitalize md:px-6 ">
       <h1 className="">
         Wrist<span className="text-[#696969]">Braces</span>
       </h1>
