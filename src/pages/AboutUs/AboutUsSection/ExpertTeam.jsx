@@ -57,13 +57,13 @@ const ExpertTeam = () => {
   ];
 
   return (
-    <section className="container mx-auto py-10">
-      <Title title="Our Expert Team" />
-      <h1 className="text-start mb-10">
+    <section className="container mx-auto">
+      <Title title="Our Expert Team"  className="text-[#696969]"/>
+      <h1 className="text-start ">
         Dedicated{" "}
         <span className="text-[#696969]">
           Professionals <br />
-          Supporting
+          Supporting{" "}
         </span>
         Your Journey
       </h1>
@@ -78,26 +78,26 @@ const ExpertTeam = () => {
             />
 
             {/* Social Icons */}
-            <div className="absolute bottom-28 left-1/2 -translate-x-1/2 flex gap-8 opacity-0 group-hover:opacity-100 transition bg-white p-4 rounded-md">
+            <div className="absolute bottom-28 left-1/2 -translate-x-1/2 flex gap-8 opacity-0 group-hover:opacity-100 transition bg-white p-2 rounded-md">
               <a href={member.social.telegram} target="_blank">
-                <FaTelegramPlane className="text-[#696969] text-3xl items-center justify-between rounded-full" />
+                <FaTelegramPlane className="text-[#696969] text-2xl items-center justify-between rounded-full" />
               </a>
               <a href={member.social.instagram} target="_blank">
-                <AiFillInstagram className="text-[#696969] text-3xl items-center justify-between rounded-full" />
+                <AiFillInstagram className="text-[#696969] text-2xl items-center justify-between rounded-full" />
               </a>
               <a href={member.social.facebook} target="_blank">
-                <FaFacebookF className="text-[#696969] text-3xl items-center justify-between rounded-full" />
+                <FaFacebookF className="text-[#696969] text-2xl items-center justify-between rounded-full" />
               </a>
               <a href={member.social.linkedin} target="_blank">
-                <FaLinkedinIn className="text-[#696969] text-3xl items-center justify-center rounded-full" />
+                <FaLinkedinIn className="text-[#696969] text-2xl items-center justify-center rounded-full" />
               </a>
             </div>
 
             <div className="bg-white p-6">
-              <h3 className="text-xl font-Marcellus text-primary">
+              <h4 className=" text-primary">
                 {member.name}
-              </h3>
-              <p className="text-sm text-[#696969] mt-1">{member.position}</p>
+              </h4>
+              <p className=" text-[#696969] mt-1">{member.position}</p>
             </div>
           </div>
         ))}
