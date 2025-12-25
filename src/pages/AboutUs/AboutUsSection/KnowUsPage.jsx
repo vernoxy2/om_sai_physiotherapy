@@ -18,7 +18,6 @@ const KnowUsPage = () => {
           const duration = 2000;
           const interval = 30;
           const step = Math.ceil(end / (duration / interval));
-
           const timer = setInterval(() => {
             start += step;
             if (start >= end) {
@@ -158,7 +157,8 @@ const KnowUsPage = () => {
               alt="Know Us"
               className="w-full h-auto object-cover"
             />
-
+            
+            {/* left sec */}
             <div
               className="
                     absolute
@@ -209,14 +209,15 @@ const KnowUsPage = () => {
             ))}
           </div>
         </div>
-{/* content 2 */}
+
+        {/* content 2 */}
         <div className="space-y-5 py-10 w-full lg:w-[91%]">
           {DataList2.map((item, index) => (
             <div key={index} className="space-y-5 text-[#696969]">
               {item.SubText}
             </div>
           ))}
-{/* content3 */}
+          {/* content3 */}
           {DataList3.map((item, index) => (
             <div key={index} className="space-y-5 text-[#696969]">
               {item.SubText}

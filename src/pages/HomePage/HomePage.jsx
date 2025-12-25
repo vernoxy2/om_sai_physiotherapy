@@ -48,7 +48,7 @@ const HomePage = () => {
   return (
     <div>
       <Home slides={slides} />
-      <AboutUs />
+      <AboutUs /> 
       <Services />
       <AdvancedTreat />
       <PatientsTrust />
