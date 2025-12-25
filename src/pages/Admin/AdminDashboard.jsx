@@ -278,11 +278,12 @@ const fetchHours = async () => {
   ];
 
   return (
+    <section>
     <div className="min-h-screen bg-gray-50 py-12 px-4 sm:px-6 lg:px-8">
       <div className="max-w-4xl mx-auto">
         <div className="bg-white shadow-lg rounded-lg overflow-hidden">
-          <div className="px-6 py-4 bg-teal-600 text-white flex justify-between items-center">
-            <h1 className="text-2xl font-bold">Admin Dashboard</h1>
+          <div className="px-6 py-4 bg-primary text-white flex justify-between items-center">
+            <h1 className="text-white">Admin Dashboard</h1>
             <button
               onClick={handleLogout}
               className="bg-white text-teal-600 px-4 py-2 rounded-md text-sm font-medium hover:bg-gray-100 transition-colors"
@@ -384,6 +385,7 @@ const fetchHours = async () => {
         </div>
       </div>
     </div>
+    </section>
   );
 };
 
