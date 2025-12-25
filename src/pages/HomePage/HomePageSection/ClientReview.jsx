@@ -71,7 +71,7 @@ const ClientReview = () => {
   return (
     <section
       style={{ backgroundImage: `url(${BgImg})` }}
-      className="bg-cover bg-center bg-no-repeat container capitalize"
+      className="bg-cover bg-center bg-no-repeat  capitalize"
     >
       <div className="relative container space-y-12 space-x-60">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -122,7 +122,7 @@ const ClientReview = () => {
         </div>
 
         {/* ⬅➡ Navigation */}
-        <div className="hidden md:flex absolute top-3/2 left-1/3 -translate-x-1/2 -translate-y-1/2 gap-8">
+        <div className="hidden md:flex absolute top-3/2 left-1/3 -translate-x-1/2 -translate-y-2/3 gap-8">
           <button
             onClick={() =>
               setCurrentReview(

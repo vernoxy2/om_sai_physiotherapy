@@ -13,7 +13,7 @@ import { useNavigate } from "react-router-dom";
 
 const AdvancedTreat = () => {
   const navigate = useNavigate();
-  
+
   const handleArrowClick = (route) => {
     if (route) {
       window.scrollTo(0, 0);
@@ -120,17 +120,19 @@ const AdvancedTreat = () => {
               )}
             </div>
 
-            <h4 className="mb-3 transition text-white group-hover:text-white flex items-center justify-between px-3 relative">
-              {item.MainText}
-              <img
-                src={item.svg}
-                alt="icon"
-                className="flex-shrink-0 absolute bottom-6 right-0"
-              />
-            </h4>
-            <p className="text-base leading-relaxed transition text-white group-hover:text-white px-3 w-[92%]">
-              {item.SubText}
-            </p>
+            <div className="py-2 pb-8">
+              <h4 className="mb-3 transition  text-white group-hover:text-white flex items-center justify-between px-3 relative">
+                {item.MainText}
+                <img
+                  src={item.svg}
+                  alt="icon"
+                  className="flex-shrink-0 absolute bottom-6 right-0"
+                />
+              </h4>
+              <p className="text-base leading-relaxed transition text-white group-hover:text-white px-3 w-[92%]">
+                {item.SubText}
+              </p>
+            </div>
           </div>
         ))}
       </div>

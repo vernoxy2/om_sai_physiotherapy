@@ -149,7 +149,7 @@ const KnowUsPage = () => {
   return (
     <section>
       <div className="container gap-7 capitalize">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-5 ">
+        <div className="grid grid-cols-1 lg:grid-cols-2 lg:grid-cols-2 gap-5 ">
           {/* Left Section */}
           <div className="relative w-full order-2 md:order-1">
             <img
@@ -163,8 +163,7 @@ const KnowUsPage = () => {
               className="
                     absolute
                     bottom-2 left-2
-                    sm:top-56 sm:left-2
-                    md:bottom-4 md:left-4
+                    
                     lg:bottom-7 lg:left-4 
                      xl:bottom-8 xl:left-4 xl:top-auto
                     text-xs sm:text-sm md:text-base lg:text-lg
