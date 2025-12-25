@@ -20,7 +20,7 @@ const BackBraces = () => {
   ];
 
   return (
-    <section className="py-4 pb-8 space-y-5 capitalize md:ps-9 ">
+    <section className="py-4 space-y-5 capitalize md:px-6 ">
       <h1 className="">
         Back <span className="text-[#696969]">Braces </span>
       </h1>
@@ -28,7 +28,7 @@ const BackBraces = () => {
         <hr className="w-full h-1 bg-[#696969] border-none" />
         <p className="absolute top-0 left-0 lg:w-[25%] h-1.5 bg-primary rounded-full " />
       </div>
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+      <div className="grid grid-cols-1 lg:grid-cols-2 lg:gap-6">
         <div className="space-y-4 text-base ">
           <h5 className="bg-primary text-white rounded-md w-full lg:w-[50%] text-center border border-black p-2 ">
             Types of Back Braces
@@ -59,7 +59,7 @@ const BackBraces = () => {
               ))}
             </ul>
           </div>
-          <p className="text-[#696969] py-7">
+          <p className="text-[#696969] pt-2 lg:py-7">
             Insurance: Most plans cover custom back braces.
           </p>
           {/* Vertical */}

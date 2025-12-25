@@ -11,7 +11,7 @@ const neckBenefits = [
 
 
   return (
-    <section className="py-4 pb-8 space-y-5 capitalize md:ps-9 ">
+    <section className="py-4 space-y-5 capitalize md:px-4 ">
       <h1 className="">
         Wrist &nbsp;<span className="text-[#696969]">Braces</span>
       </h1>

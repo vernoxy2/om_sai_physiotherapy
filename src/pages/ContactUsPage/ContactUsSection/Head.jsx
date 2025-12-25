@@ -6,9 +6,9 @@ const Head = () => {
   return (
     <section
       style={{ backgroundImage: `url(${BgImg})` }}
-      className="container bg-no-repeat bg-cover bg-center items-center justify-start flex lg:h-screen max-h-auto"
+      className=" bg-no-repeat bg-cover bg-center flex items-center justify-start min-h-[280px] md:min-h-[550px]"
     >
-      <h1 className="text-priamry">
+      <h1 className="text-priamry container">
         Contact&nbsp;<span className="text-white">Us</span>
       </h1>
 

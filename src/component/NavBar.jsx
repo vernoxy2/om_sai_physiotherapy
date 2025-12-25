@@ -30,6 +30,14 @@ const menuItems = [
   { id: 5, name: "Products", url: "/products" },
   { id: 6, name: "FAQ", url: "/faq" },
   { id: 7, name: "Contact Us", url: "/contactus" },
+  //  {
+  //   id: 8,
+  //   name: "Admin",
+  //   submenu: [
+  //     { id: 81, name: "Login", url: "/admin/login" },
+  //     { id: 82, name: "Dashboard", url: "/admin/dashboard" },
+  //   ],
+  // },
 ];
 
 const Navbar = () => {
@@ -72,7 +80,7 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="absolute left-1/2 -translate-x-1/2 top-3 lg:top-5 w-full z-50 container">
+    <nav className="fixed left-1/2 -translate-x-1/2 top-3 lg:top-5 w-full z-50 container ">
       <div className="flex justify-between items-center bg-white rounded-full py-2 lg:p-1">
         {/* LEFT SIDE */}
         <div className="flex items-center gap-8 lg:gap-16">
@@ -83,7 +91,7 @@ const Navbar = () => {
           {/* DESKTOP MENU (only on lg and above) */}
           <ul
             ref={desktopRef}
-            className="hidden 2xl:flex 2xl:space-x-8 relative gap-5"
+            className="hidden xl:flex space-x-3 2xl:space-x-8 relative gap-5"
           >
             {menuItems.map((link) => {
               const hasSubmenu = !!link.submenu;
@@ -162,7 +170,7 @@ const Navbar = () => {
         </div>
 
         {/* DESKTOP CTA (only on lg and above) */}
-        <Link to="/contactus" className="hidden 2xl:block mr-1">
+        <Link to="/contactus" className="hidden xl:block mr-0.5">
           <button className="bg-primary text-white lg:px-6 lg:py-4 rounded-full text-base">
             Get In Touch
           </button>
@@ -170,7 +178,7 @@ const Navbar = () => {
 
         {/* HAMBURGER MENU (visible on all screens < lg, including iPads) */}
         <button
-          className="2xl:hidden p-2 bg-primary rounded-xl text-white mr-4"
+          className="xl:hidden p-2 bg-primary rounded-xl text-white mr-4"
           onClick={() => setMenuOpen(!menuOpen)}
         >
           {menuOpen ? <X size={24} /> : <Menu size={24} />}

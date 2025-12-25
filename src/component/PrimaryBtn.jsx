@@ -52,7 +52,7 @@ const PrimaryBtn = ({
       <button
         type={type}
         onClick={onClick}
-        className="font-marcellus md:text-2xl bg-primary text-white "
+        className="font-marcellus text-2xl bg-primary text-white "
       >
         {children}
       </button>

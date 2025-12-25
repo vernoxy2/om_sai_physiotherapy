@@ -14,6 +14,9 @@ import MassageTherapy from "./pages/ServicePage/MassageTherapy/MassageTherapy.js
 import Acupuncture from "./pages/ServicePage/Acupuncture/Acupuncture.jsx";
 import ShockwaveTherapy from "./pages/ServicePage/ShockwaveTherapy/ShockwaveTherapy.jsx";
 import Spinal from "./pages/ServicePage/Spinal/Spinal.jsx";
+import AdminLogin from "./pages/Admin/AdminLogin.jsx";
+import ProtectedRoute from "./component/ProtectedRoute.jsx";
+import AdminDashboard from "./pages/Admin/AdminDashboard.jsx";
 
 const App = () => {
   return (
@@ -40,6 +43,15 @@ const App = () => {
           <Route path="/faq" element={<FAQ />} />
           <Route path="/contactus" element={<ContactUs />} />
           <Route path="/gettouch" element={<GetTouch />} />
+           <Route path="/admin/login" element={<AdminLogin />} />
+          <Route 
+            path="/admin/dashboard" 
+            element={
+              <ProtectedRoute>
+                <AdminDashboard />
+              </ProtectedRoute>
+            } 
+          />
         </Routes>
         <Footer />
       </BrowserRouter>
