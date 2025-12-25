@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import coverImg from "../../../assets/ContcatPageImgs/Message/coverImg.png";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
@@ -8,10 +8,39 @@ import { FaLocationDot } from "react-icons/fa6";
 import { MdCall } from "react-icons/md";
 import { CiMail } from "react-icons/ci";
 import { FaClock } from "react-icons/fa6";
-
+import { doc, getDoc } from "firebase/firestore";
+import { db } from "../../../firebase";
 
 const Message = () => {
   const [dateTime, setDateTime] = useState(null);
+  const [hours, setHours] = useState({
+    monday: "Loading...",
+    tuesday: "Loading...",
+    wednesday: "Loading...",
+    thursday: "Loading...",
+    friday: "Loading...",
+    saturday: "Loading...",
+    sunday: "Loading...",
+  });
+
+  // 👇 FETCH HOURS FROM FIREBASE
+  useEffect(() => {
+    const fetchHours = async () => {
+      try {
+        const docRef = doc(db, "settings", "hoursOfOperation");
+        const docSnap = await getDoc(docRef);
+
+        if (docSnap.exists()) {
+          setHours(docSnap.data());
+        }
+      } catch (err) {
+        console.error("Error fetching hours:", err);
+      }
+    };
+
+    fetchHours();
+  }, []);
+
   const contactdata = [
     {
       id: 1,
@@ -57,13 +86,13 @@ const Message = () => {
       title: "Clock",
       Heading: "Hours of Operation",
       Hours: [
-        "Mon | 02:00 P.M. – 07:00 A.M.",
-        "Tue | 02:00 A.M. – 07:00 P.M.",
-        "Wed | 02:00 P.M. – 07:00 P.M.",
-        "Thu | 02:00 A.M. – 07:00 P.M.",
-        "Fri | 02:00 P.M. – 07:00 P.M.",
-        "Sat | 02:00 A.M. – 07:00 P.M.",
-        "Sun | Closed",
+        `Mon | ${hours.monday}`,
+        `Tue | ${hours.tuesday}`,
+        `Wed | ${hours.wednesday}`,
+        `Thu | ${hours.thursday}`,
+        `Fri | ${hours.friday}`,
+        `Sat | ${hours.saturday}`,
+        `Sun | ${hours.sunday}`,
       ],
     },
   ];
@@ -166,10 +195,9 @@ const Message = () => {
 
           <PrimaryBtn>Schedule Your Visit</PrimaryBtn>
         </form>
-      
       </div>
       <div className=" container w-auto">
-        <img src={coverImg} alt="coverImg" className="border bg-center"/>
+        <img src={coverImg} alt="coverImg" className="border bg-center" />
       </div>
     </section>
   );

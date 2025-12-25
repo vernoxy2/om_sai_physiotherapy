@@ -30,6 +30,14 @@ const menuItems = [
   { id: 5, name: "Products", url: "/products" },
   { id: 6, name: "FAQ", url: "/faq" },
   { id: 7, name: "Contact Us", url: "/contactus" },
+   {
+    id: 8,
+    name: "Admin",
+    submenu: [
+      { id: 81, name: "Login", url: "/admin/login" },
+      { id: 82, name: "Dashboard", url: "/admin/dashboard" },
+    ],
+  },
 ];
 
 const Navbar = () => {
