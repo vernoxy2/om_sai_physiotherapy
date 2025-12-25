@@ -43,7 +43,6 @@ const Visit = () => {
     const emailInput = document.querySelector('input[name="email"]');
     const serviceInput = document.querySelector('input[name="serviceType"]');
     const messageInput = document.querySelector('textarea[name="message"]');
-
     const newErrors = {};
     const newMessages = {};
 
@@ -120,12 +119,12 @@ const Visit = () => {
       {/* Bottom Section */}
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start container">
         {/* Left Content */}
-        <div className="space-y-4 lg:w-[80%]">
+        <div className="space-y-7 lg:w-[80%]">
           <Title className="text-xl text-[#696969]" title="Plan Your Visit " />
           <h3 className="text-3xl md:text-4xl font-light text-primary lg:text-start  ">
-            Take The First Step <br />
-            <span className="font-medium text-[#696969]">
-              To A Pain-Free Life
+            Take The First Step <span className="font-medium text-[#696969]">To A<br />
+           
+              Pain-Free Life
             </span>
           </h3>
           <p className="text-[#696969] text-sm ">
@@ -142,8 +141,8 @@ const Visit = () => {
         </div>
 
         {/* Form */}
-        <form className="bg-white">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+        <form className="bg-white ">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4  mb-4">
             <div className="relative">
               <input
                 type="text"
@@ -230,12 +229,12 @@ const Visit = () => {
           </PrimaryBtn>
         </form>
       </div>
-      <img src={cvrImg} alt="curve" className="w-full " />
+      <img src={cvrImg} alt="curve" className="w-full container " />
       {/* slider  */}
 
       <div
         style={{ backgroundImage: `url(${SliderImg})` }}
-        className="relative overflow-hidden  py-5"
+        className="relative overflow-hidden py-5 "
       >
         <div className="flex gap-10 animate-marquee-left whitespace-nowrap">
           {[...TherapyData, ...TherapyData].map((item, i) => (

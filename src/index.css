@@ -144,3 +144,18 @@ body {
   box-shadow: 0 30px 50px rgba(0, 0, 0, 0.4);
 }
 
+@keyframes scaleUpDown {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.logo-img-hover:hover {
+  animation: scaleUpDown 0.8s ease-in-out;
+}
