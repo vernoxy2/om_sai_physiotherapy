@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
+import { useParams, useNavigate } from "react-router-dom";
 import Title from "../../../component/Title";
 import img1 from "../../../assets/ConditionPageImgs/Treat/img1.png";
 import img2 from "../../../assets/ConditionPageImgs/Treat/img2.png";
@@ -11,12 +12,36 @@ import img8 from "../../../assets/ConditionPageImgs/Treat/img8.png";
 import img9 from "../../../assets/ConditionPageImgs/Treat/img9.png";
 import img10 from "../../../assets/ConditionPageImgs/Treat/img10.png";
 
-const ConditionTreat = () => {
+const Conditions = () => {
+  const { id } = useParams();
+  const navigate = useNavigate();
+  const selectedId = id ? parseInt(id) : null;
+  const selectedCardRef = useRef(null);
+
+ useEffect(() => {
+  if (!id) return; // nothing to clean if already /conditions
+
+  if (selectedCardRef.current) {
+    selectedCardRef.current.scrollIntoView({
+      behavior: "smooth",
+      block: "center",
+    });
+
+    // Give scroll + highlight time, then clean URL
+    const timeout = setTimeout(() => {
+      navigate("/conditions", { replace: true });
+    }, 7000); // adjust if needed
+
+    return () => clearTimeout(timeout);
+  }
+}, [id, navigate]);
+
+
   const headText = [
     {
       MainText: (
         <h1>
-          Comprehensive &nbsp;
+          Comprehensive{" "}
           <span className="text-[#696969]">
             Care for
             <br /> Every<span className="text-primary"> Condition </span>
@@ -103,7 +128,7 @@ const ConditionTreat = () => {
       img: img7,
       Type: "Ankle & Foot ",
       SubText: [
-        " Ankle Pain",
+        " Ankle Pain",
         "Plantar Fasciitis",
         "Metatarsalgia",
         "Heel & Foot Pain",
@@ -143,9 +168,9 @@ const ConditionTreat = () => {
   return (
     <section>
       <div className="container gap-10">
-        <div className="mx-auto w-full flex flex-col items-center justify-center text-center space-y-3">
+        <div className="mx-auto w-full flex flex-col items-center justify-center text-center gap-5 ">
           <Title
-            className="text-white text-xl items-center"
+            className="text-[#696969] text-xl items-center"
             title="Conditions We Treat"
           />
           {headText.map((item, index) => (
@@ -153,11 +178,16 @@ const ConditionTreat = () => {
           ))}
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-9">
+        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-x-8 gap-y-10 pt-10">
           {cardData.map((member, index) => (
             <div
+              ref={selectedId === member.id ? selectedCardRef : null}
               key={index}
-              className="relative text-center rounded-xl overflow-hidden shadow-lg"
+              className={`relative text-center rounded-xl overflow-hidden ${
+                selectedId === member.id
+                  ? "ring-8 ring-primary shadow-lg"
+                  : ""
+              }`}
             >
               {/* Image */}
               <div className="relative group rounded-t-xl overflow-hidden">
@@ -167,7 +197,7 @@ const ConditionTreat = () => {
                 <div
                   className="absolute inset-0 flex flex-col justify-start opacity-0
                      group-hover:opacity-100 transition-all duration-500 p-7
-                     bg-[#797979] group-hover:bg-[#131313]/60
+                     bg-[#797979] group-hover:bg-[#131313]/60 border
                      group-hover:backdrop-blur-sm"
                 >
                   <ul className="list-disc list-inside text-start space-y-1 text-white text-base">
@@ -179,7 +209,7 @@ const ConditionTreat = () => {
               </div>
 
               {/* Type */}
-              <div className="bg-primary rounded-b-xl mt-2 py-3 flex h-full justify-center">
+              <div className="bg-primary rounded-xl mt-3 py-3 flex h-full justify-center">
                 <h2 className="text-2xl font-Marcellus text-white">
                   {member.Type}
                 </h2>
@@ -192,4 +222,4 @@ const ConditionTreat = () => {
   );
 };
 
-export default ConditionTreat;
+export default Conditions;

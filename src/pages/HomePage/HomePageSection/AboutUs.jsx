@@ -12,7 +12,7 @@ const AboutUs = () => {
     <section className="">
       <div className=" mx-auto ">
         {/* MAIN GRID */}
-        <div className="grid grid-cols-1 xl:grid-cols-2 border gap-8 items-center container capitalize">
+        <div className="grid grid-cols-1 xl:grid-cols-2  gap-8 items-center container capitalize">
           {/* LEFT SECTION */}
           <div
             className="relative grid grid-cols-2 gap-7  order-1 md:order-1 lg:order-1"

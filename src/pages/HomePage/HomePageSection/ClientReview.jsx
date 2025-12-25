@@ -71,7 +71,7 @@ const ClientReview = () => {
   return (
     <section
       style={{ backgroundImage: `url(${BgImg})` }}
-      className="bg-cover bg-center bg-no-repeat container"
+      className="bg-cover bg-center bg-no-repeat container capitalize"
     >
       <div className="relative container space-y-12 space-x-60">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -81,7 +81,7 @@ const ClientReview = () => {
               {/* <BaseLine className=""/> */}
             <Title className="text-white text-xl" title='Client Reviews & Testimonials'/>
               <h1>{item.MainText}</h1>
-              <div className="text-white w-[74%]">{item.subText}</div>
+              <div className="text-white w-full">{item.subText}</div>
 
               {/* ⭐ Client Review */}
               {Review[currentReview] && (
