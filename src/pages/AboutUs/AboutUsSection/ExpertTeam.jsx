@@ -60,7 +60,12 @@ const ExpertTeam = () => {
     <section className="container mx-auto py-10">
       <Title title="Our Expert Team" />
       <h1 className="text-start mb-10">
-        Dedicated Professionals Supporting Your Journey
+        Dedicated{" "}
+        <span className="text-[#696969]">
+          Professionals <br />
+          Supporting
+        </span>
+        Your Journey
       </h1>
 
       <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-8">

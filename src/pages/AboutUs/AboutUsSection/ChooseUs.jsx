@@ -11,7 +11,7 @@ const ChooseUs = () => {
       MainText: (
         <h1>
           Our Commitment to Exceptional <br />
-          <span className="text-[#696969]"> Patient Care</span>
+          <span className="text-[#696969]">Physiotherapy Care</span>
         </h1>
       ),
     },
@@ -48,7 +48,7 @@ const ChooseUs = () => {
     <section>
       <div className="container grid grid-cols-1 space-y-12">
         <div className="mx-auto w-full flex flex-col items-center justify-center text-center space-y-3">
-          <Title className="text-white text-xl" title="Why Choose Us" />
+          <Title className="text-[#696969] text-xl" title="Why Choose Us" />
           {headText.map((item, index) => (
             <h1 className="w-" key={index}>
               {item.MainText}
@@ -56,7 +56,7 @@ const ChooseUs = () => {
           ))}
         </div>
         {/* card */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-20">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {cardData.map((item, index) => (
             <div
               key={index}
