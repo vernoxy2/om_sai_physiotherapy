@@ -12,9 +12,11 @@ const AboutUs = () => {
     <section className="">
       <div className=" mx-auto ">
         {/* MAIN GRID */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center container">
+        <div className="grid grid-cols-1 xl:grid-cols-2 border gap-8 items-center container capitalize">
           {/* LEFT SECTION */}
-          <div className="relative grid grid-cols-2 gap-7">
+          <div
+            className="relative grid grid-cols-2 gap-7  order-1 md:order-1 lg:order-1"
+          >
             {/* Image 1 */}
             <div className="rounded-2xl overflow-hidden">
               <img
@@ -29,7 +31,7 @@ const AboutUs = () => {
               <div>
                 <img src={img1} alt="physio" className="w-full rounded-3xl" />
               </div>
-              <img src={img3} alt="physio" className="w-full object-cover  " />
+              <img src={img3} alt="physio" className="w-full object-cover " />
             </div>
 
             {/* COUNTER */}
@@ -43,10 +45,10 @@ const AboutUs = () => {
                 >
                   <div className="text-center">
                     <h3 className="text-3xl font-bold text-white">
-                      <CountUp start={0} end={15} duration={2.5} />+
+                      <CountUp start={0} end={20} duration={2.5} />+
                     </h3>
                     <p className="text-xs text-white mt-1 leading-tight">
-                      YEARS OF <br /> EXPERIENCE
+                      YEARS OF EXPERTISE
                     </p>
                   </div>
                 </div>
@@ -55,33 +57,40 @@ const AboutUs = () => {
           </div>
 
           {/* RIGHT SECTION */}
-          <div className=" space-y-4 w-full lg:w-[90%]">
-            <Title className="text-[#696969] text-xl md:text-3xl " title="About Us"/>
+          <div className="order-2 space-y-7 ">
+            <Title
+              className="text-[#696969] text-xl md:text-3xl "
+              title="About Us"
+            />
             <h1 className="leading-tight">
-              Om Sai Physiotherapy<span className="text-[#696969]"><br/>Mississauga</span>
+              Om Sai Physiotherapy
+              <span className="text-[#696969]">
+                <br />
+                Mississauga
+              </span>
             </h1>
 
-            <p className="font-lato text-[#696969]">
-              Welcome to Om Sai Physiotherapy Clinic in Mississauga, your trusted
-              destination for expert physiotherapy and rehabilitation. Our
-              experienced physiotherapists provide personalized, evidence-based
-              care for acute injuries, chronic pain, and mobility issues.
+            <p className="font-lato text-[#696969] w-full lg:w-[93%]">
+              Welcome to Om Sai Physiotherapy Clinic in Mississauga, your
+              trusted destination for expert physiotherapy and rehabilitation.
+              Our experienced physiotherapists provide personalized,
+              evidence-based care for acute injuries, chronic pain, and mobility
+              issues.
             </p>
 
-            <p className="font-lato text-[#696969]">
+            <p className="font-lato text-[#696969] w-full lg:w-[93%]">
               We offer comprehensive physiotherapy services in Mississauga,
               helping patients move better, recover faster, and live pain-free.
               Our modern, welcoming clinic ensures effective treatment plans
               tailored for every patient, from athletes to seniors.
             </p>
-            <p className="font-lato text-[#696969]">
+            <p className="font-lato text-[#696969] w-full lg:w-[93%]">
               Start your recovery today at Om Sai Physiotherapy Clinic – North
               York’s trusted physiotherapy center.
             </p>
+            <hr className="w-full h-0.5 bg-[#696969] border-none" />
 
-           <PrimaryBtn className="xl:w-[28%] w-full" >
-            Learn More
-           </PrimaryBtn>
+            <PrimaryBtn>Learn More</PrimaryBtn>
           </div>
         </div>
       </div>

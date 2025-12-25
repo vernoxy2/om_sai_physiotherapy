@@ -39,7 +39,7 @@ const Logo = () => {
               <img
                 src={image}
                 alt={`logo-${index + 1}`}
-                className="max-w-auto h-auto object-contain "
+                className="max-w-auto h-auto object-contain logo-img-hover "
               />
             </div>
           ))}
