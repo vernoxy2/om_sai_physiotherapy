@@ -20,7 +20,8 @@ const TimePickerDropdown = ({ value, onChange, label }) => {
     return { hour, minute, period };
   };
 
-  const [selected, setSelected] = useState(parseTime(value));
+  // Derive selected state from value prop
+  const selected = parseTime(value);
 
   useEffect(() => {
     const handleClickOutside = (event) => {
@@ -34,7 +35,6 @@ const TimePickerDropdown = ({ value, onChange, label }) => {
 
   const handleChange = (field, val) => {
     const newSelected = { ...selected, [field]: val };
-    setSelected(newSelected);
     onChange(`${newSelected.hour}:${newSelected.minute} ${newSelected.period}`);
   };
 
@@ -161,45 +161,55 @@ const AdminDashboard = () => {
   //   }
   // };
 
-  const fetchHours = async () => {
-    try {
-      const docRef = doc(db, 'settings', 'hoursOfOperation');
-      const docSnap = await getDoc(docRef);
+const fetchHours = async () => {
+  try {
+    const docRef = doc(db, 'settings', 'hoursOfOperation');
+    const docSnap = await getDoc(docRef);
+    
+    // Default hours structure
+    const defaultHours = {
+      monday: { isOpen: true, openTime: '09:00 AM', closeTime: '05:00 PM' },
+      tuesday: { isOpen: true, openTime: '09:00 AM', closeTime: '05:00 PM' },
+      wednesday: { isOpen: true, openTime: '09:00 AM', closeTime: '05:00 PM' },
+      thursday: { isOpen: true, openTime: '09:00 AM', closeTime: '05:00 PM' },
+      friday: { isOpen: true, openTime: '09:00 AM', closeTime: '05:00 PM' },
+      saturday: { isOpen: true, openTime: '09:00 AM', closeTime: '05:00 PM' },
+      sunday: { isOpen: false, openTime: '09:00 AM', closeTime: '05:00 PM' }
+    };
+    
+    if (docSnap.exists()) {
+      // Document exists, parse the data
+      const data = docSnap.data();
+      const parsedHours = { ...defaultHours };
       
-      if (docSnap.exists()) {
-        const data = docSnap.data();
-        // Start with default hours structure
-        const defaultHours = {
-          monday: { isOpen: true, openTime: '09:00 AM', closeTime: '05:00 PM' },
-          tuesday: { isOpen: true, openTime: '09:00 AM', closeTime: '05:00 PM' },
-          wednesday: { isOpen: true, openTime: '09:00 AM', closeTime: '05:00 PM' },
-          thursday: { isOpen: true, openTime: '09:00 AM', closeTime: '05:00 PM' },
-          friday: { isOpen: true, openTime: '09:00 AM', closeTime: '05:00 PM' },
-          saturday: { isOpen: true, openTime: '09:00 AM', closeTime: '05:00 PM' },
-          sunday: { isOpen: false, openTime: '09:00 AM', closeTime: '05:00 PM' }
-        };
-        
-        // Convert string format to our state format
-        const parsedHours = { ...defaultHours };
-        Object.keys(data).forEach(day => {
-          if (data[day] === 'Closed') {
-            parsedHours[day] = { isOpen: false, openTime: '09:00 AM', closeTime: '05:00 PM' };
-          } else {
-            // Parse "02:00 P.M. – 07:00 P.M." format
-            const match = data[day].match(/(\d{2}:\d{2})\s+(A\.M\.|P\.M\.)\s+–\s+(\d{2}:\d{2})\s+(A\.M\.|P\.M\.)/);
-            if (match) {
-              const openTime = `${match[1]} ${match[2].replace(/\./g, '')}`;
-              const closeTime = `${match[3]} ${match[4].replace(/\./g, '')}`;
-              parsedHours[day] = { isOpen: true, openTime, closeTime };
-            }
+      Object.keys(data).forEach(day => {
+        if (data[day] === 'Closed') {
+          parsedHours[day] = { isOpen: false, openTime: '09:00 AM', closeTime: '05:00 PM' };
+        } else {
+          // Parse "02:00 P.M. – 07:00 P.M." format
+          const match = data[day].match(/(\d{2}:\d{2})\s+(A\.M\.|P\.M\.)\s+–\s+(\d{2}:\d{2})\s+(A\.M\.|P\.M\.)/);
+          if (match) {
+            const openTime = `${match[1]} ${match[2].replace(/\./g, '')}`;
+            const closeTime = `${match[3]} ${match[4].replace(/\./g, '')}`;
+            parsedHours[day] = { isOpen: true, openTime, closeTime };
           }
-        });
-        setHours(parsedHours);
-      }
-    } catch (err) {
-      console.error('Error fetching hours:', err);
+        }
+      });
+      setHours(parsedHours);
+    } else {
+      // Document doesn't exist, create it with default hours
+      const formattedDefaultHours = {};
+      Object.keys(defaultHours).forEach(day => {
+        formattedDefaultHours[day] = formatTimeDisplay(defaultHours[day]);
+      });
+      
+      await setDoc(docRef, formattedDefaultHours);
+      setHours(defaultHours);
     }
-  };
+  } catch (err) {
+    console.error('Error fetching hours:', err);
+  }
+};
   const handleDayChange = (day, field, value) => {
     setHours(prev => ({
       ...prev,
