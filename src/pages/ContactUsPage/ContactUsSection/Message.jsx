@@ -132,7 +132,7 @@ const Message = () => {
                     </ul>
                   </div>
                 ) : item.contacts ? (
-                  <div className="flex items-center underline text-[#696969] gap-2 text-xl font-Marcellus">
+                  <div className="flex items-center  text-[#696969] gap-2 text-xl font-Marcellus">
                     {item.contacts
                       .filter((contact) => !contact.label) // removes Fax
                       .map((contact, index, arr) => (
@@ -145,7 +145,7 @@ const Message = () => {
                 ) : (
                   <a
                     href={item.link}
-                    className="text-[#696969] text-xl underline font-Marcellus"
+                    className="text-[#696969] text-xl  font-Marcellus"
                     target="_blank"
                     rel="noopener noreferrer"
                   >

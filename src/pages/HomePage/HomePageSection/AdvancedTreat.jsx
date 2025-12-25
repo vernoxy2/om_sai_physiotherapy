@@ -29,8 +29,8 @@ const AdvancedTreat = () => {
       MainText: (
         <>
           <h4 className="text-white">
-            Personalized
-            <br /> Treatment
+            Shockwave  
+            <br /> Therapy
           </h4>
         </>
       ),
@@ -75,8 +75,8 @@ const AdvancedTreat = () => {
       MainText: (
         <>
           <h4 className="text-white">
-            Compassionate
-            <br /> Care
+            Spinal
+            <br /> Decompression
           </h4>
         </>
       ),
@@ -113,7 +113,7 @@ const AdvancedTreat = () => {
               {item.route && (
                 <button
                   onClick={() => handleArrowClick(item.route)}
-                  className="absolute top-3 right-3 text-white bg-primary rounded-full text-4xl flex-shrink-0 duration-100 group-hover:bg-white group-hover:text-primary group-hover:rotate-[-45deg] cursor-pointer hover:scale-110"
+                  className="absolute top-3 right-3 text-white bg-primary rounded-full text-5xl lg:text-5xl flex-shrink-0 duration-100 group-hover:bg-white group-hover:text-primary group-hover:rotate-[-45deg] cursor-pointer hover:scale-110"
                 >
                   <BsArrowRightShort />
                 </button>

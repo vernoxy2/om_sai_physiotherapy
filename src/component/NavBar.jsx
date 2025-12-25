@@ -143,7 +143,7 @@ const Navbar = () => {
                   {hasSubmenu &&
                     (desktopDropdown === link.id ||
                       desktopSticky === link.id) && (
-                      <ul className="absolute left-0 top-full mt-2 bg-white text-base rounded-xl w-56 py-2 border font-lato border-red-500 ">
+                      <ul className="absolute left-0 top-full mt-2 bg-white text-base rounded-xl w-56 py-2 font-lato ">
                         {link.submenu.map((sub) => (
                           <li key={sub.id}>
                             <Link

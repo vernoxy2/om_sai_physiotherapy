@@ -200,7 +200,7 @@ const FooterData = () => {
 
         {/* col2 */}
         <div className="text-white space-y-4  flex flex-col lg:mx-auto">
-          <h4 className="font-Marcellus ">Products</h4>
+          <h4 className="font-Marcellus text-2xl font-bold ">Products</h4>
           <ul className="">
             {ProjectLinks.map((item) => (
               <li key={item.id} className="flex items-start gap-3 py-1">
@@ -217,7 +217,7 @@ const FooterData = () => {
 
         {/* col3 */}
         <div className="text-white space-y-4 ">
-          <h4 className=" font-Marcellus ">Services</h4>
+          <h4 className=" font-Marcellus text-2xl font-bold">Services</h4>
           <ul>
             {ServiceLinks.map((item) => (
               <li key={item.id} className="flex items-start gap-3 py-1">
@@ -231,7 +231,7 @@ const FooterData = () => {
             ))}
           </ul>
           <div className="space-y-3 pt-5">
-            <h4 className="pb-1">clinic Hours</h4>
+            <h4 className="pb-1 text-2xl font-bold">clinic Hours</h4>
             <p>mon -FRI -10 am - 7pm</p>
             <p>Saturday-9am-3pm</p>
             <p>Sunday - Closed,</p>
@@ -240,7 +240,7 @@ const FooterData = () => {
 
         {/* col4 */}
         <div className="flex flex-col items-start gap-3 ">
-          <h4 className=" text-white font-Marcellus ps-1.5 ">Contact Us</h4>
+          <h4 className=" text-white font-Marcellus ps-1.5 text-2xl font-bold">Contact Us</h4>
           <ul>
             {contactdata.map((item) => (
               <li key={item.id} className="flex gap-3 py-2">
@@ -274,7 +274,7 @@ const FooterData = () => {
             ))}
           </ul>
 
-          <div className="space-y-4">
+          <div className="space-y-4 text-2xl font-bold">
             <h4 className="text-white">Follow Us</h4>
             <ul className="flex items-center justify-center text-center space-x-6 font-lato">
               {Socialdata.map((item) => (
