@@ -6,17 +6,17 @@ import img3 from "../../../assets/HomePageImgs/AboutUs/img3.png";
 import CounterBg from "../../../assets/HomePageImgs/AboutUs/CounterBg.png";
 import PrimaryBtn from "../../../component/PrimaryBtn";
 import Title from "../../../component/Title";
+import { useNavigate } from "react-router-dom";
 
 const AboutUs = () => {
+  const navigate = useNavigate();
   return (
     <section className="">
       <div className=" mx-auto ">
         {/* MAIN GRID */}
         <div className="grid grid-cols-1 xl:grid-cols-2  gap-8 items-center container capitalize">
           {/* LEFT SECTION */}
-          <div
-            className="relative grid grid-cols-2 gap-4 md:gap-7 order-1 md:order-1 lg:order-1"
-          >
+          <div className="relative grid grid-cols-2 gap-4 md:gap-7 order-1 md:order-1 lg:order-1">
             {/* Image 1 */}
             <div className="rounded-2xl overflow-hidden">
               <img
@@ -90,7 +90,12 @@ const AboutUs = () => {
             </p>
             <hr className="w-full h-0.5 bg-[#696969] border-none" />
 
-            <PrimaryBtn>Learn More</PrimaryBtn>
+            <PrimaryBtn
+              className="w-[32%] text-start"
+              onClick={() => navigate("/aboutus")}
+            >
+              Learn More
+            </PrimaryBtn>
           </div>
         </div>
       </div>
