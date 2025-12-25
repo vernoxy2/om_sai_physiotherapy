@@ -15,7 +15,7 @@ const AboutUs = () => {
         <div className="grid grid-cols-1 xl:grid-cols-2  gap-8 items-center container capitalize">
           {/* LEFT SECTION */}
           <div
-            className="relative grid grid-cols-2 gap-7  order-1 md:order-1 lg:order-1"
+            className="relative grid grid-cols-2 gap-4 md:gap-7 order-1 md:order-1 lg:order-1"
           >
             {/* Image 1 */}
             <div className="rounded-2xl overflow-hidden">
@@ -37,14 +37,14 @@ const AboutUs = () => {
             {/* COUNTER */}
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
               {/* WHITE OUTLINE */}
-              <div className="w-48 h-48 rounded-full bg-white flex items-center justify-center shadow-xl">
+              <div className="w-32 h-32 md:w-48 md:h-48 rounded-full bg-white flex items-center justify-center shadow-xl">
                 {/* BACKGROUND IMAGE CIRCLE */}
                 <div
-                  className="w-40 h-40 rounded-full flex items-center justify-center bg-center bg-cover "
+                  className=" w-28 h-28 md:w-40 md:h-40 rounded-full flex items-center justify-center bg-center bg-cover "
                   style={{ backgroundImage: `url(${CounterBg})` }}
                 >
                   <div className="text-center">
-                    <h3 className="text-3xl font-bold text-white">
+                    <h3 className="text-2xl md:text-3xl font-bold text-white">
                       <CountUp start={0} end={20} duration={2.5} />+
                     </h3>
                     <p className="text-xs text-white mt-1 leading-tight">
