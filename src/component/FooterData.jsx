@@ -174,15 +174,15 @@ const FooterData = () => {
 
   return (
     <section className="container">
-      <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-y-6 gap-4 capitalize ">
+      <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4  gap-8 capitalize ">
         {/* col1 */}
         <div className="text-white flex flex-col gap-5 ">
-          <img src={NavLogo} alt="Logo" className="w-[86%]" />
-          <p className="text-white w-[90%]">
+          <img src={NavLogo} alt="Logo" className="" />
+          <p className="text-white">
             We support your recovery by restoring strength and movement, guiding
             you toward wellness and independence every day.
           </p>
-          <hr className="h-0.5 w-[80%] bg-white" />
+          <hr className="h-0.5  bg-white" />
           <h4 className="text-xl font-Marcellus ">Stay Informed</h4>
           <input
             type="email"
@@ -190,25 +190,25 @@ const FooterData = () => {
             onChange={handleChange}
             onBlur={handleBlur}
             placeholder="Email ID*"
-            className={` required px-4 py-3 text-base rounded-full w-[80%] outline-none 
+            className={` required px-4 py-3 text-base rounded-full outline-none 
           ${error ? "border-primary" : "border-gray-300 "}
          focus:ring-2 focus:ring-white`}
           />
           {error && <p className="text-primary text-sm ">{error}</p>}
-          <PrimaryBtn className="w-[80%] text-base ">Subscribe Now</PrimaryBtn>
+          <PrimaryBtn className=" text-base ">Subscribe Now</PrimaryBtn>
         </div>
 
         {/* col2 */}
-        <div className="text-white space-y-4 md:ms-12">
-          <h4 className="font-Marcellus">Products</h4>
-          <ul>
+        <div className="text-white space-y-4  flex flex-col lg:mx-auto">
+          <h4 className="font-Marcellus ">Products</h4>
+          <ul className="">
             {ProjectLinks.map((item) => (
               <li key={item.id} className="flex items-start gap-3 py-1">
                 <a
                   href={item.link}
                   className="text-primary text-4xl lg:text-5xl text-start"
                 >
-                  <p className=" text-white font-Marcellus">{item.title}</p>
+                  <p className=" text-white font-lato">{item.title}</p>
                 </a>
               </li>
             ))}
@@ -216,22 +216,22 @@ const FooterData = () => {
         </div>
 
         {/* col3 */}
-        <div className="text-white space-y-4">
+        <div className="text-white space-y-4 ">
           <h4 className=" font-Marcellus ">Services</h4>
           <ul>
             {ServiceLinks.map((item) => (
               <li key={item.id} className="flex items-start gap-3 py-1">
                 <a
                   href={item.link}
-                  className="text-white text-4xl lg:text-5xl text-start"
+                  className=""
                 >
                   <p className=" text-white font-Lato">{item.title}</p>
                 </a>
               </li>
             ))}
           </ul>
-          <div className="space-y-4">
-            <h4>clinic Hours</h4>
+          <div className="space-y-3 pt-5">
+            <h4 className="pb-1">clinic Hours</h4>
             <p>mon -FRI -10 am - 7pm</p>
             <p>Saturday-9am-3pm</p>
             <p>Sunday - Closed,</p>
@@ -239,12 +239,12 @@ const FooterData = () => {
         </div>
 
         {/* col4 */}
-        <div className="flex flex-col items-start gap-3 lg:px-4">
+        <div className="flex flex-col items-start gap-3 ">
           <h4 className=" text-white font-Marcellus ps-1.5 ">Contact Us</h4>
           <ul>
             {contactdata.map((item) => (
-              <li key={item.id} className="flex gap-5 py-2">
-                <div className="text-[#696969] lg:text-4xl text-2xl bg-white rounded-full p-2 h-fit ">
+              <li key={item.id} className="flex gap-3 py-2">
+                <div className="text-[#696969] lg:text-3xl text-2xl bg-white rounded-full p-2 h-fit ">
                   {item.icon}
                 </div>
 
@@ -284,7 +284,7 @@ const FooterData = () => {
                   rel="noopener noreferrer"
                   aria-label="Chat on WhatsApp"
                   key={item.id}
-                  className=" lg:text-4xl text-2xl bg-white text-[#696969] rounded-full p-1 "
+                  className=" lg:text-3xl text-2xl bg-white text-[#696969] rounded-full p-1 "
                 >
                   {item.icon}
                 </a>

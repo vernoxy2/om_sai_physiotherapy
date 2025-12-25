@@ -30,10 +30,10 @@ const Head = () => {
   return (
     <section
       style={{ backgroundImage: `url(${BgImg})` }}
-      className="bg-no-repeat bg-cover bg-center items-center justify-start flex lg:h-screen max-h-auto"
+      className="bg-no-repeat bg-cover bg-center items-center justify-start flex min-h-[280px] md:min-h-[550px]"
     >
-      <div className="container grid grid-cols-1 md:grid-cols-2 h-full capitalize">
-        <div className="h-full flex flex-col items-start justify-center space-y-3">
+      <div className="container grid lg:grid-cols-3 md:grid-cols-2 h-full capitalize py-5 pt-20 md:pt-0">
+        <div className="h-full md:w-2/3 lg:w-full flex flex-col items-start justify-center space-y-3 md:col-span-2">
           <h1 className=" text-start space-x-4 leading-tight text-primary">
             {slides[0].MainText}
           </h1>

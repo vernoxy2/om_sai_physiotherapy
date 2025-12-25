@@ -117,23 +117,24 @@ const Visit = () => {
   return (
     <section>
       {/* Bottom Section */}
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start container">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start container">
         {/* Left Content */}
-        <div className="space-y-7 lg:w-[80%]">
+        <div className=" space-y-4 md:space-y-5 ">
           <Title className="text-xl text-[#696969]" title="Plan Your Visit " />
           <h3 className="text-3xl md:text-4xl font-light text-primary lg:text-start  ">
-            Take The First Step <span className="font-medium text-[#696969]">To A<br />
-           
+            Take The First Step{" "}
+            <span className="font-medium text-[#696969]">
+              To A {" "}<br className="hidden md:block lg:hidden xl:block" />
               Pain-Free Life
             </span>
           </h3>
-          <p className="text-[#696969] text-sm ">
+          <p className="text-[#696969] text-sm md:text-base ">
             Read what our patients have to say about their experiences at Om Sai
             Physiotherapy Clinic. Discover how our personalized physiotherapy
             care has helped them regain mobility, reduce pain, and improve
             overall health.
           </p>
-          <p className="text-[#696969] text-sm">
+          <p className="text-[#696969] text-sm md:text-base">
             We value your feedback! Please consider leaving a review on Google
             to share your experience and help others find trusted physiotherapy
             care.
@@ -142,91 +143,43 @@ const Visit = () => {
 
         {/* Form */}
         <form className="bg-white ">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4  mb-4">
-            <div className="relative">
-              <input
-                type="text"
-                name="name"
-                placeholder="Name*"
-                onChange={() => clearFieldError("name")}
-                className="w-full rounded-full border px-5 py-3 text-sm focus:outline-none"
-              />
-              {errors.name && (
-                <div className="absolute left-4 top-full mt-2 bg-white text-xs px-3 py-2 rounded whitespace-nowrap border border-gray-300 flex items-center gap-2 z-10 animate-in fade-in slide-in-from-top-2 duration-300">
-                  <span>⚠️</span>
-                  <span className="text-[#696969]">{errorMessages.name}</span>
-                </div>
-              )}
-            </div>
-            <div className="relative">
-              <input
-                type="email"
-                name="email"
-                placeholder="Email ID*"
-                onChange={() => clearFieldError("email")}
-                className="w-full rounded-full px-5 py-3 text-sm focus:outline-none"
-              />
-              {errors.email && (
-                <div className="absolute left-4 top-full mt-2 bg-white text-xs px-3 py-2 rounded whitespace-nowrap border border-gray-300 flex items-center gap-2 z-10 animate-in fade-in slide-in-from-top-2 duration-300">
-                  <span>⚠️</span>
-                  <span className="text-[#696969]">{errorMessages.email}</span>
-                </div>
-              )}
-            </div>
-            <div className="relative">
-              <input
-                type="text"
-                name="serviceType"
-                placeholder="Type Of Service Enquiry*"
-                onChange={() => clearFieldError("serviceType")}
-                className="w-full rounded-full bg-[#EEEEEE] px-5 py-3 text-sm focus:outline-none"
-              />
-              {errors.serviceType && (
-                <div className="absolute left-4 top-full mt-2 bg-white text-xs px-3 py-2 rounded whitespace-nowrap border border-gray-300 flex items-center gap-2 z-10 animate-in fade-in slide-in-from-top-2 duration-300">
-                  <span>⚠️</span>
-                  <span className="text-[#696969]">{errorMessages.serviceType}</span>
-                </div>
-              )}
-            </div>
-            <div className="relative w-full">
-              <DatePicker
-                selected={dateTime}
-                onChange={(date) => {
-                  setDateTime(date);
-                  clearFieldError("dateTime");
-                }}
-                showTimeSelect
-                dateFormat="MMMM d, yyyy h:mm aa"
-                placeholderText="Select Date & Time*"
-                className="w-full rounded-full bg-[#EEEEEE] px-5 py-3 text-sm focus:outline-none"
-                wrapperClassName="w-full"
-              />
-              {errors.dateTime && (
-                <div className="absolute left-4 top-full mt-2 bg-white text-xs px-3 py-2 rounded whitespace-nowrap border border-gray-300 flex items-center gap-2 z-10 animate-in fade-in slide-in-from-top-2 duration-300">
-                  <span>⚠️</span>
-                  <span className="text-[#696969]">{errorMessages.dateTime}</span>
-                </div>
-              )}
-            </div>
-          </div>
-          <div className="relative">
-            <textarea
-              name="message"
-              placeholder="Enter Your Message Here*"
-              onChange={() => clearFieldError("message")}
-              rows={4}
-              className="w-full rounded-2xl bg-[#EEEEEE] px-5 py-4 text-sm focus:outline-none mb-4"
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <input
+              type="text"
+              placeholder="Name*"
+              className="w-full rounded-full text-sm focus:outline-none"
             />
-            {errors.message && (
-              <div className="absolute left-4 top-full mb-1 bg-white text-xs px-3 py-2 rounded whitespace-nowrap border border-gray-300 flex items-center gap-1 z-10 animate-in fade-in slide-in-from-top-2 duration-300">
-                <span>⚠️</span>
-                <span className="text-[#696969]">{errorMessages.message}</span>
-              </div>
-            )}
+
+            <input
+              type="email"
+              placeholder="Email ID*"
+              className="w-full rounded-full bg-[#EEEEEE]  text-sm focus:outline-none"
+            />
+
+            <input
+              type="text"
+              placeholder="Type Of Service Enquiry*"
+              className="w-full rounded-full bg-[#EEEEEE]  text-sm focus:outline-none"
+            />
+
+            {/* Date & Time Picker */}
+            <DatePicker
+              selected={dateTime}
+              onChange={(date) => setDateTime(date)}
+              showTimeSelect
+              dateFormat="MMMM d, yyyy h:mm aa"
+              placeholderText="Select Date & Time*"
+              className="w-full rounded-full bg-[#EEEEEE]  text-sm focus:outline-none"
+            />
+            <textarea
+              placeholder="Enter Your Message Here*"
+              rows={4}
+              className="w-full rounded-2xl bg-[#EEEEEE]  text-sm focus:outline-none md:col-span-2 "
+            />
+            <PrimaryBtn className="md:col-span-2">
+              Schedule Your Visit
+            </PrimaryBtn>
           </div>
-          <PrimaryBtn className="w-full" onClick={handleSubmit}>
-            Schedule Your Visit
-          </PrimaryBtn>
         </form>
       </div>
       <img src={cvrImg} alt="curve" className="w-full container " />
