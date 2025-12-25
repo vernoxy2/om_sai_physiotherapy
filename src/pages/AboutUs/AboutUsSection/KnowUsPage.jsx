@@ -123,12 +123,14 @@ const KnowUsPage = () => {
             patient-focused care. Our dedicated team of licensed professionals
             provides personalized and comprehensive physiotherapy services
             designed to improve your mobility, reduce pain, and enhance your
-            overall well-being.<br/>We understand that every patient is unique,
-            which is why our treatment plans are carefully tailored to your
-            specific needs and health goals. Our experienced physiotherapists
-            follow a detailed, patient-centric approach to assess, diagnose, and
-            treat a wide range of conditions—including sports injuries, chronic
-            pain, workplace injuries, and mobility issues.
+            overall well-being.
+            <br />
+            We understand that every patient is unique, which is why our
+            treatment plans are carefully tailored to your specific needs and
+            health goals. Our experienced physiotherapists follow a detailed,
+            patient-centric approach to assess, diagnose, and treat a wide range
+            of conditions—including sports injuries, chronic pain, workplace
+            injuries, and mobility issues.
           </p>
           <p>
             At Om Sai Physiotherapy Centre, we believe healing is a partnership.
@@ -150,7 +152,7 @@ const KnowUsPage = () => {
       <div className="container gap-7 capitalize">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-5 ">
           {/* Left Section */}
-          <div className="relative w-full">
+          <div className="relative w-full order-2 md:order-1">
             <img
               src={KnowUs}
               alt="Know Us"
@@ -161,17 +163,17 @@ const KnowUsPage = () => {
               className="
                     absolute
                     bottom-2 left-2
-                    sm:bottom-3 sm:left-3
+                    sm:top-56 sm:left-2
                     md:bottom-4 md:left-4
-                    lg:bottom-8 lg:left-4
+                    lg:bottom-7 lg:left-4 
+                     xl:bottom-8 xl:left-4 xl:top-auto
                     text-xs sm:text-sm md:text-base lg:text-lg
-                    text-white ring-1 ring-white
-                    bg-white
+                    text-white  
                     rounded-2xl
                   "
             >
               <span
-                className="relative inline-flex rounded-2xl py-4 px-2
+                className="relative inline-flex rounded-2xl xl:py-4 xl:px-2
                  bg-gradient-to-tr 
                 bg-primary "
               >
@@ -180,10 +182,7 @@ const KnowUsPage = () => {
                    rounded-2xl bg-black/0 
                    px-7 py-4 text-center"
                 >
-                  <h1
-                    className="text-white  font-bold"
-                    ref={counterRef}
-                  >
+                  <h1 className="text-white font-bold" ref={counterRef}>
                     {count}+
                   </h1>
                   <h4 className="text-white">Years Expert Care</h4>
@@ -193,7 +192,7 @@ const KnowUsPage = () => {
           </div>
 
           {/* Right Section */}
-          <div className="text-[#696969] space-y-7 ">
+          <div className="text-[#696969] space-y-7 order-2 md:order-2 ">
             <Title title="Get to Know Us" />
             <h1 className=" ">
               Om Sai Physiotherapy{" "}
@@ -201,20 +200,23 @@ const KnowUsPage = () => {
             </h1>
 
             {DataList1.map((item, index) => (
-              <div key={index} className="space-y-5 text-[#696969] w-full lg:w-[90%] ">
+              <div
+                key={index}
+                className="space-y-5 text-[#696969] w-full lg:w-[90%]  "
+              >
                 {item.SubText}
               </div>
             ))}
           </div>
         </div>
-
-        <div className="space-y-5 py-10  w-full lg:w-[91%]">
+{/* content 2 */}
+        <div className="space-y-5 py-10 w-full lg:w-[91%]">
           {DataList2.map((item, index) => (
             <div key={index} className="space-y-5 text-[#696969]">
               {item.SubText}
             </div>
           ))}
-
+{/* content3 */}
           {DataList3.map((item, index) => (
             <div key={index} className="space-y-5 text-[#696969]">
               {item.SubText}
