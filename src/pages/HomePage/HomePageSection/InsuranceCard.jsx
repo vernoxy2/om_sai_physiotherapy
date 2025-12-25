@@ -61,7 +61,7 @@ const InsuranceCard = () => {
   const handleCardClick = (card) => {
     if (card.conditionId) {
       navigate(`/conditions/${card.conditionId}`, {
-        state: { fromInsurance: true }
+        state: { fromInsurance: true },
       });
     } else {
       navigate(`/conditions`);
@@ -76,6 +76,7 @@ const InsuranceCard = () => {
           <div className="bg-primary flex flex-col justify-center items-center px-9 space-y-4 relative">
             <h1 className="text-white capitalize ">
               we accept insurance coverage
+              <hr className="mt-4 w-[60%] border-[2px] border-white" />
             </h1>
           </div>
 
@@ -111,7 +112,7 @@ const InsuranceCard = () => {
               </button>
 
               {/* Default Title */}
-              <div className="absolute bottom-0 left-0 right-0 p-4 group-hover:opacity-0 transition-opacity duration-300">
+              <div className="absolute bottom-0 left-0 right-0 p-4 group-hover:opacity-0 transition-opacity duration-300 bg-gradient-to-b from-transparent to-black h-fit">
                 <h4 className="text-white w-[75%]">{card.MainText}</h4>
               </div>
 
