@@ -106,7 +106,7 @@ const FAQPages = () => {
   };
 
   return (
-    <section>
+    <section className="py-0">
       <div className="grid grid-cols-1 lg:grid-cols-2 container capitalize gap-8">
         {/* left sec */}
         <div className=" justify-start space-y-7 ">

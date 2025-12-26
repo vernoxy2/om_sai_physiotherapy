@@ -10,6 +10,7 @@ export default {
       fontFamily: {
         Marcellus: ["Marcellus", "sans-serif"],
         lato: ["Lato", "sans-serif"],
+        abeezee: ["ABeeZee", "sans-serif"],
       },
       colors: {
         primary: "#269BA3", // example (change if needed)

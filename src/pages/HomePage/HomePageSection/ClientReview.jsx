@@ -71,9 +71,9 @@ const ClientReview = () => {
   return (
     <section
       style={{ backgroundImage: `url(${BgImg})` }}
-      className="bg-cover bg-center bg-no-repeat  capitalize"
+      className="bg-cover bg-center bg-no-repeat  capitalize py-0"
     >
-      <div className="relative container space-y-12 space-x-60">
+      <div className="relative container space-y-12 space-x-60 py-24">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           
           {Data.map((item) => (
