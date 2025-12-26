@@ -98,7 +98,7 @@ const AdvancedTreat = () => {
         </span>
       </h1>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 xl:grid-cols-4 gap-7 w-full container">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 xl:grid-cols-4 gap-7 w-full container capitalize">
         {trustCards.map((item, index) => (
           <div
             key={index}
@@ -108,7 +108,7 @@ const AdvancedTreat = () => {
               <img
                 src={item.img}
                 alt="img"
-                className="w-full h-auto object-cover rounded-lg"
+                className="w-full h-auto object-cover rounded-t-lg"
               />
               {item.route && (
                 <button
@@ -121,12 +121,12 @@ const AdvancedTreat = () => {
             </div>
 
             <div className="py-2 pb-8">
-              <h4 className="mb-3 transition  text-white group-hover:text-white flex items-center justify-between px-3 relative">
+              <h4 className="mb-3 transition font-bold  text-white group-hover:text-white flex items-center justify-between px-3 relative">
                 {item.MainText}
                 <img
                   src={item.svg}
                   alt="icon"
-                  className="flex-shrink-0 absolute bottom-6 right-0"
+                  className="flex-shrink-0 absolute bottom-9 right-1"
                 />
               </h4>
               <p className="text-base leading-relaxed transition text-white group-hover:text-white px-3 w-[92%]">

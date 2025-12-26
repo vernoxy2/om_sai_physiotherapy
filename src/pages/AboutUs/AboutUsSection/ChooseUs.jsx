@@ -56,7 +56,7 @@ const ChooseUs = () => {
           ))}
         </div>
         {/* card */}
-        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6 capitalize">
           {cardData.map((item, index) => (
             <div
               key={index}
@@ -70,7 +70,7 @@ const ChooseUs = () => {
               />
 
               <h1
-                className="text-xl font-medium  transition
+                className="text-xl font-bold  transition
                    text-primary group-hover:text-white space-y-3"
               >
                 {item.MainText}
@@ -78,7 +78,7 @@ const ChooseUs = () => {
 
               <p
                 className="text-base leading-relaxed transition
-                    text-[#696969] group-hover:text-white"
+                    text-[#696969] group-hover:text-white w-[97%]"
               >
                 {item.SubText}
               </p>
