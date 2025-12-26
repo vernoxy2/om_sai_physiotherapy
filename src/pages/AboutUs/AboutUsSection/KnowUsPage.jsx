@@ -147,9 +147,9 @@ const KnowUsPage = () => {
   ];
 
   return (
-    <section>
+    <section className="py-0">
       <div className="container gap-7 capitalize">
-        <div className="grid grid-cols-1 lg:grid-cols-2 lg:grid-cols-2 gap-5 ">
+        <div className="grid grid-cols-1 xl:grid-cols-2 gap-8 ">
           {/* Left Section */}
           <div className="relative w-full order-2 md:order-1">
             <img
@@ -201,7 +201,7 @@ const KnowUsPage = () => {
             {DataList1.map((item, index) => (
               <div
                 key={index}
-                className="space-y-5 text-[#696969] w-full lg:w-[90%]  "
+                className="space-y-5 text-[#696969] w-full   "
               >
                 {item.SubText}
               </div>
@@ -210,7 +210,7 @@ const KnowUsPage = () => {
         </div>
 
         {/* content 2 */}
-        <div className="space-y-5 py-10 w-full lg:w-[91%]">
+        <div className="space-y-5 py-10 w-full ">
           {DataList2.map((item, index) => (
             <div key={index} className="space-y-5 text-[#696969]">
               {item.SubText}
@@ -223,7 +223,7 @@ const KnowUsPage = () => {
             </div>
           ))}
         </div>
-        <div className="bg-primary w-full h-0.5"></div>
+        <div className="bg-black w-full h-0.5"></div>
       </div>
     </section>
   );

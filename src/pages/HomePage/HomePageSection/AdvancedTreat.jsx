@@ -86,7 +86,7 @@ const AdvancedTreat = () => {
   ];
 
   return (
-    <section>
+    <section className="py-0">
       <Title
         className="text-center text-xl text-[#696969] items-center w-fit mx-auto font-Marcellus"
         title="Advanced Treatment"

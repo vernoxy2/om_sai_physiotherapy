@@ -11,7 +11,7 @@ import { useNavigate } from "react-router-dom";
 const AboutUs = () => {
   const navigate = useNavigate();
   return (
-    <section className="">
+    <section className="py-0">
       <div className=" mx-auto ">
         {/* MAIN GRID */}
         <div className="grid grid-cols-1 xl:grid-cols-2  gap-8 items-center container capitalize">

@@ -190,7 +190,7 @@ const FooterData = () => {
             onChange={handleChange}
             onBlur={handleBlur}
             placeholder="Email ID*"
-            className={` required px-4 py-3 text-base rounded-full outline-none 
+            className={` required px-4 py-3 text-base rounded-full outline outline-white bg-transparent placeholder:text-white 
           ${error ? "border-primary" : "border-gray-300 "}
          focus:ring-2 focus:ring-white`}
           />

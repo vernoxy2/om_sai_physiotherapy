@@ -24,7 +24,7 @@ const Logo = () => {
   ];
 
   return (
-    <section>
+    <section className="py-0">
       <div className="container text-center space-y-20">
         <h1>
           Direct billing with insurance

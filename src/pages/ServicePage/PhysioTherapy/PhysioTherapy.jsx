@@ -1,8 +1,8 @@
 import React from "react";
 import PrimarySecGrid from "../ServiceComponent/PrimarySecGrid";
 import img1 from "../../../assets/ServicesPageImgs/PhysioTherapy/img1.png";
-import img2 from "../../../assets/ServicesPageImgs/PhysioTherapy/img2.png";
-import img3 from "../../../assets/ServicesPageImgs/PhysioTherapy/img3.png";
+import img3 from "../../../assets/ServicesPageImgs/PhysioTherapy/img2.png";
+import img2 from "../../../assets/ServicesPageImgs/PhysioTherapy/img3.png";
 import Title from "../../../component/Title";
 import icon from "../../../assets/ServicesPageImgs/PhysioTherapy/icon.svg";
 import PhysioHead from "../ServiceSection/PhysioHead";
@@ -11,14 +11,16 @@ import BgImg from "../../../assets/ServicesPageImgs/PhysioTherapy/BgImg.png";
 // Section 1
 const Section1 = () => {
   return (
-    <div className="space-y-5">
-      <Title title="Physiotherapy" />
-      <h1>
-        How Physiotherapy <br />
-        <span className="text-[#696969]">Helps</span>
-      </h1>
+    <div className="space-y-4 md:space-y-8 ">
+      <div className="space-y-3">
+        <Title title="Physiotherapy" />
+        <h1 >
+          How Physiotherapy <br className="hidden lg:block" />
+          <span className="text-[#696969]">Helps</span>
+        </h1>
+      </div>
 
-      <ul className="space-y-5 ">
+      <ul className="space-y-2.5 md:space-y-5 ">
         <li className="flex items-start gap-3">
           <img src={icon} alt="icon" className="w-3 h-3 my-auto" />
           <p>Reduces Pain From Acute And Chronic Injuries</p>
@@ -59,11 +61,11 @@ const Section1 = () => {
 // Section 2
 const Section2 = () => {
   return (
-    <div className="flex flex-col h-full space-y-5">
+    <div className="flex flex-col justify-center h-full space-y-3 md:space-y-6">
       <h1>
         What We <span className="text-[#696969]">Offer</span>
       </h1>
-      <ul className="space-y-5">
+      <ul className="space-y-2.5 md:space-y-5">
         <li className="flex items-start gap-3">
           <img src={icon} alt="icon" className="w-3 h-3 my-auto" />
           <p>Manual Therapy</p>
@@ -96,12 +98,12 @@ const Section2 = () => {
 // Section 3
 const Section3 = () => {
   return (
-    <div className="space-y-5">
+    <div className="space-y-3 md:space-y-6">
       <h1>
         Conditions <span className="text-[#696969]">We Treat</span>
       </h1>
-      <div className="grid grid-cols-1 lg:grid-cols-2">
-        <ul className="space-y-5">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-y-2.5">
+        <ul className="space-y-2.5 md:space-y-5">
           <li className="flex items-start gap-3">
             <img src={icon} alt="icon" className="w-3 h-3 my-auto" />
             <p>Athletic Injuries</p>
@@ -133,7 +135,7 @@ const Section3 = () => {
           </li>
         </ul>
 
-        <ul className="space-y-5">
+        <ul className="space-y-2.5 md:space-y-5">
           <li className="flex items-start gap-3">
             <img src={icon} alt="icon" className="w-3 h-3 my-auto" />
             <p>Arthritis & Osteoporosis</p>
@@ -170,10 +172,10 @@ const Section3 = () => {
           </li>
         </ul>
       </div>
-      <p className="bg-[#D9D9D9] h-0.5 w-full" />
+      <p className="bg-[#D9D9D9] h-0.5 w-full shadow-md" />
       <h5 className="capitalize">
         "Direct Billing Available For Extended Health
-        <br />
+        <br className="hidden lg:block " />
         Benefit Plans.”
       </h5>
     </div>
@@ -183,7 +185,7 @@ const Section3 = () => {
 // Main Component
 const PhysioTherapy = () => {
   return (
-    <div className="bg-white rounded-3xl">
+    <div className="">
       <PhysioHead
         BgImg={BgImg}
         Heading={
@@ -197,6 +199,11 @@ const PhysioTherapy = () => {
                 Our Physiotherapy Team Uses Hands-On Techniques And Clinical Expertise To Assess, Diagnose, And Treat The Root Cause Of Your Pain. 
                   We Focus On Restoring Mobility, Improving Strength, And Enhancing Overall Physical Function."
       />
+      <section
+        className="relative space-y-20 py-12 md:py-14 lg:py-20 bg-white
+                   before:absolute before:h-14 before:w-full before:bg-white before:-top-12 before:content-[''] before:rounded-t-[33px] before:md:rounded-t-[66px] before:z-[1]
+                   after:absolute after:h-14 after:w-full after:bg-white after:-bottom-12 after:content-[''] after:rounded-b-[33px] after:md:rounded-b-[66px] after:z-[1]"
+      >
       <PrimarySecGrid
         className1="lg:order-1"
         className2="lg:order-2"
@@ -217,6 +224,7 @@ const PhysioTherapy = () => {
         Img={img3}
         Children={<Section3 />}
       />
+      </section>
     </div>
   );
 };

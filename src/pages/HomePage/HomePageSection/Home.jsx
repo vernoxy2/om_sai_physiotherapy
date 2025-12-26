@@ -25,24 +25,29 @@ const Header = ({
   }, [slides, duration, fadeDuration]);
   return (
     <section
-    style={{
+      style={{
         backgroundImage: `url(${current.BgImg})`,
-        backgroundPosition: "top",   
+        backgroundPosition: "center",
         opacity: fade ? opacity : 0.7,
         transition: `opacity ${fadeDuration}ms ease-in-out`,
       }}
-      className="bg-cover bg-center bg-no-repeat lg:h-screen max-h-auto"
+      className="bg-cover bg-center-center bg-no-repeat min-h-[200px] lg:min-h-[700px] flex items-center justify-center py-0"
     >
-        <div className="container grid grid-cols-1 md:grid-cols-2 h-full capitalize">
-        <div className="space-y-5 xl:w-[95%] py-16 lg:py-0 md:py-24 h-full flex flex-col items-start justify-center">
-          <Title className="text-white text-xl md:text-3xl" title="Helping Hands"/>
+      <div className="container grid grid-cols-1 xl:grid-cols-2 h-full capitalize   ">
+        <div className="space-y-5 xl:w-[95%] py-16 lg:py-0 md:py-24 h-full flex flex-col items-start justify-center md:w-[90%] ">
+          <Title
+            className="text-white text-lg md:text-3xl" 
+            title="Helping Hands"
+          />
           <h1 className=" text-start space-x-4 leading-tight">
             {current.MainText}
           </h1>
           <div className="flex">
-          <p className="text-white lg:w-4/5 ">{current.SubText}</p>
+            <p className="text-white lg:w-4/5 ">{current.SubText}</p>
           </div>
-         <PrimaryBtn className="w-full xl:w-[55%] lg:w-[80%] text-start text-base lg:text-xl">Physiotherapy in Mississauga</PrimaryBtn>
+          <PrimaryBtn className="w-full xl:w-[55%] lg:w-[80%] text-start text-sm lg:text-xl">
+            Physiotherapy in Mississauga
+          </PrimaryBtn>
         </div>
       </div>
     </section>

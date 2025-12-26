@@ -36,7 +36,7 @@ const PatientsTrust = () => {
   ];
 
   return (
-    <section className="w-full bg-white py-20 container">
+    <section className="w-full bg-white py-0 container">
       <div className="text-center mx-auto space-y-7">
         <Title
           className=" text-xl text-[#696969] items-center w-fit mx-auto"
