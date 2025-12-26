@@ -90,23 +90,8 @@ const ProductPages = () => {
   };
 
   return (
-    <>
-      <div className="">
-        <PhysioHead
-          Heading={
-            <>
-              <span className="text-white">Orthotics,</span> Braces & Supportive
-            </>
-          }
-          WhiteText="Products"
-          BgImg={BgImg}
-          subtext="At Om Sai Physiotherapy Clinic, we offer a comprehensive range of custom orthotics, medical-grade braces, compression stockings, 
-        and supportive devices designed to reduce pain, improve mobility,and correct biomechanical issues."
-          subtext1="Our goal is to help you move comfortably, prevent further injury, and support your long-term musculoskeletal health with tailored 
-        solutions that truly fit your body."
-        />
-
-        <div className="container grid grid-cols-1 xl:grid-cols-2 gap-8 capitalize py-20">
+    <>  
+        <div className="container grid grid-cols-1 xl:grid-cols-2 gap-8 capitalize">
           <div
             ref={orthoticsRef}
             className={`rounded-2xl transition-all duration-300 ${
@@ -122,10 +107,14 @@ const ProductPages = () => {
             />
           </div>
 
-          <div ref={compressionRef}
-          className={`rounded-2xl transition-all duration-300 ${
-              isSelected("compression") ? "ring-4 ring-primary ring-offset-4" : ""
-            }`}>
+          <div
+            ref={compressionRef}
+            className={`rounded-2xl transition-all duration-300 ${
+              isSelected("compression")
+                ? "ring-4 ring-primary ring-offset-4"
+                : ""
+            }`}
+          >
             <ProductSection
               ProductImg={img2}
               Headtext="Compression"
@@ -136,9 +125,12 @@ const ProductPages = () => {
             />
           </div>
 
-          <div ref={kneeBracesRef}
-           className={`rounded-2xl transition-all duration-300 ${
-              isSelected("kneeBraces") ? "ring-4 ring-primary ring-offset-4" : ""
+          <div
+            ref={kneeBracesRef}
+            className={`rounded-2xl transition-all duration-300 ${
+              isSelected("kneeBraces")
+                ? "ring-4 ring-primary ring-offset-4"
+                : ""
             }`}
           >
             <ProductSection
@@ -150,9 +142,12 @@ const ProductPages = () => {
             />
           </div>
 
-          <div ref={backBracesRef}
-          className={`rounded-2xl transition-all duration-300 ${
-              isSelected("backBraces") ? "ring-4 ring-primary ring-offset-4" : ""
+          <div
+            ref={backBracesRef}
+            className={`rounded-2xl transition-all duration-300 ${
+              isSelected("backBraces")
+                ? "ring-4 ring-primary ring-offset-4"
+                : ""
             }`}
           >
             <ProductSection
@@ -164,9 +159,12 @@ const ProductPages = () => {
             />
           </div>
 
-          <div ref={elbowBracesRef}
-          className={`rounded-2xl transition-all duration-300 ${
-              isSelected("elbowbraces") ? "ring-4 ring-primary ring-offset-4" : ""
+          <div
+            ref={elbowBracesRef}
+            className={`rounded-2xl transition-all duration-300 ${
+              isSelected("elbowbraces")
+                ? "ring-4 ring-primary ring-offset-4"
+                : ""
             }`}
           >
             <ProductSection
@@ -178,9 +176,12 @@ const ProductPages = () => {
             />
           </div>
 
-          <div ref={ankleBracesRef}
-           className={`rounded-2xl transition-all duration-300 ${
-              isSelected("anklebraces") ? "ring-4 ring-primary ring-offset-4" : ""
+          <div
+            ref={ankleBracesRef}
+            className={`rounded-2xl transition-all duration-300 ${
+              isSelected("anklebraces")
+                ? "ring-4 ring-primary ring-offset-4"
+                : ""
             }`}
           >
             <ProductSection
@@ -192,9 +193,12 @@ const ProductPages = () => {
             />
           </div>
 
-          <div ref={wristBracesRef}
-          className={`rounded-2xl transition-all duration-300 ${
-              isSelected("wristbraces") ? "ring-4 ring-primary ring-offset-4" : ""
+          <div
+            ref={wristBracesRef}
+            className={`rounded-2xl transition-all duration-300 ${
+              isSelected("wristbraces")
+                ? "ring-4 ring-primary ring-offset-4"
+                : ""
             }`}
           >
             <ProductSection
@@ -206,8 +210,9 @@ const ProductPages = () => {
             />
           </div>
 
-          <div ref={cervicalRef}
-          className={`rounded-2xl transition-all duration-300 ${
+          <div
+            ref={cervicalRef}
+            className={`rounded-2xl transition-all duration-300 ${
               isSelected("cervical") ? "ring-4 ring-primary ring-offset-4" : ""
             }`}
           >
@@ -220,7 +225,6 @@ const ProductPages = () => {
             />
           </div>
         </div>
-      </div>
 
       {/* MODAL (opens ONLY on card click) */}
       <ProductModal

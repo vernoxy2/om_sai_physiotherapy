@@ -57,7 +57,7 @@ const ExpertTeam = () => {
   ];
 
   return (
-    <section className="container mx-auto">
+    <section className="container mx-auto py-0">
       <Title title="Our Expert Team"  className="text-[#696969]"/>
       <h1 className="text-start ">
         Dedicated{" "}

@@ -9,7 +9,7 @@ import Title from "../../../component/Title";
 
 const AboutUs = () => {
   return (
-    <section className="">
+    <section className="py-0">
       <div className=" mx-auto ">
         {/* MAIN GRID */}
         <div className="grid grid-cols-1 xl:grid-cols-2  gap-8 items-center container capitalize">

@@ -69,7 +69,7 @@ const InsuranceCard = () => {
   };
 
   return (
-    <section className="bg-[#EFEFEF]/30">
+    <section className="bg-[#EFEFEF]/30 py-0">
       <div className="container mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-7">
           {/* Heading Card */}

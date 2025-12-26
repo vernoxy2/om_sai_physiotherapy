@@ -97,7 +97,7 @@ const Message = () => {
     },
   ];
   return (
-    <section>
+    <section className="py-0">
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start container">
         {/* Left Content */}
         <div className=" space-y-2 md:space-y-3">
