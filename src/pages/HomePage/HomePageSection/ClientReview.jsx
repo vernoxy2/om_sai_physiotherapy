@@ -71,9 +71,9 @@ const ClientReview = () => {
   return (
     <section
       style={{ backgroundImage: `url(${BgImg})` }}
-      className="bg-cover bg-center bg-no-repeat  capitalize py-0"
+      className="bg-cover bg-right bg-no-repeat  capitalize py-0"
     >
-      <div className="relative container space-y-12 space-x-60 py-24">
+      <div className="relative container space-y-12 space-x-60 py-12 lg:py-24">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           
           {Data.map((item) => (
@@ -122,7 +122,7 @@ const ClientReview = () => {
         </div>
 
         {/* ⬅➡ Navigation */}
-        <div className="hidden md:flex absolute top-3/2 left-1/3 -translate-x-1/2 -translate-y-2/3 gap-8">
+        <div className="hidden md:flex absolute bottom-0 md:top-3/2 md:left-1/3 -translate-x-1/2 -translate-y-2/3 gap-8">
           <button
             onClick={() =>
               setCurrentReview(
