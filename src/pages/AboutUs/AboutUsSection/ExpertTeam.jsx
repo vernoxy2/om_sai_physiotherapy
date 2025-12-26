@@ -68,13 +68,13 @@ const ExpertTeam = () => {
         Your Journey
       </h1>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-8">
+      <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-8 ">
         {teamData.map((member, index) => (
-          <div key={index} className="relative group text-center bg-primary/20">
+          <div key={index} className="relative group text-center bg-primary/20 rounded-lg">
             <img
               src={member.img}
               alt={member.name}
-              className="w-full rounded-xl"
+              className="w-full"
             />
 
             {/* Social Icons */}
