@@ -12,6 +12,91 @@ import { doc, getDoc } from "firebase/firestore";
 import { db } from "../../../firebase";
 
 const Message = () => {
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    serviceType: "",
+    message: "",
+  });
+
+  const [error, setError] = useState("");
+  const [errorField, setErrorField] = useState("");
+
+  const validateEmail = (email) => {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailRegex.test(email);
+  };
+
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    setFormData((prev) => ({
+      ...prev,
+      [name]: value,
+    }));
+    // Clear error when user types
+    if (errorField === name) {
+      setError("");
+      setErrorField("");
+    }
+  };
+
+  const handleSubmit = () => {
+    // Step 1: Check Name
+    if (!formData.name.trim()) {
+      setError("Please fill out this field.");
+      setErrorField("name");
+      return;
+    }
+
+    // Step 2: Check Email
+    if (!formData.email.trim()) {
+      setError("Please fill out this field.");
+      setErrorField("email");
+      return;
+    } else if (!validateEmail(formData.email.trim())) {
+      setError("Please enter a valid email.");
+      setErrorField("email");
+      return;
+    }
+
+    // Step 3: Check Service Type
+    if (!formData.serviceType.trim()) {
+      setError("Please fill out this field.");
+      setErrorField("serviceType");
+      return;
+    }
+
+    // Step 4: Check DateTime
+    if (!dateTime) {
+      setError("Please fill out this field.");
+      setErrorField("dateTime");
+      return;
+    }
+
+    // Step 5: Check Message
+    if (!formData.message.trim()) {
+      setError("Please fill out this field.");
+      setErrorField("message");
+      return;
+    }
+
+    // All fields filled - Submit
+    setError("");
+    setErrorField("");
+    console.log("Form submitted successfully!", {
+      ...formData,
+      dateTime,
+    });
+    alert("Form submitted successfully!");
+    // Reset form
+    setFormData({
+      name: "",
+      email: "",
+      serviceType: "",
+      message: "",
+    });
+    setDateTime(null);
+  };
   const [dateTime, setDateTime] = useState(null);
   const [hours, setHours] = useState({
     monday: "Loading...",
@@ -96,11 +181,12 @@ const Message = () => {
       ],
     },
   ];
+
   return (
     <section className="py-0">
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start container">
         {/* Left Content */}
-        <div className=" space-y-2 md:space-y-3">
+        <div className=" space-y-2 md:space-y-3 capitalize">
           {/* Head Tile */}
           <Title
             className="text-xl text-[#696969] "
@@ -159,42 +245,110 @@ const Message = () => {
 
         {/* Form */}
         <form className="bg-white ">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <input
-              type="text"
-              placeholder="Name*"
-              className="w-full rounded-full   text-sm focus:outline-none"
-            />
+          <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-2 gap-6">
+            <div>
+              <input
+                type="text"
+                name="name"
+                placeholder="Name*"
+                value={formData.name}
+                onChange={handleInputChange}
+                className={`w-full rounded-full text-sm focus:outline-none placeholder:text-[#696969] font-lato${
+                  errorField === "name" ? "border-2 border-red-500" : ""
+                }`}
+              />
+              {errorField === "name" && (
+                <p className="text-red-500 text-xs mt-1 ml-3">⚠ {error}</p>
+              )}
+            </div>
 
-            <input
-              type="email"
-              placeholder="Email ID*"
-              className="w-full rounded-full bg-[#EEEEEE]  text-sm focus:outline-none"
-            />
+            <div>
+              <input
+                type="email"
+                name="email"
+                placeholder="Email ID*"
+                value={formData.email}
+                onChange={handleInputChange}
+                className={`w-full rounded-full text-sm focus:outline-none placeholder:text-[#696969] font-lato ${
+                  errorField === "email"
+                    ? "border-2 border-red-500"
+                    : "bg-[#EEEEEE]"
+                }`}
+              />
+              {errorField === "email" && (
+                <p className="text-red-500 text-xs mt-1 ml-3">⚠ {error}</p>
+              )}
+            </div>
 
-            <input
-              type="text"
-              placeholder="Type Of Service Enquiry*"
-              className="w-full rounded-full bg-[#EEEEEE]  text-sm focus:outline-none"
-            />
+            <div>
+              <input
+                type="text"
+                name="serviceType"
+                placeholder="Type Of Service Enquiry*"
+                value={formData.serviceType}
+                onChange={handleInputChange}
+                className={`w-full rounded-full bg-[#EEEEEE] text-sm focus:outline-none  placeholder:text-[#696969] font-lato ${
+                  errorField === "serviceType"
+                    ? "border-2 border-red-500 bg-red-50"
+                    : ""
+                }`}
+              />
+              {errorField === "serviceType" && (
+                <p className="text-red-500 text-xs mt-1 ml-3">⚠ {error}</p>
+              )}
+            </div>
 
             {/* Date & Time Picker */}
-            <DatePicker
-              selected={dateTime}
-              onChange={(date) => setDateTime(date)}
-              showTimeSelect
-              dateFormat="MMMM d, yyyy h:mm aa"
-              placeholderText="Select Date & Time*"
-              className="w-full rounded-full bg-[#EEEEEE]  text-sm focus:outline-none"
-            />
-            <textarea
-              placeholder="Enter Your Message Here*"
-              rows={4}
-              className="w-full rounded-2xl bg-[#EEEEEE]  text-sm focus:outline-none md:col-span-2 "
-            />
-          <PrimaryBtn className="md:col-span-2">Schedule Your Visit</PrimaryBtn>
-          </div>
+            <div className="flex flex-col">
+              <DatePicker
+                selected={dateTime}
+                onChange={(date) => {
+                  setDateTime(date);
+                  if (errorField === "dateTime") {
+                    setError("");
+                    setErrorField("");
+                  }
+                }}
+                showTimeSelect
+                dateFormat="MMMM d, yyyy h:mm aa"
+                placeholderText="Select Date & Time*"
+                minDate={new Date()}
+                className={`w-full rounded-full bg-[#EEEEEE] text-sm focus:outline-none  placeholder:text-[#696969] font-lato ${
+                  errorField === "dateTime"
+                    ? "border-2 border-red-500 bg-red-50"
+                    : ""
+                }`}
+              />
+              {errorField === "dateTime" && (
+                <p className="text-red-500 text-xs mt-1 ml-3">⚠ {error}</p>
+              )}
+            </div>
+            <div className="md:col-span-2">
+              <textarea
+                name="message"
+                placeholder="Enter Your Message Here*"
+                rows={4}
+                value={formData.message}
+                onChange={handleInputChange}
+                className={`w-full rounded-2xl bg-[#EEEEEE] text-sm focus:outline-none  placeholder:text-[#696969] font-lato ${
+                  errorField === "message"
+                    ? "border-2 border-red-500 bg-red-50"
+                    : ""
+                }`}
+              />
+              {errorField === "message" && (
+                <p className="text-red-500 text-xs mt-1 ml-3">⚠ {error}</p>
+              )}
+            </div>
 
+            <button
+              type="button"
+              onClick={handleSubmit}
+              className="md:col-span-2"
+            >
+              <PrimaryBtn className="w-full">Schedule Your Visit</PrimaryBtn>
+            </button>
+          </div>
         </form>
       </div>
       <div className=" container w-full">

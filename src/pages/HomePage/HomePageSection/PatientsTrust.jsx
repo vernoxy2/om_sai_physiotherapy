@@ -49,7 +49,7 @@ const PatientsTrust = () => {
             You Can Feel
           </span>
         </h1>
-        <p className="text-[#696969] items-center lg:w-[45%]  mx-auto">
+        <p className="text-[#696969] items-center lg:w-[45%]  mx-auto capitalize">
           At Om Sai Physiotherapy Clinic, we deliver personalized, high-quality
           physiotherapy care in a modern, patient-focused environment. Here’s
           why patients trust us for their rehabilitation and wellness
@@ -57,7 +57,7 @@ const PatientsTrust = () => {
       </div>
 
       {/* Cards */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-6 mb-20  ">
+      <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-6 mb-20 capitalize">
         {trustCards.map((item, index) => (
           <div
             key={index}
@@ -71,8 +71,8 @@ const PatientsTrust = () => {
             />
 
             <h4
-              className="text-lg font-medium mb-3 transition
-                   text-[#696969] group-hover:text-white"
+              className="text-lg font-bold mb-3 transition
+                   text-primary group-hover:text-white "
             >
               {item.MainText}
             </h4>

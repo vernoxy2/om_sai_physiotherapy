@@ -29,102 +29,105 @@ const Visit = () => {
       value: "Cardiovascular Rehabilitation",
     },
   ];
+
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    serviceType: "",
+    message: "",
+  });
+
   const [dateTime, setDateTime] = useState(null);
-  const [errors, setErrors] = useState({});
-  const [errorMessages, setErrorMessages] = useState({});
+  const [error, setError] = useState("");
+  const [errorField, setErrorField] = useState("");
 
   const validateEmail = (email) => {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     return emailRegex.test(email);
   };
 
-  const handleSubmit = () => {
-    const nameInput = document.querySelector('input[name="name"]');
-    const emailInput = document.querySelector('input[name="email"]');
-    const serviceInput = document.querySelector('input[name="serviceType"]');
-    const messageInput = document.querySelector('textarea[name="message"]');
-    const newErrors = {};
-    const newMessages = {};
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    setFormData((prev) => ({
+      ...prev,
+      [name]: value,
+    }));
+    // Clear error when user types
+    if (errorField === name) {
+      setError("");
+      setErrorField("");
+    }
+  };
 
+  const handleSubmit = () => {
     // Step 1: Check Name
-    if (!nameInput || !nameInput.value.trim()) {
-      newErrors.name = true;
-      newMessages.name = "Please fill out this field.";
-      setErrors(newErrors);
-      setErrorMessages(newMessages);
+    if (!formData.name.trim()) {
+      setError("Please fill out this field.");
+      setErrorField("name");
       return;
     }
 
     // Step 2: Check Email
-    if (!emailInput || !emailInput.value.trim()) {
-      newErrors.email = true;
-      newMessages.email = "Please fill out this field.";
-      setErrors(newErrors);
-      setErrorMessages(newMessages);
+    if (!formData.email.trim()) {
+      setError("Please fill out this field.");
+      setErrorField("email");
       return;
-    } else if (!validateEmail(emailInput.value.trim())) {
-      newErrors.email = true;
-      newMessages.email = "Please enter a valid email.";
-      setErrors(newErrors);
-      setErrorMessages(newMessages);
+    } else if (!validateEmail(formData.email.trim())) {
+      setError("Please enter a valid email.");
+      setErrorField("email");
       return;
     }
 
     // Step 3: Check Service Type
-    if (!serviceInput || !serviceInput.value.trim()) {
-      newErrors.serviceType = true;
-      newMessages.serviceType = "Please fill out this field.";
-      setErrors(newErrors);
-      setErrorMessages(newMessages);
+    if (!formData.serviceType.trim()) {
+      setError("Please fill out this field.");
+      setErrorField("serviceType");
       return;
     }
 
     // Step 4: Check DateTime
     if (!dateTime) {
-      newErrors.dateTime = true;
-      newMessages.dateTime = "Please fill out this field.";
-      setErrors(newErrors);
-      setErrorMessages(newMessages);
+      setError("Please fill out this field.");
+      setErrorField("dateTime");
       return;
     }
 
     // Step 5: Check Message
-    if (!messageInput || !messageInput.value.trim()) {
-      newErrors.message = true;
-      newMessages.message = "Please fill out this field.";
-      setErrors(newErrors);
-      setErrorMessages(newMessages);
+    if (!formData.message.trim()) {
+      setError("Please fill out this field.");
+      setErrorField("message");
       return;
     }
 
-    // All fields filled - Clear errors
-    setErrors({});
-    setErrorMessages({});
-    console.log("Form submitted successfully!");
-  };
-
-  const clearFieldError = (fieldName) => {
-    setErrors((prevErrors) => ({
-      ...prevErrors,
-      [fieldName]: false,
-    }));
-    setErrorMessages((prevMessages) => ({
-      ...prevMessages,
-      [fieldName]: "",
-    }));
+    // All fields filled - Submit
+    setError("");
+    setErrorField("");
+    console.log("Form submitted successfully!", {
+      ...formData,
+      dateTime,
+    });
+    alert("Form submitted successfully!");
+    // Reset form
+    setFormData({
+      name: "",
+      email: "",
+      serviceType: "",
+      message: "",
+    });
+    setDateTime(null);
   };
 
   return (
     <section className="py-0">
       {/* Bottom Section */}
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start container">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-7 items-start container capitalize">
         {/* Left Content */}
-        <div className=" space-y-4 md:space-y-5 ">
+        <div className=" space-y-4 md:space-y-5 w-[78%] ">
           <Title className="text-xl text-[#696969]" title="Plan Your Visit " />
           <h3 className="text-3xl md:text-4xl font-light text-primary lg:text-start  ">
             Take The First Step{" "}
             <span className="font-medium text-[#696969]">
-              To A {" "}<br className="hidden md:block lg:hidden xl:block" />
+              To A <br className="hidden md:block lg:hidden xl:block" />
               Pain-Free Life
             </span>
           </h3>
@@ -142,43 +145,110 @@ const Visit = () => {
         </div>
 
         {/* Form */}
-        <form className="bg-white ">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <input
-              type="text"
-              placeholder="Name*"
-              className="w-full rounded-full text-sm focus:outline-none"
-            />
+        <form className="bg-white">
+          <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-2 gap-6">
+            <div>
+              <input
+                type="text"
+                name="name"
+                placeholder="Name*"
+                value={formData.name}
+                onChange={handleInputChange}
+                className={`w-full rounded-full text-sm focus:outline-none placeholder:text-[#696969] font-lato ${
+                  errorField === "name" ? "border-2 border-red-500" : ""
+                }`}
+              />
+              {errorField === "name" && (
+                <p className="text-red-500 text-xs mt-1 ml-3">⚠ {error}</p>
+              )}
+            </div>
 
-            <input
-              type="email"
-              placeholder="Email ID*"
-              className="w-full rounded-full bg-[#EEEEEE]  text-sm focus:outline-none"
-            />
+            <div>
+              <input
+                type="email"
+                name="email"
+                placeholder="Email ID*"
+                value={formData.email}
+                onChange={handleInputChange}
+                className={`w-full rounded-full text-sm focus:outline-none placeholder:text-[#696969] font-lato ${
+                  errorField === "email"
+                    ? "border-2 border-red-500"
+                    : "bg-[#EEEEEE]"
+                }`}
+              />
+              {errorField === "email" && (
+                <p className="text-red-500 text-xs mt-1 ml-3">⚠ {error}</p>
+              )}
+            </div>
 
-            <input
-              type="text"
-              placeholder="Type Of Service Enquiry*"
-              className="w-full rounded-full bg-[#EEEEEE]  text-sm focus:outline-none"
-            />
+            <div>
+              <input
+                type="text"
+                name="serviceType"
+                placeholder="Type Of Service Enquiry*"
+                value={formData.serviceType}
+                onChange={handleInputChange}
+                className={`w-full rounded-full bg-[#EEEEEE] text-sm focus:outline-none placeholder:text-[#696969] font-lato ${
+                  errorField === "serviceType"
+                    ? "border-2 border-red-500 bg-red-50"
+                    : ""
+                }`}
+              />
+              {errorField === "serviceType" && (
+                <p className="text-red-500 text-xs mt-1 ml-3">⚠ {error}</p>
+              )}
+            </div>
 
             {/* Date & Time Picker */}
-            <DatePicker
-              selected={dateTime}
-              onChange={(date) => setDateTime(date)}
-              showTimeSelect
-              dateFormat="MMMM d, yyyy h:mm aa"
-              placeholderText="Select Date & Time*"
-              className="w-full rounded-full bg-[#EEEEEE]  text-sm focus:outline-none"
-            />
-            <textarea
-              placeholder="Enter Your Message Here*"
-              rows={4}
-              className="w-full rounded-2xl bg-[#EEEEEE]  text-sm focus:outline-none md:col-span-2 "
-            />
-            <PrimaryBtn className="md:col-span-2">
-              Schedule Your Visit
-            </PrimaryBtn>
+            <div className="flex flex-col">
+              <DatePicker
+                selected={dateTime}
+                onChange={(date) => {
+                  setDateTime(date);
+                  if (errorField === "dateTime") {
+                    setError("");
+                    setErrorField("");
+                  }
+                }}
+                showTimeSelect
+                dateFormat="MMMM d, yyyy h:mm aa"
+                placeholderText="Select Date & Time*"
+                minDate={new Date()}
+                className={`w-full rounded-full bg-[#EEEEEE] text-sm focus:outline-none  placeholder:text-[#696969] font-lato  ${
+                  errorField === "dateTime"
+                    ? "border-2 border-red-500 bg-red-50"
+                    : ""
+                }`}
+              />
+              {errorField === "dateTime" && (
+                <p className="text-red-500 text-xs mt-1 ml-3">⚠ {error}</p>
+              )}
+            </div>
+            <div className="md:col-span-2">
+              <textarea
+                name="message"
+                placeholder="Enter Your Message Here*"
+                rows={4}
+                value={formData.message}
+                onChange={handleInputChange}
+                className={`w-full rounded-2xl bg-[#EEEEEE] text-sm focus:outline-none  placeholder:text-[#696969] font-lato ${
+                  errorField === "message"
+                    ? "border-2 border-red-500 bg-red-50"
+                    : ""
+                }`}
+              />
+              {errorField === "message" && (
+                <p className="text-red-500 text-xs mt-1 ml-3">⚠ {error}</p>
+              )}
+            </div>
+
+            <button
+              type="button"
+              onClick={handleSubmit}
+              className="md:col-span-2"
+            >
+              <PrimaryBtn className="w-full">Schedule Your Visit</PrimaryBtn>
+            </button>
           </div>
         </form>
       </div>
