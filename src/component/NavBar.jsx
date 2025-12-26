@@ -218,7 +218,7 @@ const Navbar = () => {
                   )}
 
                   {hasSubmenu && mobileDropdown === link.id && (
-                    <ul className="mt-2 space-y-2">
+                    <ul className="mt-2 space-y-2 font-lato">
                       {link.submenu.map((sub) => (
                         <li key={sub.id}>
                           <Link
