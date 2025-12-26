@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from "react";
-import { useParams, useNavigate } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import Title from "../../../component/Title";
 import img1 from "../../../assets/ConditionPageImgs/Treat/img1.png";
 import img2 from "../../../assets/ConditionPageImgs/Treat/img2.png";
@@ -14,7 +14,6 @@ import img10 from "../../../assets/ConditionPageImgs/Treat/img10.png";
 
 const Conditions = () => {
   const { id } = useParams();
-  const navigate = useNavigate();
   const selectedId = id ? parseInt(id) : null;
   const selectedCardRef = useRef(null);
 
@@ -26,15 +25,18 @@ const Conditions = () => {
       behavior: "smooth",
       block: "center",
     });
-
-    // Give scroll + highlight time, then clean URL
-    const timeout = setTimeout(() => {
-      navigate("/conditions", { replace: true });
-    }, 7000); // adjust if needed
-
-    return () => clearTimeout(timeout);
   }
-}, [id, navigate]);
+}, [id]);
+  
+ useEffect(() => {
+    // Clean URL only on page load/render
+    if (id) {
+      const timer = setTimeout(() => {
+        window.history.replaceState(null, "", "/conditions");
+      }, 0);
+      return () => clearTimeout(timer);
+    }
+  }, []);
 
 
   const headText = [

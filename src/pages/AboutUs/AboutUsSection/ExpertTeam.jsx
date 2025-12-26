@@ -94,7 +94,7 @@ const ExpertTeam = () => {
             </div>
 
             <div className="bg-white p-6">
-              <h4 className=" text-primary">
+              <h4 className=" text-primary font-bold font-marcellus">
                 {member.name}
               </h4>
               <p className=" text-[#696969] mt-1">{member.position}</p>

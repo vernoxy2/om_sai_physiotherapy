@@ -71,7 +71,7 @@ const InsuranceCard = () => {
   return (
     <section className="bg-[#EFEFEF]/30">
       <div className="container mx-auto">
-        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-7">
+        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-7 capitalize">
           {/* Heading Card */}
           <div className="bg-primary flex flex-col justify-center items-center px-9 space-y-4 relative">
             <h1 className="text-white capitalize ">
@@ -90,7 +90,7 @@ const InsuranceCard = () => {
               <img
                 src={card.img}
                 alt={card.MainText}
-                className="w-full h-auto object-contain transition-all duration-300 group-hover:blur-sm"
+                className="w-full h-auto object-contain transition-all duration-300 group-hover:blur-sm "
               />
 
               {/* Arrow Button (Top Right) */}
@@ -113,7 +113,9 @@ const InsuranceCard = () => {
 
               {/* Default Title */}
               <div className="absolute bottom-0 left-0 right-0 p-4 group-hover:opacity-0 transition-opacity duration-300 bg-gradient-to-b from-transparent to-black h-fit">
-                <h4 className="text-white w-[75%]">{card.MainText}</h4>
+                <h4 className="text-white w-[75%] font-bold">
+                  {card.MainText}
+                </h4>
               </div>
 
               {/* Hover Overlay */}
@@ -123,7 +125,9 @@ const InsuranceCard = () => {
       pb-5 opacity-0 group-hover:opacity-100 
       transition-all duration-300 space-y-2"
               >
-                <h4 className="text-white px-7 xl:w-[75%]">{card.MainText}</h4>
+                <h4 className="text-white px-7 xl:w-[75%] font-bold">
+                  {card.MainText}
+                </h4>
                 <p className="text-white px-7 xl:w-[95%]">{card.Subtext}</p>
               </div>
             </div>

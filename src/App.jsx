@@ -1,3 +1,4 @@
+import React , { useEffect }  from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Home from "./pages/HomePage/HomePage";
 import NavBar from "./component/NavBar";
@@ -17,11 +18,27 @@ import Spinal from "./pages/ServicePage/Spinal/Spinal.jsx";
 import AdminLogin from "./pages/Admin/AdminLogin.jsx";
 import ProtectedRoute from "./component/ProtectedRoute.jsx";
 import AdminDashboard from "./pages/Admin/AdminDashboard.jsx";
+import ScrollToTop from "./component/ScrollToTop.jsx";
+import AOS from "aos";
+import "aos/dist/aos.css";
+import GoToTop from "./component/GoToTop.jsx";
 
 const App = () => {
+ useEffect(() => {
+    AOS.init({
+      duration: 600,
+      easing: "ease-in-out",
+      once: true,
+      mirror: true,
+      delay: 400,
+      offset: 150,
+    });
+  }, []);
+
   return (
     <div className="text-4xl">
       <BrowserRouter>
+       <ScrollToTop />
         <NavBar />
         <Routes>
           <Route path="/" element={<Home />} />
@@ -54,6 +71,7 @@ const App = () => {
           />
         </Routes>
         <Footer />
+      <GoToTop/>
       </BrowserRouter>
     </div>
   );

@@ -25,6 +25,7 @@ const ProductPages = () => {
   const [selectedProduct, setSelectedProduct] = useState(null);
   const [searchParams] = useSearchParams();
   const isSelected = (key) => searchParams.get("product") === key;
+
   // 🔹 refs for scrolling
   const orthoticsRef = useRef(null);
   const compressionRef = useRef(null);
@@ -35,10 +36,20 @@ const ProductPages = () => {
   const wristBracesRef = useRef(null);
   const cervicalRef = useRef(null);
 
-  // 🔹 scroll to section from footer link
+  // 🔹 Clean URL on page load/render
   useEffect(() => {
     const product = searchParams.get("product");
+    if (product) {
+      const timer = setTimeout(() => {
+        window.history.replaceState(null, "", "/products");
+      }, 0);
+      return () => clearTimeout(timer);
+    }
+  }, []);
 
+  // 🔹 Scroll to section from URL params
+  useEffect(() => {
+    const product = searchParams.get("product");
     const refMap = {
       orthotics: orthoticsRef,
       compression: compressionRef,
@@ -51,10 +62,12 @@ const ProductPages = () => {
     };
 
     if (product && refMap[product]?.current) {
-      refMap[product].current.scrollIntoView({
-        behavior: "smooth",
-        block: "start",
-      });
+      setTimeout(() => {
+        refMap[product].current.scrollIntoView({
+          behavior: "smooth",
+          block: "center",
+        });
+      }, 100);
     }
   }, [searchParams]);
 
@@ -110,7 +123,7 @@ const ProductPages = () => {
           <div
             ref={orthoticsRef}
             className={`rounded-2xl transition-all duration-300 ${
-              isSelected("orthotics") ? "ring-4 ring-primary ring-offset-4" : ""
+              isSelected("orthotics") ? "ring-2 ring-primary ring-offset-4" : ""
             }`}
           >
             <ProductSection
@@ -122,10 +135,12 @@ const ProductPages = () => {
             />
           </div>
 
-          <div ref={compressionRef}
-          className={`rounded-2xl transition-all duration-300 ${
+          <div
+            ref={compressionRef}
+            className={`rounded-2xl transition-all duration-300 ${
               isSelected("compression") ? "ring-4 ring-primary ring-offset-4" : ""
-            }`}>
+            }`}
+          >
             <ProductSection
               ProductImg={img2}
               Headtext="Compression"
@@ -136,8 +151,9 @@ const ProductPages = () => {
             />
           </div>
 
-          <div ref={kneeBracesRef}
-           className={`rounded-2xl transition-all duration-300 ${
+          <div
+            ref={kneeBracesRef}
+            className={`rounded-2xl transition-all duration-300 ${
               isSelected("kneeBraces") ? "ring-4 ring-primary ring-offset-4" : ""
             }`}
           >
@@ -150,8 +166,9 @@ const ProductPages = () => {
             />
           </div>
 
-          <div ref={backBracesRef}
-          className={`rounded-2xl transition-all duration-300 ${
+          <div
+            ref={backBracesRef}
+            className={`rounded-2xl transition-all duration-300 ${
               isSelected("backBraces") ? "ring-4 ring-primary ring-offset-4" : ""
             }`}
           >
@@ -164,8 +181,9 @@ const ProductPages = () => {
             />
           </div>
 
-          <div ref={elbowBracesRef}
-          className={`rounded-2xl transition-all duration-300 ${
+          <div
+            ref={elbowBracesRef}
+            className={`rounded-2xl transition-all duration-300 ${
               isSelected("elbowbraces") ? "ring-4 ring-primary ring-offset-4" : ""
             }`}
           >
@@ -178,8 +196,9 @@ const ProductPages = () => {
             />
           </div>
 
-          <div ref={ankleBracesRef}
-           className={`rounded-2xl transition-all duration-300 ${
+          <div
+            ref={ankleBracesRef}
+            className={`rounded-2xl transition-all duration-300 ${
               isSelected("anklebraces") ? "ring-4 ring-primary ring-offset-4" : ""
             }`}
           >
@@ -192,8 +211,9 @@ const ProductPages = () => {
             />
           </div>
 
-          <div ref={wristBracesRef}
-          className={`rounded-2xl transition-all duration-300 ${
+          <div
+            ref={wristBracesRef}
+            className={`rounded-2xl transition-all duration-300 ${
               isSelected("wristbraces") ? "ring-4 ring-primary ring-offset-4" : ""
             }`}
           >
@@ -206,8 +226,9 @@ const ProductPages = () => {
             />
           </div>
 
-          <div ref={cervicalRef}
-          className={`rounded-2xl transition-all duration-300 ${
+          <div
+            ref={cervicalRef}
+            className={`rounded-2xl transition-all duration-300 ${
               isSelected("cervical") ? "ring-4 ring-primary ring-offset-4" : ""
             }`}
           >

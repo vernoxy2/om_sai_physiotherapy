@@ -136,7 +136,7 @@ const Services = () => {
                 {/* Outer container: fixed height */}
                 <div className="relative h-[400px] group ">
                   {/* Inner card: lifts on hover */}
-                  <div className="rounded-md overflow-hidden cursor-pointer h-full transition-transform duration-500 ease-out group-hover:-translate-y-8 group-hover:shadow-2xl">
+                  <div className="rounded-md overflow-hidden cursor-pointer h-full transition-transform duration-5000 border ease-out group-hover:-translate-y-8 group-hover:shadow-2xl">
                     <img
                       src={coverImages[index]}
                       alt={item.Maintext}
@@ -145,7 +145,7 @@ const Services = () => {
 
                     {/* Overlay on hover */}
                     <div className="absolute inset-0 flex flex-col items-center justify-center text-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 p-4 bg-gradient-to-t from-black via-black/20 to-transparent">
-                      <h3 className="text-2xl text-white mb-2">
+                      <h3 className="text-2xl text-white mb-2 font-bold">
                         {item.Maintext}
                       </h3>
                       <p className="text-white">{item.Subtext}</p>
