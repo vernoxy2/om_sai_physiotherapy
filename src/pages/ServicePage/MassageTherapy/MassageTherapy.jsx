@@ -10,16 +10,18 @@ import BgImg from "../../../assets/ServicesPageImgs/MassageTherapy/BgImg.png";
 // Section 1
 const Section1 = () => {
   return (
-    <div className="space-y-5">
-      <Title title="Massage Therapy" />
+    <div className="space-y-4 md:space-y-8">
+      <div className="space-y-3">
+        <Title title="Massage Therapy" />
 
       <h1>
-        Massage Helps <br />
+        Massage Helps <br className="hidden lg:block"/>
         <span className="text-[#696969]">With</span>
       </h1>
+      </div>
 
-      <div className="grid grid-cols-1 lg:grid-cols-2">
-        <ul className="space-y-5 capitalize">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-y-2.5">
+        <ul className="space-y-2.5 md:space-y-5 capitalize">
           <li className="flex items-start gap-3">
             <img src={icon} alt="icon" className="w-3 h-3 my-auto" />
             <p>Sports injuries</p>
@@ -80,7 +82,7 @@ const Section1 = () => {
 // Section 2
 const Section2 = () => {
   return (
-    <div className="space-y-5">
+    <div className="space-y-4 md:space-y-8 xl:pt-10">
       <h1>
         Benefits of{" "}
         <span className="text-[#696969]">
@@ -88,7 +90,7 @@ const Section2 = () => {
         </span>
       </h1>
 
-      <ul className="space-y-5 capitalize">
+      <ul className="space-y-2.5 md:space-y-5 capitalize">
         <li className="flex items-start gap-3">
           <img src={icon} alt="icon" className="w-3 h-3 my-auto" />
           <p>Relieves muscle tension</p>
@@ -114,7 +116,7 @@ const Section2 = () => {
           <p>Enhances flexibility & joint movement</p>
         </li>
 
-        <li className="flex items-start gap-3">
+        <li className="flex items-start gap-3 pb-5">
           <img src={icon} alt="icon" className="w-3 h-3 my-auto" />
           <p>Boosts healing of injured tissues</p>
         </li>
@@ -136,7 +138,11 @@ const MassageTherapy = () => {
 Our Registered Massage Therapists (RMTs) use evidence-based techniques to treat soft-tissue conditions, relax tense muscles, and improve circulation. Massage therapy accelerates healing and supports long-term wellness.
 "
       />
-
+<section
+        className="relative space-y-20 py-10 md:py-14 lg:py-20 bg-white
+                   before:absolute before:h-14 before:w-full before:bg-white before:-top-12 before:content-[''] before:rounded-t-[33px] before:md:rounded-t-[66px] before:z-[1]
+                   after:absolute after:h-14 after:w-full after:bg-white after:-bottom-12 after:content-[''] after:rounded-b-[33px] after:md:rounded-b-[66px] after:z-[1]"
+      >
       <PrimarySecGrid
         className1="lg:order-1"
         className2="lg:order-2"
@@ -150,6 +156,7 @@ Our Registered Massage Therapists (RMTs) use evidence-based techniques to treat 
         Img={img2}
         Children={<Section2 />}
       />
+      </section>
     </div>
   );
 };

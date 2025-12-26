@@ -118,7 +118,7 @@ const Visit = () => {
   };
 
   return (
-    <section>
+    <section className="py-0">
       {/* Bottom Section */}
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-7 items-start container capitalize">
         {/* Left Content */}

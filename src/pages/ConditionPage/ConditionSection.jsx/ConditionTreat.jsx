@@ -168,7 +168,7 @@ const Conditions = () => {
   ];
 
   return (
-    <section>
+    <section className="py-0">
       <div className="container gap-10">
         <div className="mx-auto w-full flex flex-col items-center justify-center text-center gap-5 ">
           <Title

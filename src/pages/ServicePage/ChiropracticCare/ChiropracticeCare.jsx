@@ -11,15 +11,17 @@ import BgImg from "../../../assets/ServicesPageImgs/Chiropractic/BgImg.png";
 // Section 1
 const Section1 = () => {
   return (
-    <div className="space-y-5">
-      <Title title="Chiropractic Care" />
-      <h1>
-        Conditions We <br />
-        <span className="text-[#696969]">Treat</span>
-      </h1>
+    <div className="space-y-4 md:space-y-8">
+      <div className="space-y-3">
+        <Title title="Chiropractic Care" />
+        <h1>
+          Conditions We <br className="hidden lg:block" />
+          <span className="text-[#696969]">Treat</span>
+        </h1>
+      </div>
 
-      <div className="grid grid-cols-1 lg:grid-cols-2">
-        <div className="space-y-5">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-y-2.5">
+        <div className="space-y-2.5 md:space-y-5">
           <li className="flex items-start gap-3">
             <img src={icon} alt="icon" className="w-3 h-3 my-auto" />
             <p>Sports Injuries</p>
@@ -51,7 +53,7 @@ const Section1 = () => {
           </li>
         </div>
 
-        <div className="space-y-5">
+        <div className="space-y-2.5 md:space-y-5">
           <li className="flex items-start gap-3">
             <img src={icon} alt="icon" className="w-3 h-3 my-auto" />
             <p>Chronic Pain</p>
@@ -75,11 +77,11 @@ const Section1 = () => {
 // Section 2
 const Section2 = () => {
   return (
-    <div className="space-y-5">
+    <div className="flex flex-col justify-center h-full space-y-2.5 md:space-y-5">
       <h1>
         Benefits of <span className="text-[#696969]">Chiropractic Care</span>
       </h1>
-      <ul className="space-y-5">
+      <ul className="space-y-2.5 md:space-y-5">
         <li className="flex items-start gap-3">
           <img src={icon} alt="icon" className="w-3 h-3 my-auto" />
           <p>Reduced Pain & Tension</p>
@@ -111,44 +113,49 @@ const Section2 = () => {
 // Section 3
 const Section3 = () => {
   return (
-    <div className="space-y-5">
-      <h1>Treatment</h1>
-      <ul className="space-y-5">
-        <li className="flex items-start gap-3">
-          <img src={icon} alt="icon" className="w-3 h-3 my-auto" />
-          <p>Chiropractic Adjustments</p>
-        </li>
+    <div className="flex flex-col justify-between h-full gap-y-6 md:gap-y-8">
+      <div className="space-y-4 md:space-y-8">
+        <h1>Treatment</h1>
+        <ul className="space-y-2.5 md:space-y-5">
+          <li className="flex items-start gap-3">
+            <img src={icon} alt="icon" className="w-3 h-3 my-auto" />
+            <p>Chiropractic Adjustments</p>
+          </li>
 
-        <li className="flex items-start gap-3">
-          <img src={icon} alt="icon" className="w-3 h-3 my-auto" />
-          <p>Manual Therapy</p>
-        </li>
+          <li className="flex items-start gap-3">
+            <img src={icon} alt="icon" className="w-3 h-3 my-auto" />
+            <p>Manual Therapy</p>
+          </li>
 
-        <li className="flex items-start gap-3">
-          <img src={icon} alt="icon" className="w-3 h-3 my-auto" />
-          <p>Laser Therapy</p>
-        </li>
+          <li className="flex items-start gap-3">
+            <img src={icon} alt="icon" className="w-3 h-3 my-auto" />
+            <p>Laser Therapy</p>
+          </li>
 
-        <li className="flex items-start gap-3">
-          <img src={icon} alt="icon" className="w-3 h-3 my-auto" />
-          <p>Active Release Techniques (ART®)</p>
-        </li>
+          <li className="flex items-start gap-3">
+            <img src={icon} alt="icon" className="w-3 h-3 my-auto" />
+            <p>Active Release Techniques (ART®)</p>
+          </li>
 
-        <li className="flex items-start gap-3">
-          <img src={icon} alt="icon" className="w-3 h-3 my-auto" />
-          <p>Acupuncture</p>
-        </li>
+          <li className="flex items-start gap-3">
+            <img src={icon} alt="icon" className="w-3 h-3 my-auto" />
+            <p>Acupuncture</p>
+          </li>
 
-        <li className="flex items-start gap-3">
-          <img src={icon} alt="icon" className="w-3 h-3 my-auto" />
-          <p>Stretching & Exercise Programs</p>
-        </li>
-      </ul>
-      <p className="bg-[#D9D9D9] h-0.5 w-full" />
-      <h5 className="capitalize py-7">
-        “Direct billing available for extended health <br />
-        insurances”
-      </h5>
+          <li className="flex items-start gap-3">
+            <img src={icon} alt="icon" className="w-3 h-3 my-auto" />
+            <p>Stretching & Exercise Programs</p>
+          </li>
+        </ul>
+      </div>
+      <div className="space-y-5">
+        <p className="bg-[#D9D9D9] h-0.5 w-full" />
+        <h5 className="capitalize ">
+          “Direct billing available for extended health{" "}
+          <br className="hidden lg:block" />
+          insurances”
+        </h5>
+      </div>
     </div>
   );
 };
@@ -165,6 +172,11 @@ const ChiropracticeCare = () => {
           Chiropractic Care Focuses On Correcting Dysfunctions In The Spine, Joints, And Nervous System. When Your Nervous System Is Functioning Optimally, Your Entire Body Works Better—Reducing Pain And Improving Mobility.
         "
       />
+      <section
+        className="relative space-y-20 py-10 md:py-14 lg:py-20 bg-white
+                   before:absolute before:h-14 before:w-full before:bg-white before:-top-12 before:content-[''] before:rounded-t-[33px] before:md:rounded-t-[66px] before:z-[1]
+                   after:absolute after:h-14 after:w-full after:bg-white after:-bottom-12 after:content-[''] after:rounded-b-[33px] after:md:rounded-b-[66px] after:z-[1]"
+      >
       <PrimarySecGrid
         className1="lg:order-1"
         className2="lg:order-2"
@@ -185,6 +197,7 @@ const ChiropracticeCare = () => {
         Img={img3}
         Children={<Section3 />}
       />
+      </section>
     </div>
   );
 };

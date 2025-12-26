@@ -45,7 +45,7 @@ const ChooseUs = () => {
   ];
 
   return (
-    <section>
+    <section className="py-0">
       <div className="container grid grid-cols-1 space-y-12">
         <div className="mx-auto w-full flex flex-col items-center justify-center text-center space-y-3">
           <Title className="text-[#696969] text-xl" title="Why Choose Us" />

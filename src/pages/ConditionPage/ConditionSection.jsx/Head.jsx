@@ -30,7 +30,7 @@ const Head = () => {
   return (
     <section
       style={{ backgroundImage: `url(${BgImg})` }}
-      className="bg-no-repeat bg-cover bg-center items-center justify-start flex min-h-[280px] md:min-h-[550px]"
+      className="bg-no-repeat bg-cover bg-center items-center justify-start flex min-h-[280px] md:min-h-[550px] pb-14"
     >
       <div className="container grid lg:grid-cols-3 md:grid-cols-2 h-full capitalize py-5 pt-20 md:pt-0">
         <div className="h-full md:w-2/3 lg:w-full flex flex-col items-start justify-center space-y-3 md:col-span-2">
