@@ -17,16 +17,31 @@ const Conditions = () => {
   const selectedId = id ? parseInt(id) : null;
   const selectedCardRef = useRef(null);
 
- useEffect(() => {
-  if (!id) return; // nothing to clean if already /conditions
+//  useEffect(() => {
+//   if (!id) return; // nothing to clean if already /conditions
 
-  if (selectedCardRef.current) {
-    selectedCardRef.current.scrollIntoView({
-      behavior: "smooth",
-      block: "center",
-    });
-  }
+//   if (selectedCardRef.current) {
+//     selectedCardRef.current.scrollIntoView({
+//       behavior: "smooth",
+//       block: "center",
+//     });
+//   }
+// }, [id]);
+useEffect(() => {
+  if (!id) return;
+
+  const timer = setTimeout(() => {
+    if (selectedCardRef.current) {
+      selectedCardRef.current.scrollIntoView({
+        behavior: "smooth",
+        block: "center",
+      });
+    }
+  }, 200); // 👈 small delay fixes the issue
+
+  return () => clearTimeout(timer);
 }, [id]);
+
   
  useEffect(() => {
     // Clean URL only on page load/render

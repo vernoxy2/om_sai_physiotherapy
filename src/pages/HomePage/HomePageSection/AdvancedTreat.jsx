@@ -108,7 +108,7 @@ const AdvancedTreat = () => {
               <img
                 src={item.img}
                 alt="img"
-                className="w-full h-auto object-cover rounded-lg"
+                className="w-full h-auto object-cover rounded-t-lg"
               />
               {item.route && (
                 <button
@@ -126,7 +126,7 @@ const AdvancedTreat = () => {
                 <img
                   src={item.svg}
                   alt="icon"
-                  className="flex-shrink-0 absolute bottom-6 right-0"
+                  className="flex-shrink-0 absolute bottom-9 right-1"
                 />
               </h4>
               <p className="text-base leading-relaxed transition text-white group-hover:text-white px-3 w-[92%]">
