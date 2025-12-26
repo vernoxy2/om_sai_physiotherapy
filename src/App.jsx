@@ -17,6 +17,9 @@ import Spinal from "./pages/ServicePage/Spinal/Spinal.jsx";
 import AdminLogin from "./pages/Admin/AdminLogin.jsx";
 import ProtectedRoute from "./component/ProtectedRoute.jsx";
 import AdminDashboard from "./pages/Admin/AdminDashboard.jsx";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+
 
 const App = () => {
   return (
