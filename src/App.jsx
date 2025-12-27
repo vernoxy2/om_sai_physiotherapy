@@ -18,6 +18,9 @@ import Spinal from "./pages/ServicePage/Spinal/Spinal.jsx";
 import AdminLogin from "./pages/Admin/AdminLogin.jsx";
 import ProtectedRoute from "./component/ProtectedRoute.jsx";
 import AdminDashboard from "./pages/Admin/AdminDashboard.jsx";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+
 import ScrollToTop from "./component/ScrollToTop.jsx";
 import AOS from "aos";
 import "aos/dist/aos.css";
