@@ -38,10 +38,10 @@ const Head = () => {
             {slides[0].MainText}
           </h1>
           <div className="space-y-5">
-            <p className="text-white font-lato lg:w-3/4 ">
+            <p className="text-white font-lato lg:w-3/4 text-sm md:text-base">
               {slides[0].SubText}
             </p>
-            <p className="text-white font-lato lg:w-4/5 ">
+            <p className="text-white font-lato lg:w-4/5 text-sm md:text-base">
               {slides[0].SubText1}
             </p>
           </div>

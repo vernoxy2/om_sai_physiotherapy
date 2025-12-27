@@ -94,7 +94,7 @@ const AdvancedTreat = () => {
       <h1 className="text-center capitalize ">
         Advanced Physiotherapy Treatments
         <span className="text-[#696969] ">
-          <br /> at Om sai physiotherapy Clinic
+          <br className="hidden md:block" /> at Om sai physiotherapy Clinic
         </span>
       </h1>
 

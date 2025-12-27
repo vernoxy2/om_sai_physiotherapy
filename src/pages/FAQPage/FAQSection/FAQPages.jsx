@@ -141,7 +141,7 @@ const FAQPages = () => {
             </div>
             <PrimaryBtn
               href="mailto:"
-              className="bg-[#EEEEEE] text-white xl:w-[45%] w-full xl:text-start rounded-full hover:bg-primary transition "
+              className="bg-[#EEEEEE] text-white w-fit xl:text-start rounded-full hover:bg-primary transition "
             >
               Send Email
             </PrimaryBtn>

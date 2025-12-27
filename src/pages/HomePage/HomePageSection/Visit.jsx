@@ -247,7 +247,7 @@ const Visit = () => {
               onClick={handleSubmit}
               className="md:col-span-2"
             >
-              <PrimaryBtn className="w-full">Schedule Your Visit</PrimaryBtn>
+              <PrimaryBtn className="w-full gap-0">Schedule Your Visit</PrimaryBtn>
             </button>
           </div>
         </form>
@@ -257,9 +257,9 @@ const Visit = () => {
 
       <div
         style={{ backgroundImage: `url(${SliderImg})` }}
-        className="relative overflow-hidden py-5 "
+        className="relative overflow-hidden py-5 bg-no-repeat bg-cover bg-center"
       >
-        <div className="flex gap-10 animate-marquee-left whitespace-nowrap">
+        <div className="flex gap-10 animate-marquee-left whitespace-nowrap container px-0">
           {[...TherapyData, ...TherapyData].map((item, i) => (
             <div key={i} className="flex items-center gap-3 text-white">
               <TiStarburst className="text-white" />
