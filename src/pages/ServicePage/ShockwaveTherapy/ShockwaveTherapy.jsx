@@ -130,7 +130,7 @@ const ShockwaveTherapy = () => {
         WhiteText="Therapy"
         subtext={
           <>
-            <p className="w-[85%]">
+            <p className="md:w-[85%]">
               Advanced Non-Surgical Pain Treatment
               <br />
               Shockwave Therapy promotes healing by increasing blood flow,

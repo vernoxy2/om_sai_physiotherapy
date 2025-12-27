@@ -513,7 +513,7 @@ const FooterData = () => {
         {/* col1 */}
         <div className="text-white flex flex-col gap-5 ">
           <img src={NavLogo} alt="Logo" className="" />
-          <p className="text-white">
+          <p className="text-white text-sm md:text-base">
             We support your recovery by restoring strength and movement, guiding
             you toward wellness and independence every day.
           </p>
@@ -525,12 +525,12 @@ const FooterData = () => {
             onChange={handleChange}
             onBlur={handleBlur}
             placeholder="Email ID*"
-            className={` required px-4 py-3 text-base rounded-full outline outline-white bg-transparent placeholder:text-white 
+            className={` required px-4 py-3 text-base rounded-full outline outline-white bg-transparent placeholder:text-white focus:outline-white
           ${error ? "border-primary" : "border-gray-300 "}
          focus:ring-2 focus:ring-white`}
           />
           {error && <p className="text-primary text-sm ">{error}</p>}
-          <PrimaryBtn className=" text-base ">Subscribe Now</PrimaryBtn>
+          <PrimaryBtn className="w-fit">Subscribe Now</PrimaryBtn>
         </div>
 
         {/* col2 */}

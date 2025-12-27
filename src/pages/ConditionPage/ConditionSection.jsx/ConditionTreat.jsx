@@ -61,7 +61,7 @@ useEffect(() => {
           Comprehensive{" "}
           <span className="text-[#696969]">
             Care for
-            <br /> Every<span className="text-primary"> Condition </span>
+            <br className="hidden md:block" /> Every<span className="text-primary"> Condition </span>
           </span>
         </h1>
       ),

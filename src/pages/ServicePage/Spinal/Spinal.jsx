@@ -129,7 +129,7 @@ const Spinal = () => {
         WhiteText="Traction"
         subtext={
           <>
-            <p className="w-[85%]">
+            <p className="md:w-[85%]">
               Gentle Spinal Decompression for Back & Neck Pain Spinal traction
               relieves pressure on spinal discs, reduces nerve compression, and
               supports recovery from:

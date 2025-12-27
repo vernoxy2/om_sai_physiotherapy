@@ -42,8 +42,8 @@ const KnowUsPage = () => {
     {
       SubText: (
         <>
-          <p>
-            <span className="text-primary font-bold">
+          <p className="text-sm md:text-base ">
+            <span className="text-primary font-bold ">
               Om Sai Physiotherapy Clinic (Mississauga) Inc.
             </span>{" "}
             has been delivering high-quality physiotherapy, chiropractic care,
@@ -51,7 +51,7 @@ const KnowUsPage = () => {
             team is committed to providing personalized, compassionate care
             tailored to each patient’s needs.
           </p>
-          <p>
+          <p className="text-sm md:text-base">
             In addition to our core services, we offer custom-made orthotics,
             compression stockings, and braces to support rehabilitation and
             enhance mobility. Our experienced professionals take a collaborative
@@ -61,14 +61,14 @@ const KnowUsPage = () => {
             Vehicle Accidents (MVA), and Workplace Injuries (WSIB), making our
             services accessible to all patients in need.
           </p>
-          <p>
+          <p className="text-sm md:text-base">
             Our clinic specializes in sports injuries, car accident-related
             injuries, chronic and acute pain, and mobility issues. We focus on
             comprehensive, patient-specific wellness and fitness programs
             designed to optimize recovery, restore function, and improve overall
             health.
           </p>
-          <p>
+          <p className="text-sm md:text-base">
             At Om Sai Physiotherapy Clinic, our goal is to help every patient
             move better, feel better, and achieve long-term wellness through
             expert care, modern facilities, and a compassionate, results-driven
@@ -82,10 +82,10 @@ const KnowUsPage = () => {
     {
       SubText: (
         <>
-          <p className="text-primary font-bold">
+          <p className="text-primary font-bold ">
             Physiotherapy: Restore, Recover & Live Pain-Free
           </p>
-          <p>
+          <p className="text-sm md:text-base">
             Physiotherapy focuses on improving health, mobility, and overall
             well-being by treating injuries, pain, and physical conditions
             through natural, evidence-based techniques—not medication. These
@@ -96,7 +96,7 @@ const KnowUsPage = () => {
             movement, building strength, reducing pain, and improving day-to-day
             function for individuals of all ages.
           </p>
-          <p>
+          <p className="text-sm md:text-base">
             Whether you're healing after surgery, managing chronic pain, or
             regaining mobility after an injury, physiotherapy supports your
             recovery through personalized exercise programs, manual therapy, and
@@ -114,10 +114,10 @@ const KnowUsPage = () => {
     {
       SubText: (
         <>
-          <p className="text-primary font-bold">
+          <p className="text-primary font-bold ">
             Physiotherapy: Restore, Recover & Live Pain-Free
           </p>
-          <p>
+          <p className="text-sm md:text-base">
             Om Sai Physiotherapy Centre Inc. welcomes you with compassionate,
             patient-focused care. Our dedicated team of licensed professionals
             provides personalized and comprehensive physiotherapy services
@@ -130,14 +130,14 @@ const KnowUsPage = () => {
             patient-centric approach to assess, diagnose, and treat a wide range
             of conditions—including sports injuries, chronic pain, workplace
             injuries, and mobility issues.
-          </p>
-          <p>
+          </p >
+          <p className="text-sm md:text-base">
             At Om Sai Physiotherapy Centre, we believe healing is a partnership.
             Your commitment, combined with our expertise, helps you achieve the
             best possible outcome. From your first visit to full recovery, we
             are here to guide, support, and care for you every step of the way.
           </p>
-          <p className="text-primary font-bold">
+          <p className="text-primary font-bold ">
             Book your initial assessment today and begin your journey toward
             better health with Om Sai Physiotherapy Centre Inc.
           </p>
@@ -191,7 +191,7 @@ const KnowUsPage = () => {
           </div>
 
           {/* Right Section */}
-          <div className="text-[#696969] space-y-7 order-2 md:order-2 ">
+          <div className="text-[#696969] space-y-3 md:space-y-7 order-2 md:order-2 ">
             <Title title="Get to Know Us" />
             <h1 className=" ">
               Om Sai Physiotherapy{" "}
@@ -201,7 +201,7 @@ const KnowUsPage = () => {
             {DataList1.map((item, index) => (
               <div
                 key={index}
-                className="space-y-5 text-[#696969] w-full   "
+                className=" space-y-2.5 md:space-y-5 text-[#696969] w-full   "
               >
                 {item.SubText}
               </div>
@@ -210,15 +210,15 @@ const KnowUsPage = () => {
         </div>
 
         {/* content 2 */}
-        <div className="space-y-5 py-10 w-full ">
+        <div className="space-y-2.5 md:space-y-5 py-5 md:py-10 w-full ">
           {DataList2.map((item, index) => (
-            <div key={index} className="space-y-5 text-[#696969]">
+            <div key={index} className="space-y-2.5 md:space-y-5 text-[#696969]">
               {item.SubText}
             </div>
           ))}
           {/* content3 */}
           {DataList3.map((item, index) => (
-            <div key={index} className="space-y-5 text-[#696969]">
+            <div key={index} className="space-y-2.5 md:space-y-5 text-[#696969]">
               {item.SubText}
             </div>
           ))}

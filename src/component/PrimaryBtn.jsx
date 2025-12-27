@@ -2,20 +2,32 @@ import React from "react";
 import { BsArrowRightShort } from "react-icons/bs";
 import { Link } from "react-router-dom";
 
-const PrimaryBtn = ({ children, className, onClick, type = "button" }) => {
+const PrimaryBtn = ({ children, className, onClick, to, type = "button" }) => {
   return (
-    <button
-      className={`text-xl text-center bg-primary font-Marcellus text-white py-3 px-5 rounded-full relative group active:scale-95 duration-200 ${className}`}
+    <Link
+      to={to}
+      className={`flex items-center justify-between gap-4 text-base md:text-xl text-center bg-primary font-Marcellus text-white p-1 ps-5 rounded-full relative group active:scale-95 duration-200  ${className}`}
       type={type}
       onClick={onClick}
     >
-      {children}
-      <BsArrowRightShort className="absolute right-1 top-1/2 transform -translate-y-1/2 text-5xl  bg-[#696969] rounded-full group-hover:rotate-[-45deg] duration-500 transition-transform" />
-    </button>
+      <h6 className="text-center mx-auto ">{children}</h6>
+      <BsArrowRightShort className="bg-[#696969] rounded-full text-5xl p-1 group-hover:-rotate-45 duration-300 ease-in-out" />
+      
+    </Link>
+   
   );
 };
 
 export default PrimaryBtn;
+
+//  <button
+//       className={`text-xl text-center bg-primary font-Marcellus text-white py-3 px-5 rounded-full relative group active:scale-95 duration-200 ${className}`}
+//       type={type}
+//       onClick={onClick}
+//     >
+//       {children}
+//       <BsArrowRightShort className="absolute right-1 top-1/2 transform -translate-y-1/2 text-5xl  bg-[#696969] rounded-full group-hover:rotate-[-45deg] duration-500 transition-transform" />
+//     </button>
 
 // import React from "react";
 // import { BsArrowRightShort } from "react-icons/bs";
