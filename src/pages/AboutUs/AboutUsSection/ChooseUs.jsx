@@ -10,7 +10,7 @@ const ChooseUs = () => {
     {
       MainText: (
         <h1>
-          Our Commitment to Exceptional <br />
+          Our Commitment to Exceptional <br className="hidden md:block"/>
           <span className="text-[#696969]">Physiotherapy Care</span>
         </h1>
       ),

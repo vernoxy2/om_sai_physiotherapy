@@ -44,7 +44,7 @@ const ProductSection = ({
       </div>
 
       {/* ✅ FIXED BUTTON */}
-      <PrimaryBtn onClick={onOpen} className="w-full md:w-[35%]  md:text-start">
+      <PrimaryBtn onClick={onOpen} className="w-full md:w-fit  md:text-start">
         More Details
       </PrimaryBtn>
     </div>

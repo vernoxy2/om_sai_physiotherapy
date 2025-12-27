@@ -57,7 +57,7 @@ const AboutUs = () => {
           </div>
 
           {/* RIGHT SECTION */}
-          <div className="order-2 space-y-7 ">
+          <div className="order-2 space-y-3 md:space-y-7 ">
             <Title
               className="text-[#696969] text-xl md:text-3xl "
               title="About Us"
@@ -70,7 +70,7 @@ const AboutUs = () => {
               </span>
             </h1>
 
-            <p className="font-lato text-[#696969] w-full lg:w-[93%]">
+            <p className="font-lato text-[#696969] w-full lg:w-[93%] text-sm md:text-base">
               Welcome to Om Sai Physiotherapy Clinic in Mississauga, your
               trusted destination for expert physiotherapy and rehabilitation.
               Our experienced physiotherapists provide personalized,
@@ -78,21 +78,21 @@ const AboutUs = () => {
               issues.
             </p>
 
-            <p className="font-lato text-[#696969] w-full lg:w-[93%]">
+            <p className="font-lato text-[#696969] w-full lg:w-[93%] text-sm md:text-base">
               We offer comprehensive physiotherapy services in Mississauga,
               helping patients move better, recover faster, and live pain-free.
               Our modern, welcoming clinic ensures effective treatment plans
               tailored for every patient, from athletes to seniors.
             </p>
-            <p className="font-lato text-[#696969] w-full lg:w-[93%]">
+            <p className="font-lato text-[#696969] w-full lg:w-[93%] text-sm md:text-base">
               Start your recovery today at Om Sai Physiotherapy Clinic – North
               York’s trusted physiotherapy center.
             </p>
             <hr className="w-full h-0.5 bg-[#696969] border-none" />
 
             <PrimaryBtn
-              className="w-[32%] text-start"
-              onClick={() => navigate("/aboutus")}
+              className="w-fit"
+              to="/aboutus"
             >
               Learn More
             </PrimaryBtn>
